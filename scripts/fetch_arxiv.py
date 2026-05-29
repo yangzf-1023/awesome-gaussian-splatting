@@ -95,12 +95,13 @@ def is_relevant(title: str, summary: str) -> bool:
     has_pos = any(p.search(blob) for p in STRONG_POSITIVES)
     if not has_pos:
         return False
-    # If the only "hit" is the ambiguous "3D gaussian" phrase AND a negative pattern
-    # is also present, drop. Conservative: keep when both pos and neg coexist but
-    # we have an unambiguous splatting phrase.
-    unambiguous = re.search(r"\bgaussian splatt(ing|er)?\b|\b3d ?gs\b|\b4d ?gs\b", blob, re.I)
+    # Unambiguous splatting-specific phrase -> always keep.
+    unambiguous = re.search(
+        r"\bgaussian splatt(ing|er)?\b|\b3d ?gs\b|\b4d ?gs\b", blob, re.I
+    )
     if unambiguous:
         return True
+    # Only the ambiguous "3D gaussian" phrase matched; drop if a negative co-occurs.
     if any(n.search(blob) for n in NEGATIVE_PATTERNS):
         return False
     return True
@@ -170,7 +171,6 @@ def group_by_topic(papers: list[dict]) -> "dict[str, list[dict]]":
         grouped[name] = []
     for p in papers:
         grouped.setdefault(p["topic"], []).append(p)
-    # drop empty buckets
     return {k: v for k, v in grouped.items() if v}
 
 
@@ -231,14 +231,13 @@ def main() -> int:
             seen[p["id"]] = p["published"]
         save_json(SEEN_FILE, seen)
 
-        # Feishu notify (no-op if webhook absent)
         grouped = group_by_topic(new_papers)
         try:
             feishu_notify(today, len(new_papers), grouped, REPO_URL)
         except Exception as e:
             print(f"[warn] feishu notify raised: {e}", file=sys.stderr)
 
-    save_json(METHOD_FILE if False else META_FILE, {  # keep file name explicit
+    save_json(META_FILE, {
         "last_updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "total_seen": len(seen),
         "added_this_run": len(new_papers),
