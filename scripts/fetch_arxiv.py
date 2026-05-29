@@ -153,8 +153,16 @@ def fetch_query(query: str) -> list[dict]:
     return kept
 
 
+def _sanitize_for_details(text: str) -> str:
+    """Make abstract safe inside <details>: collapse whitespace, escape closing tag."""
+    t = re.sub(r"\s+", " ", text).strip()
+    # Defensive: avoid an abstract that happens to contain '</details>' breaking layout.
+    return t.replace("</details>", "<\\/details>")
+
+
 def render_entry(p: dict) -> str:
     tldr = p.get("tldr_zh", "")
+    summary = p.get("summary", "")
     lines = [
         f"- **[{p['title']}]({p['link']})**  ",
         f"  *{p['authors']}*  ",
@@ -162,6 +170,15 @@ def render_entry(p: dict) -> str:
     ]
     if tldr:
         lines.append(f"  > 💡 {tldr}")
+    if summary:
+        clean = _sanitize_for_details(summary)
+        # Blank line before <details> is required for GitHub to render it properly.
+        lines.append("")
+        lines.append("  <details><summary>Abstract</summary>")
+        lines.append("")
+        lines.append(f"  {clean}")
+        lines.append("")
+        lines.append("  </details>")
     return "\n".join(lines) + "\n"
 
 
