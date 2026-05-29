@@ -27,6 +27,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Fetch latest Gaussian Splatting papers
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET:  ${{ secrets.FEISHU_SECRET }}
         run: python scripts/fetch_arxiv.py
 
       - name: Commit & push if changed
