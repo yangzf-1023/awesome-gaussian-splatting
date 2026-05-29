@@ -6,8 +6,10 @@ Pipeline:
   2. Apply local strong/negative keyword guard to reduce false positives.
   3. Dedup against data/seen.json.
   4. Classify each new paper into a topic bucket.
-  5. Rewrite the AUTO-GENERATED block in README.md, grouped by topic.
-  6. Optionally push a digest card to Feishu via webhook.
+  5. (Optional) Generate Chinese TL;DR via OpenAI-compatible endpoint.
+  6. Rewrite the AUTO-GENERATED block in README.md, grouped by topic.
+  7. Archive day blocks older than RETAIN_DAYS into papers/YYYY-MM.md.
+  8. (Optional) Push a digest card to Feishu via webhook.
 """
 from __future__ import annotations
 
@@ -25,6 +27,8 @@ import requests
 
 from classify import classify, topic_order
 from feishu_notify import notify as feishu_notify
+from tldr import enrich as tldr_enrich
+from archive import archive_old_blocks
 
 ROOT = Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
@@ -33,8 +37,6 @@ META_FILE = ROOT / "data" / "meta.json"
 
 ARXIV_API = "http://export.arxiv.org/api/query"
 
-# Phrase queries -> arXiv full-text search across title + abstract + comments.
-# Quote phrases so that "gaussian splatting" is matched as a whole phrase.
 PHRASE_QUERIES = [
     '"gaussian splatting"',
     '"gaussian splat"',
@@ -44,18 +46,15 @@ PHRASE_QUERIES = [
     '"4dgs"',
 ]
 
-# Strong positive guards: at least one must appear in title or abstract.
-# Stricter than the query keywords; filters out "3D Gaussian process" etc.
 STRONG_POSITIVES = [
     re.compile(r"\bgaussian splatting\b", re.I),
     re.compile(r"\bgaussian splat\b", re.I),
     re.compile(r"\b3d ?gs\b", re.I),
     re.compile(r"\b4d ?gs\b", re.I),
-    re.compile(r"\b3d gaussians?\b", re.I),   # "3D gaussians" (plural typical in GS literature)
+    re.compile(r"\b3d gaussians?\b", re.I),
     re.compile(r"\b4d gaussians?\b", re.I),
 ]
 
-# Negative guards: if matched and no strong positive, drop.
 NEGATIVE_PATTERNS = [
     re.compile(r"\bgaussian process(es)?\b", re.I),
     re.compile(r"\bgaussian mixture\b", re.I),
@@ -66,9 +65,9 @@ NEGATIVE_PATTERNS = [
     re.compile(r"\bgaussian random\b", re.I),
 ]
 
-MAX_RESULTS = 200          # per query per run
-REQUEST_TIMEOUT = 60       # seconds
-SLEEP_BETWEEN = 3          # be nice to arXiv
+MAX_RESULTS = 200
+REQUEST_TIMEOUT = 60
+SLEEP_BETWEEN = 3
 
 REPO_URL = "https://github.com/yangzf-1023/awesome-gaussian-splatting"
 
@@ -92,16 +91,13 @@ def save_json(path: Path, data) -> None:
 
 def is_relevant(title: str, summary: str) -> bool:
     blob = f"{title}\n{summary}"
-    has_pos = any(p.search(blob) for p in STRONG_POSITIVES)
-    if not has_pos:
+    if not any(p.search(blob) for p in STRONG_POSITIVES):
         return False
-    # Unambiguous splatting-specific phrase -> always keep.
     unambiguous = re.search(
         r"\bgaussian splatt(ing|er)?\b|\b3d ?gs\b|\b4d ?gs\b", blob, re.I
     )
     if unambiguous:
         return True
-    # Only the ambiguous "3D gaussian" phrase matched; drop if a negative co-occurs.
     if any(n.search(blob) for n in NEGATIVE_PATTERNS):
         return False
     return True
@@ -158,11 +154,15 @@ def fetch_query(query: str) -> list[dict]:
 
 
 def render_entry(p: dict) -> str:
-    return (
-        f"- **[{p['title']}]({p['link']})**  \n"
-        f"  *{p['authors']}*  \n"
-        f"  `{p['published']}` · `{p['primary_category']}` · [abs]({p['link']}) · [pdf]({p['pdf']})\n"
-    )
+    tldr = p.get("tldr_zh", "")
+    lines = [
+        f"- **[{p['title']}]({p['link']})**  ",
+        f"  *{p['authors']}*  ",
+        f"  `{p['published']}` · `{p['primary_category']}` · [abs]({p['link']}) · [pdf]({p['pdf']})",
+    ]
+    if tldr:
+        lines.append(f"  > 💡 {tldr}")
+    return "\n".join(lines) + "\n"
 
 
 def group_by_topic(papers: list[dict]) -> "dict[str, list[dict]]":
@@ -224,8 +224,15 @@ def main() -> int:
     print(f"[result] {len(new_papers)} new paper(s) after dedup + filter")
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    moved = 0
 
     if new_papers:
+        # LLM enrichment (silent no-op if env vars unset)
+        try:
+            tldr_enrich(new_papers)
+        except Exception as e:
+            print(f"[warn] tldr enrich raised: {e}", file=sys.stderr)
+
         update_readme(today, new_papers)
         for p in new_papers:
             seen[p["id"]] = p["published"]
@@ -237,10 +244,19 @@ def main() -> int:
         except Exception as e:
             print(f"[warn] feishu notify raised: {e}", file=sys.stderr)
 
+    # Run monthly archival regardless (handles late catch-up too).
+    try:
+        moved = archive_old_blocks()
+        if moved:
+            print(f"[archive] moved {moved} day block(s) to papers/")
+    except Exception as e:
+        print(f"[warn] archive raised: {e}", file=sys.stderr)
+
     save_json(META_FILE, {
         "last_updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "total_seen": len(seen),
         "added_this_run": len(new_papers),
+        "archived_this_run": moved,
     })
     return 0
 

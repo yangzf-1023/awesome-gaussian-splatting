@@ -28,8 +28,11 @@ jobs:
 
       - name: Fetch latest Gaussian Splatting papers
         env:
-          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-          FEISHU_SECRET:  ${{ secrets.FEISHU_SECRET }}
+          FEISHU_WEBHOOK:  ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET:   ${{ secrets.FEISHU_SECRET }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY:  ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL:    ${{ secrets.OPENAI_MODEL }}
         run: python scripts/fetch_arxiv.py
 
       - name: Commit & push if changed
@@ -37,9 +40,9 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [[ -n "$(git status --porcelain)" ]]; then
-            git add README.md data/seen.json data/meta.json
+            git add README.md data/ papers/ 2>/dev/null || true
             git commit -m "chore(auto): daily arxiv update $(date -u +'%Y-%m-%d')"
             git push
           else
-            echo "No new papers today."
+            echo "No changes today."
           fi
