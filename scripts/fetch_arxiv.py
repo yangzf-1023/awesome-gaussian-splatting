@@ -7,9 +7,12 @@ Pipeline:
   3. Dedup against data/seen.json.
   4. Classify each new paper into a topic bucket.
   5. (Optional) Generate Chinese TL;DR via OpenAI-compatible endpoint.
-  6. Rewrite the AUTO-GENERATED block in README.md, grouped by topic.
-  7. Archive day blocks older than RETAIN_DAYS into papers/YYYY-MM.md.
-  8. (Optional) Push a digest card to Feishu via webhook.
+  6. Append each new paper to its per-topic file under topics/<slug>.md.
+  7. Rewrite README's TOPIC-INDEX and LATEST blocks (only the most recent day
+     is shown inline; full per-topic history lives in topics/).
+  8. Archive day blocks older than RETAIN_DAYS into papers/YYYY-MM.md
+     (kept for backwards-compatible chronological browsing).
+  9. (Optional) Push a digest card to Feishu via webhook.
 """
 from __future__ import annotations
 
@@ -29,6 +32,7 @@ from classify import classify, topic_order
 from feishu_notify import notify as feishu_notify
 from tldr import enrich as tldr_enrich
 from archive import archive_old_blocks
+from topics_writer import append_papers, regenerate_index, topic_counts
 
 ROOT = Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
@@ -73,6 +77,12 @@ REPO_URL = "https://github.com/yangzf-1023/awesome-gaussian-splatting"
 
 START_MARKER = "<!-- AUTO-GENERATED-START -->"
 END_MARKER = "<!-- AUTO-GENERATED-END -->"
+INDEX_START = "<!-- TOPIC-INDEX-START -->"
+INDEX_END = "<!-- TOPIC-INDEX-END -->"
+LATEST_START = "<!-- LATEST-START -->"
+LATEST_END = "<!-- LATEST-END -->"
+
+NAME_TO_SLUG = {name: slug for name, slug in topic_order()}
 
 
 def load_json(path: Path, default):
@@ -156,7 +166,6 @@ def fetch_query(query: str) -> list[dict]:
 def _sanitize_for_details(text: str) -> str:
     """Make abstract safe inside <details>: collapse whitespace, escape closing tag."""
     t = re.sub(r"\s+", " ", text).strip()
-    # Defensive: avoid an abstract that happens to contain '</details>' breaking layout.
     return t.replace("</details>", "<\\/details>")
 
 
@@ -172,7 +181,6 @@ def render_entry(p: dict) -> str:
         lines.append(f"  > 💡 {tldr}")
     if summary:
         clean = _sanitize_for_details(summary)
-        # Blank line before <details> is required for GitHub to render it properly.
         lines.append("")
         lines.append("  <details><summary>Abstract</summary>")
         lines.append("")
@@ -191,36 +199,93 @@ def group_by_topic(papers: list[dict]) -> "dict[str, list[dict]]":
     return {k: v for k, v in grouped.items() if v}
 
 
-def render_day_block(date_str: str, papers: list[dict]) -> str:
-    grouped = group_by_topic(papers)
-    lines = [f"### {date_str} (UTC) — {len(papers)} new paper(s)\n"]
-    for topic, items in grouped.items():
-        lines.append(f"#### {topic} ({len(items)})\n")
-        for p in items:
+def _slugify(name: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    return s or "topic"
+
+
+def _replace_block(text: str, start: str, end: str, new_inner: str) -> str:
+    """Replace text between markers; create block if missing."""
+    if start in text and end in text:
+        pre, rest = text.split(start, 1)
+        _, post = rest.split(end, 1)
+        return pre + start + "\n" + new_inner.rstrip() + "\n" + end + post
+    # If markers missing, no-op (defensive)
+    return text
+
+
+def render_topic_index(counts: dict, latest_grouped: dict) -> str:
+    lines = [
+        "",
+        "| # | Topic | Total Papers | Latest-day Δ | Browse |",
+        "|---|---|---|---|---|",
+    ]
+    for i, (name, _slug) in enumerate(topic_order(), 1):
+        slug = NAME_TO_SLUG.get(name, _slugify(name))
+        total = counts.get(name, 0)
+        delta = len(latest_grouped.get(name, []))
+        delta_cell = f"**+{delta}**" if delta else "—"
+        lines.append(
+            f"| {i} | **{name}** | {total} | {delta_cell} | "
+            f"[topics/{slug}.md](topics/{slug}.md) |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_latest_block(date_str: str, grouped: dict, total: int) -> str:
+    lines = ["", f"### {date_str} (UTC) — {total} new paper(s)", ""]
+    if not grouped:
+        lines.append("_No new papers today._")
+        lines.append("")
+        return "\n".join(lines)
+    for name, papers in grouped.items():
+        slug = NAME_TO_SLUG.get(name, _slugify(name))
+        lines.append(
+            f"<details><summary><b>{name}</b> ({len(papers)}) · "
+            f"<a href=\"topics/{slug}.md\">full list →</a></summary>"
+        )
+        lines.append("")
+        for p in papers:
             lines.append(render_entry(p))
+            lines.append("")
+        lines.append("</details>")
         lines.append("")
     return "\n".join(lines)
 
 
 def update_readme(date_str: str, papers: list[dict]) -> None:
+    """Rewrite the AUTO-GENERATED area: topic index + latest day only."""
     content = README.read_text(encoding="utf-8")
     if START_MARKER not in content or END_MARKER not in content:
         raise RuntimeError("README markers missing")
 
+    grouped = group_by_topic(papers) if papers else {}
+    counts = topic_counts()  # already includes today's after append_papers ran
+
+    topic_index = render_topic_index(counts, grouped)
+    latest_block = render_latest_block(date_str, grouped, len(papers))
+
+    # If sub-markers exist, do targeted replacements; otherwise rebuild full body.
+    if INDEX_START in content and LATEST_START in content:
+        content = _replace_block(content, INDEX_START, INDEX_END, topic_index)
+        content = _replace_block(content, LATEST_START, LATEST_END, latest_block)
+        README.write_text(content, encoding="utf-8")
+        return
+
     pre, rest = content.split(START_MARKER, 1)
-    old_block, post = rest.split(END_MARKER, 1)
-
-    parts = [START_MARKER, ""]
-    if papers:
-        parts.append(render_day_block(date_str, papers))
-
-    prev = old_block.strip()
-    if prev and not prev.startswith("_No papers fetched yet"):
-        parts.append(prev)
-        parts.append("")
-
-    parts.append(END_MARKER)
-    README.write_text(pre + "\n".join(parts) + post, encoding="utf-8")
+    _, post = rest.split(END_MARKER, 1)
+    body = (
+        "\n\n"
+        "## Browse by topic\n\n"
+        "Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.\n\n"
+        f"{INDEX_START}\n{topic_index.rstrip()}\n{INDEX_END}\n\n"
+        "## Latest update\n\n"
+        f"Only the most recent crawl day is shown inline. Day-by-day history older than 30 days is rotated into "
+        f"[`papers/YYYY-MM.md`](papers/); the canonical view of each sub-topic lives in [`topics/`](topics/).\n\n"
+        f"{LATEST_START}\n{latest_block.rstrip()}\n{LATEST_END}\n\n"
+    )
+    README.write_text(pre.rstrip() + "\n\n" + START_MARKER + body + END_MARKER + post, encoding="utf-8")
 
 
 def main() -> int:
@@ -250,18 +315,33 @@ def main() -> int:
         except Exception as e:
             print(f"[warn] tldr enrich raised: {e}", file=sys.stderr)
 
+        # 1) Append to per-topic files FIRST so topic_counts() reflects today.
+        grouped = group_by_topic(new_papers)
+        try:
+            append_papers(today, grouped, render_entry)
+            regenerate_index()
+        except Exception as e:
+            print(f"[warn] topic writer raised: {e}", file=sys.stderr)
+
+        # 2) Rewrite README index + latest block
         update_readme(today, new_papers)
+
         for p in new_papers:
             seen[p["id"]] = p["published"]
         save_json(SEEN_FILE, seen)
 
-        grouped = group_by_topic(new_papers)
         try:
             feishu_notify(today, len(new_papers), grouped, REPO_URL)
         except Exception as e:
             print(f"[warn] feishu notify raised: {e}", file=sys.stderr)
+    else:
+        # Still refresh the README's "latest" block so the date marker is current.
+        try:
+            update_readme(today, [])
+        except Exception as e:
+            print(f"[warn] update_readme (no papers) raised: {e}", file=sys.stderr)
 
-    # Run monthly archival regardless (handles late catch-up too).
+    # Monthly archive keeps backwards-compatible chronological view.
     try:
         moved = archive_old_blocks()
         if moved:
