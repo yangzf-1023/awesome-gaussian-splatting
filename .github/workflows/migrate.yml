@@ -1,0 +1,40 @@
+name: Migrate README to per-topic files (one-shot)
+
+# Manually triggered: parses the current README.md, splits the AUTO-GENERATED
+# block into per-topic files under topics/, and rewrites the README to a
+# lean "topic index + latest day only" layout.
+#
+# Safe to re-run: the migration regenerates topic files from README's current
+# content. After the layout is in place, the daily crawler maintains it.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run migration
+        run: python scripts/migrate_to_topics.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add README.md topics/
+            git commit -m "refactor: split README into per-topic files"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          else
+            echo "Nothing to migrate."
+          fi
