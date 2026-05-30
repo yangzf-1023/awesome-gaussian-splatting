@@ -1,7 +1,6 @@
 {
-  "last_updated": null,
-  "total_seen": 0,
-  "added_this_run": 0,
-  "archived_this_run": 0,
-  "note": "State reset on 2026-05-30; next daily-update run treats every arXiv hit as new."
+  "last_updated": "2026-05-30T10:01:59+00:00",
+  "total_seen": 474,
+  "added_this_run": 474,
+  "archived_this_run": 0
 }
