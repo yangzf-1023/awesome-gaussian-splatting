@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-01
+
+- **[LiftNav: Path Planning via Semantic Lifting in TSDF-Guided Gaussian Splatting](https://arxiv.org/abs/2605.31376)**  
+  *Hannah Schieber, Dominik Frischmann, Victor Schaack, Angela P. Schoellig, Daniel Roth*  
+  `2026-05-29` · `cs.RO` · [abs](https://arxiv.org/abs/2605.31376) · [pdf](https://arxiv.org/pdf/2605.31376.pdf)
+  > 💡 针对未知室内环境语义导航难题，提出TSDF引导高斯泼溅的混合框架，结合YOLO检测
+
+  <details><summary>Abstract</summary>
+
+  Autonomous robots in unknown indoor environments require both reliable collision avoidance and object-level understanding. Classical representations such as TSDF support safe planning but lack semantics, while photorealistic methods like Gaussian Splatting (GS) provide rich appearance yet suffer from soft geometry, limiting precise obstacle avoidance. We present LiftNav, a hybrid navigation framework built on GSFusion's TSDF+GS dual map, augmented with a real-time pipeline of YOLO-based detection, TSDF-based 3D lifting, and B-spline trajectory optimization. This design enables flexible semantic navigation without dense 3D embeddings. We further introduce a hinge-loss-based collision penalty that improves trajectory smoothness and safety. We evaluate our approach in a simulation using the Replica dataset. Compared against a state-of-the-art radiance field baseline we show a 100% feasibility rate and shorter trajectories.
+
+  </details>
+
 ## 2026-05-30
 
 - **[Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](https://arxiv.org/abs/2605.30342)**  

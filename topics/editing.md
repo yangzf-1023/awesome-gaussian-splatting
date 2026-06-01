@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-01
+
+- **[Triangle Splatting SLAM](https://arxiv.org/abs/2605.31419)**  
+  *Nicholas Fry, Eric Dexheimer, Kirill Mazur, Paul H. J. Kelly, Andrew J. Davison*  
+  `2026-05-29` · `cs.CV` · [abs](https://arxiv.org/abs/2605.31419) · [pdf](https://arxiv.org/pdf/2605.31419.pdf)
+  > 💡 提出基于可微三角形splatting的密集RGB-D SLAM，实现跟踪与建图，支持在线网格编辑，几何性能优于基线。
+
+  <details><summary>Abstract</summary>
+
+  We present a dense RGB-D SLAM system using differentiable triangles as the 3D map representation. While 3D Gaussian Splatting has emerged as the leading method for novel-view synthesis, triangles remain the standard primitive for traditional rendering hardware, game engines, and downstream tasks requiring explicit geometry such as simulation, collision, and editing. Recent offline methods have demonstrated that an unstructured 'triangle soup' can be optimised into a photorealistic mesh via Delaunay triangulation across a set of posed images. Building upon this insight, we present the first dense SLAM system to employ Triangle Splatting to perform both tracking and mapping through online differentiable rendering of a triangle soup. The map can be converted into a connected mesh on-the-fly via restricted Delaunay triangulation, enabling new online capabilities such as mesh deformation and collision checking. On Replica and TUM-RGBD, our system outperforms baselines on 3D geometry, matches the camera-tracking accuracy, and enables online mesh-based scene editing.
+
+  </details>
+
 ## 2026-05-30
 
 - **[Boosting Zero-Shot 3D Style Transfer with 2D Pre-trained Priors](https://arxiv.org/abs/2605.30065)**  

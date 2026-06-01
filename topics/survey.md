@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-01
+
+- **[Smaller and Faster 3DGS via Post-Training Dictionary Learning](https://arxiv.org/abs/2605.30396)**  
+  *Jiarong Gong, Jonas Unger, Ehsan Miandji*  
+  `2026-05-28` · `cs.GR` · [abs](https://arxiv.org/abs/2605.30396) · [pdf](https://arxiv.org/pdf/2605.30396.pdf)
+  > 💡 提出基于字典学习的后训练压缩框架，无需重训练，实现3.95倍压缩同时提升渲染速度约24%并保持图像质量。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) is a promising neural scene representation for real-time rendering, but trained models often suffer from large memory footprints, limiting deployment on less powerful devices. Existing compression techniques often lead to architectures with several additional trainable parameters. While achieving outstanding compression ratios, they introduce noticeable drops in image quality. In this work, we introduce the first dictionary-learning-based compression framework for 3DGS. The proposed post-training compression pipeline can be deployed in virtually any 3DGS model without the need for re-training or modifications to existing 3DGS models. Our compression framework is straightforward to implement, yet provides significant compression capabilities, preserves image quality, and improves real-time rendering performance. Across 13 benchmark scenes, our approach achieves an average compression ratio of 3.95x, 3.10x, and 4.55x when applied to 3DGS, 3DGS-MCMC, and PixelGS, respectively. This yields consistent rendering speedups of 23.3%, 24.3%, and 25.3%, while maintaining image quality.
+
+  </details>
+
 ## 2026-05-30
 
 - **[Learning Representations from 3D Gaussian Splats](https://arxiv.org/abs/2605.29549)**  

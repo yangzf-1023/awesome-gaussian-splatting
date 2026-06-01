@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-01
+
+- **[Benchmarking Single-Step Inpainting Methods for Multi-Object 3D Gaussian Splatting Scenes](https://arxiv.org/abs/2605.30987)**  
+  *Finn Dröge, Cecilia Curreli, Abhishek Saroha, Daniel Cremers*  
+  `2026-05-29` · `cs.CV` · [abs](https://arxiv.org/abs/2605.30987) · [pdf](https://arxiv.org/pdf/2605.30987.pdf)
+  > 💡 对比2D修复器用于3DGS场景移除，重建型优于扩散，从头初始化胜于微调，并引入多对象真实数据集。
+
+  <details><summary>Abstract</summary>
+
+  The tasks of object removal and inpainting 3D Gaussian Splatting (3DGS) scenes face challenges such as 3D consistency across camera views. In comparing 2D inpainters and their suitability for the 3D domain, we find that reconstruction-based inpainters outperform generative diffusion models in 3D consistency. Integrating these 2D inpainters into different single-step methods for creating and finetuning 3DGS scenes, our results indicate that initializing the scene from scratch produces higher quality results than finetuning the existing scene. Using a state-of-the-art generative 2D inpainter, we create a straightforward baseline to underline the importance of object removal before inpainting in the 3D setting. Since 360° datasets rarely include real-world ground truths, and challenging occlusion scenarios are equally sparse, we introduce a novel multi-object scene with recorded ground truth data and many views with object occlusions.
+
+  </details>
+
 ## 2026-05-30
 
 - **[Eulerian Gaussian Splatting using Hashed Probability Pyramids](https://arxiv.org/abs/2605.29136)**  

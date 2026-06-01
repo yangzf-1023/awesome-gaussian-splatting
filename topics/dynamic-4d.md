@@ -6,6 +6,42 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-01
+
+- **[DSD-GS: Dynamic-Static Decomposition of Gaussian Splatting for Efficient and High-Fidelity Dynamic Scene Reconstruction](https://arxiv.org/abs/2605.30863)**  
+  *Youngtae Han, Sung-hwan Han, Youngmin Yi*  
+  `2026-05-29` · `cs.CV` · [abs](https://arxiv.org/abs/2605.30863) · [pdf](https://arxiv.org/pdf/2605.30863.pdf)
+  > 💡 提出静态-动态分解的高斯泼溅框架，结合前馈编码器和光流模型，实现高效高保真动态场景重建，无需COLMAP预处理。
+
+  <details><summary>Abstract</summary>
+
+  Dynamic scene reconstruction and novel view synthesis are fundamental to next-generation visual intelligence applications such as virtual reality, robotics, and digital twins. However, high-fidelity reconstruction of complex, time-varying scenes from arbitrary viewpoints remains a significant challenge. Existing dynamic 3DGS methods suffer from computational inefficiency, since they model all Gaussians as dynamic components. While recent decomposition-based approaches address this issue, they still struggle with degraded reconstruction quality and prolonged training time. To mitigate these limitations, we propose a novel dynamic reconstruction framework built upon an efficient static-dynamic decomposition strategy using a Feed-Forward Gaussian Splatting encoder and an optical flow model. By eliminating redundant computations on static regions, our method achieves state-of-the-art performance, outperforming existing baselines across rendering quality, training and rendering speed, and storage efficiency. Notably, on the Neural 3D dataset, our framework requires only 10 minutes for training and achieves a rendering speed of over 700 FPS on a single NVIDIA RTX 5090 GPU at resolution of 1352x1014. Furthermore, our decomposition strategy eliminates the need for COLMAP preprocessing and enables deterministic initialization, thereby enhancing both efficiency and reproducibility.
+
+  </details>
+
+- **[Robust Dreamer: Deviation-Aware Latent Gaussian Memory for Action-Controlled AR Video Generation](https://arxiv.org/abs/2605.30855)**  
+  *Hanlin Chen, Jiaxin Wei, Xibin Song, Yifu Wang, Steve Wang, Hongdong Li, Pan Ji, Gim Hee Lee*  
+  `2026-05-29` · `cs.CV` · [abs](https://arxiv.org/abs/2605.30855) · [pdf](https://arxiv.org/pdf/2605.30855.pdf)
+  > 💡 针对长序列AR视频生成中的累积漂移问题，提出潜在高斯记忆与偏差学习框架，实现稳健的状态保持与SOTA性能。
+
+  <details><summary>Abstract</summary>
+
+  Frame-wise action-controlled image-to-video generation is a promising paradigm for interactive world simulation, where each control signal should elicit an immediate visual response. However, maintaining visual fidelity and 3D consistency over long autoregressive rollouts remains challenging. Existing 3D-aware methods often suffer from catastrophic drift due to two impediments: information loss from \textit{Latent--RGB Cycling}, where generated latents are repeatedly decoded to RGB and re-encoded for future conditioning, and the training--inference gap induced by the \textit{error-free hypothesis}, where clean training memory fails to match prediction-corrupted inference memory. To address these challenges, we present \textbf{Robust Dreamer}, a memory-augmented framework built around how to design 3D memory and how to use it robustly. First, we introduce \textbf{Latent Gaussian Memory}, which anchors diffusion latents inherited from the generation process to Gaussian primitives and recalls them via latent-space Gaussian splatting. This provides dense, geometry-aware, view-aligned conditioning while avoiding accumulated degradation from repeated VAE conversion. Second, we propose \textbf{Deviation Learning with Dynamic Deviation Archive}, which synthesizes rollout-induced latent deviations through a one-step approximation, stores them by autoregressive stage and denoising timestamp, and injects them into historical memory during training. This exposes the generator to realistic corrupted memory states and teaches internal correction before inference. Experiments on ScanNet, DL3DV, and OmniWorldGame demonstrate state-of-the-art long-horizon performance.
+
+  </details>
+
+- **[Learning Global Motion with Compact Gaussians for Feed-Forward 4D Reconstruction](https://arxiv.org/abs/2605.31595)**  
+  *Mungyeom Kim, Minkyeong Jeon, Honggyu An, Jaewoo Jung, Hyuna Ko, Jisang Han, Hyeonseo Yu, Donghwan Shin, Sunghwan Hong, Takuya Narihira, Kazumi Fukuda, Yuki Mitsufuji, Seungryong Kim*  
+  `2026-05-29` · `cs.CV` · [abs](https://arxiv.org/abs/2605.31595) · [pdf](https://arxiv.org/pdf/2605.31595.pdf)
+  > 💡 用紧凑高斯查询令牌聚合时序特征，实现前馈4D
+
+  <details><summary>Abstract</summary>
+
+  Dynamic scene reconstruction from monocular video remains a fundamental challenge in computer vision. Existing feed-forward methods predict 3D Gaussians pixel-wise for each frame, suffering from duplicated Gaussians and view-dependent biases that hinder effective learning of scene motion. We present C4G, a feed-forward 4D reconstruction framework built upon a compact set of timestamp-conditioned learnable Gaussian query tokens. Each token aggregates corresponding features across the full temporal context and decodes a 3D Gaussian whose position is modulated by the target timestamp, enabling globally coherent motion modeling without per-scene optimization. To capture fine-grained details, we further introduce a video diffusion model-based rendering enhancement module. Since our framework effectively aggregates features into Gaussians, we extend this capability to feature lifting, producing a 4D feature field that supports point tracking and dynamic scene understanding. C4G achieves strong novel-view synthesis performance using significantly fewer Gaussians and without requiring camera poses, while exhibiting stronger motion modeling and robustness to large temporal gaps.
+
+  </details>
+
 ## 2026-05-30
 
 - **[MonoPhysics: Estimating Geometry, Appearance, and Physical Parameters from Monocular Videos](https://arxiv.org/abs/2605.30320)**  
