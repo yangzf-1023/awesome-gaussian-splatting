@@ -121,6 +121,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -152,7 +153,7 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-06-03 (UTC) — 0 new paper(s)
+### 2026-06-04 (UTC) — 0 new paper(s)
 
 _No new papers today._
 <!-- LATEST-END -->
