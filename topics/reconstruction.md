@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-06
+
+- **[Geometry Gaussians: Decoupling Appearance and Geometry in Gaussian Splatting](https://arxiv.org/abs/2606.05124)**  
+  *Hongyu Zhou, Zorah Lähner*  
+  `2026-06-03` · `cs.GR` · [abs](https://arxiv.org/abs/2606.05124) · [pdf](https://arxiv.org/pdf/2606.05124.pdf)
+  > 💡 针对3DGS难以同时建模纹理与几何，通过引入几何不透明度参数和透明度优化管线解耦外观与几何，提升渲染与几何质量，尤其适用透明物体场景。
+
+  <details><summary>Abstract</summary>
+
+  After the success of 3D Gaussian Splatting (3DGS) for novel view synthesis, many works have explored how to also use it for geometric surface representation. However, extracting accurate geometric information directly from 3DGS remains challenging and can often reduce the appearance rendering quality. In this work, we show that 3DGS in its default form is inheritedly unsuited to represent texture and geometry at the same time, by training with complete ground-truth texture and geometry information. We also propose a simple solution by applying a single additional geometry opacity parameter to each splat, together with an optional transparency-curated optimization pipeline. Our experiments, both with ground-truth and vision foundation model geometric input, show that this change leads to improved rendering and geometry performance on a wide variety of dataset, and especially complex scenes with transparent objects benefit significantly from our method.
+
+  </details>
+
 ## 2026-05-30
 
 - **[DVSM: Decoder-only View Synthesis Model Done Right](https://arxiv.org/abs/2605.29891)**  

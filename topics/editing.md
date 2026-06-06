@@ -7,6 +7,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 ---
 
 
+
+## 2026-06-06
+
+- **[MLP Splatting: Object-Centric Neural Fields](https://arxiv.org/abs/2606.03877)**  
+  *Shinjeong Kim, Yuzhou Cheng, Xin Kong, Paul H. J. Kelly, Andrew J. Davison*  
+  `2026-06-02` · `cs.CV` · [abs](https://arxiv.org/abs/2606.03877) · [pdf](https://arxiv.org/pdf/2606.03877.pdf)
+  > 💡 以紧凑MLP光场基元替代高斯基元，实现高效场景分解和新视图合成，内存和渲染速度显著优于语义3DGS。
+
+  <details><summary>Abstract</summary>
+
+  3D representations are fundamental to scene rendering, understanding, and interaction. Recent approaches, such as 3D Gaussian Splatting and Neural Radiance Fields, achieve impressive photorealistic novel-view synthesis, but lack the ability to easily decompose scene elements into a few primitives, requiring additional segmentation or grouping for object-level manipulation. We present MLP-Splatting, a method that enables scene decomposition via a few expressive light-field primitives while providing photorealistic novel-view synthesis. MLP-Splatting models each primitive as an independent compact MLP with localized spatial support that predicts radiance and opacity. In contrast to low-level Gaussian primitives or a single global radiance field, our neural primitives provide greater expressive capacity while remaining spatially localized. Rendering is performed through efficient sparse volumetric compositing over ray-primitive interactions. Our primitives are supervised using RGB supervision alone, which yields primitives that represent local scene regions often corresponding to objects or object parts, enabling interactive object-level editing without segmentation masks by selecting a handful of primitives. Our method, augmented with optional semantic feature distillation, enables open-vocabulary scene interaction and open-set instant segmentation. Compared to state-of-the-art methods, we achieve substantially lower memory usage (1/15$\times$) and faster rendering (3$\times$), as we show in our experiments compared to semantic 3DGS methods. Project Page: https://shinjeongkim.com/mlp-splatting
+
+  </details>
+
 ## 2026-06-01
 
 - **[Triangle Splatting SLAM](https://arxiv.org/abs/2605.31419)**  

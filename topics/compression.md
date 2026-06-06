@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-06
+
+- **[ZipSplat: Fewer Gaussians, Better Splats](https://arxiv.org/abs/2606.05102)**  
+  *Alexander Veicht, Sunghwan Hong, Dániel Baráth, Marc Pollefeys*  
+  `2026-06-03` · `cs.CV` · [abs](https://arxiv.org/abs/2606.05102) · [pdf](https://arxiv.org/pdf/2606.05102.pdf)
+  > 💡 用聚类压缩视觉token为场景token，解耦高斯放置与像素网格，实现更少高斯更优质量，无需真值位姿。
+
+  <details><summary>Abstract</summary>
+
+  Feed-forward 3D Gaussian Splatting methods reconstruct a scene from posed or pose-free images in a single forward pass, yet current approaches predict one Gaussian per input pixel, tying the representation budget to camera resolution rather than scene complexity. A flat wall and a richly textured object thus produce equally many Gaussians despite very different geometric needs. We propose ZipSplat, a token-based feed-forward model that decouples Gaussian placement from the pixel grid. A multi-view backbone extracts dense visual tokens, and k-means clustering compresses them into a compact set of scene tokens. Cross- and self-attention refine these tokens, and a lightweight MLP decodes each into a group of Gaussians with unconstrained 3D positions. Because clustering is applied at inference, a single trained model spans the quality-efficiency curve without retraining. ZipSplat operates without ground-truth poses or intrinsics, yet sets a new state of the art on DL3DV and RealEstate10K with ${\sim}6{\times}$ fewer Gaussians than pixel-aligned methods, surpassing the best pose-free baseline by 2.1dB and 1.2dB PSNR, respectively. It further generalizes zero-shot to Mip-NeRF360 and ScanNet++, outperforming all comparable baselines. Our project page is at ${\href{https://veichta.com/zipsplat}{https://veichta.com/zipsplat}}$.
+
+  </details>
+
 ## 2026-05-30
 
 - **[RxGS: Receiver-Generalizable 3D Gaussian Splatting for Radio-Frequency Data Synthesis](https://arxiv.org/abs/2605.24290)**  
