@@ -8,6 +8,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-08
+
+- **[RPC-GS: Gaussian Splatting with native RPC Rendering for Satellite Imagery](https://arxiv.org/abs/2606.06690)**  
+  *Valentin Wagner, Sebastian Bullinger, Christoph Bodensteiner, Michael Arens*  
+  `2026-06-04` · `cs.CV` · [abs](https://arxiv.org/abs/2606.06690) · [pdf](https://arxiv.org/pdf/2606.06690.pdf)
+  > 💡 针对卫星影像高斯泼溅中相机模型近似导致几何误差的问题，提出原生RPC渲染框架，通过直接投影与雅可比协方差变换，显著降低重建误差。
+
+  <details><summary>Abstract</summary>
+
+  We present RPC-GS, the first Gaussian Splatting framework for satellite imagery that operates natively with Rational Polynomial Camera (RPC) models. The RPC model is the de facto standard for representing the complex imaging geometry of modern pushbroom satellite sensors. To simplify rendering, prior satellite Gaussian Splatting methods replace the RPC model with perspective or affine camera approximations, leading to geometric errors during reconstruction. RPC-GS avoids these approximations by projecting Gaussian means and covariances directly through the RPC model during the splatting process. We embed the RPC model in a chain of carefully selected geo-coordinate transformations representing a mapping from splatting-suitable scene coordinates to image coordinates. To map the Gaussian covariance matrices, we derive a numerically robust Jacobian-based covariance projection for the (partially nonlinear) coordinate transformations. Since RPCs lack an explicit notion of camera depth, we integrate a metric ray-based depth formulation. We benchmark RPC, perspective, and affine camera models in a unified framework, with our native RPC renderer consistently achieving the lowest reconstruction error on leading satellite benchmark datasets, improving mean altitude error over perspective and affine approximations by 29.6% and 63.8% on DFC2019, and by 9.9% and 37.9% on IARPA2016. We release our code to support future research of Gaussian Splatting in the satellite imaging domain.
+
+  </details>
+
 ## 2026-06-06
 
 - **[Recent Advances and Trends in Learning-based 3D Representations](https://arxiv.org/abs/2606.04871)**  
