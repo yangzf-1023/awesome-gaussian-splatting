@@ -126,6 +126,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -134,12 +135,12 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 
 | # | Topic | Total Papers | Latest-day Δ | Browse |
 |---|---|---|---|---|
-| 1 | **Survey & Benchmark** | 57 | **+1** | [topics/survey.md](topics/survey.md) |
-| 2 | **Dynamic / 4D / Streaming** | 229 | **+2** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
-| 3 | **Avatar / Human / Face** | 29 | — | [topics/avatar-human.md](topics/avatar-human.md) |
-| 4 | **Generation / Diffusion** | 43 | — | [topics/generation.md](topics/generation.md) |
-| 5 | **Editing / Stylization / Watermark** | 20 | — | [topics/editing.md](topics/editing.md) |
-| 6 | **Compression / Compact / Efficient Storage** | 31 | — | [topics/compression.md](topics/compression.md) |
+| 1 | **Survey & Benchmark** | 58 | **+1** | [topics/survey.md](topics/survey.md) |
+| 2 | **Dynamic / 4D / Streaming** | 230 | **+1** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
+| 3 | **Avatar / Human / Face** | 30 | **+1** | [topics/avatar-human.md](topics/avatar-human.md) |
+| 4 | **Generation / Diffusion** | 45 | **+2** | [topics/generation.md](topics/generation.md) |
+| 5 | **Editing / Stylization / Watermark** | 22 | **+2** | [topics/editing.md](topics/editing.md) |
+| 6 | **Compression / Compact / Efficient Storage** | 32 | **+1** | [topics/compression.md](topics/compression.md) |
 | 7 | **Rendering / Acceleration / Mobile** | 34 | — | [topics/rendering.md](topics/rendering.md) |
 | 8 | **SLAM / Localization / Mapping** | 10 | — | [topics/slam.md](topics/slam.md) |
 | 9 | **Autonomous Driving / Outdoor** | 12 | — | [topics/driving.md](topics/driving.md) |
@@ -157,46 +158,122 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-06-08 (UTC) — 3 new paper(s)
+### 2026-06-09 (UTC) — 8 new paper(s)
 
 <details><summary><b>Survey & Benchmark</b> (1) · <a href="topics/survey.md">full list →</a></summary>
 
-- **[RPC-GS: Gaussian Splatting with native RPC Rendering for Satellite Imagery](https://arxiv.org/abs/2606.06690)**  
-  *Valentin Wagner, Sebastian Bullinger, Christoph Bodensteiner, Michael Arens*  
-  `2026-06-04` · `cs.CV` · [abs](https://arxiv.org/abs/2606.06690) · [pdf](https://arxiv.org/pdf/2606.06690.pdf)
-  > 💡 针对卫星影像高斯泼溅中相机模型近似导致几何误差的问题，提出原生RPC渲染框架，通过直接投影与雅可比协方差变换，显著降低重建误差。
+- **[REFINE: Super-efficient 3D Gaussian Splatting Pruning via Rendering-Free Primitive Importance](https://arxiv.org/abs/2606.09074)**  
+  *Zhang Chen, Shuai Wan, Mengting Yu, Fuzheng Yang, Junhui Hou*  
+  `2026-06-08` · `cs.CV` · [abs](https://arxiv.org/abs/2606.09074) · [pdf](https://arxiv.org/pdf/2606.09074.pdf)
+  > 💡 针对3DGS剪枝效率低的问题，提出基于无渲染Hessian场的重要性度量，实现3000倍加速且保持
 
   <details><summary>Abstract</summary>
 
-  We present RPC-GS, the first Gaussian Splatting framework for satellite imagery that operates natively with Rational Polynomial Camera (RPC) models. The RPC model is the de facto standard for representing the complex imaging geometry of modern pushbroom satellite sensors. To simplify rendering, prior satellite Gaussian Splatting methods replace the RPC model with perspective or affine camera approximations, leading to geometric errors during reconstruction. RPC-GS avoids these approximations by projecting Gaussian means and covariances directly through the RPC model during the splatting process. We embed the RPC model in a chain of carefully selected geo-coordinate transformations representing a mapping from splatting-suitable scene coordinates to image coordinates. To map the Gaussian covariance matrices, we derive a numerically robust Jacobian-based covariance projection for the (partially nonlinear) coordinate transformations. Since RPCs lack an explicit notion of camera depth, we integrate a metric ray-based depth formulation. We benchmark RPC, perspective, and affine camera models in a unified framework, with our native RPC renderer consistently achieving the lowest reconstruction error on leading satellite benchmark datasets, improving mean altitude error over perspective and affine approximations by 29.6% and 63.8% on DFC2019, and by 9.9% and 37.9% on IARPA2016. We release our code to support future research of Gaussian Splatting in the satellite imaging domain.
+  Existing pruning methods for 3D Gaussian splatting (3DGS) suffer from either severe quality degradation or prohibitive computational overhead. In this paper, we propose REFINE, a highly accelerated 3DGS pruning framework centered on a novel rendering-free primitive importance metric. Our approach leverages an analytically approximated, rendering-aware Hessian field to quantify the expected perceptual error induced by the removal of individual primitives. By modeling the joint modulation of visibility, projection geometry and the content adaptive hyperparameter, we entirely bypass costly forward rendering passes and derive an anisotropic perceptual weight field that serves as a high-fidelity proxy for primitive importance. Extensive experiments across multiple benchmark datasets demonstrate that REFINE maintains highly competitive rendering quality while achieving an unprecedented $3,000\times$ reduction in pruning-related computational complexity compared to state-of-the-art pruning methods.
 
   </details>
 
 
 </details>
 
-<details><summary><b>Dynamic / 4D / Streaming</b> (2) · <a href="topics/dynamic-4d.md">full list →</a></summary>
+<details><summary><b>Dynamic / 4D / Streaming</b> (1) · <a href="topics/dynamic-4d.md">full list →</a></summary>
 
-- **[EvoGS: Constructing Continuous-Layered Gaussian Splatting with Evolution Tree for Scalable 3D Streaming](https://arxiv.org/abs/2606.07179)**  
-  *Yuang Shi, Simone Gasparini, Géraldine Morin, Wei Tsang Ooi*  
-  `2026-06-05` · `cs.CV` · [abs](https://arxiv.org/abs/2606.07179) · [pdf](https://arxiv.org/pdf/2606.07179.pdf)
-  > 💡 现有离散分层3DGS流式传输存在冗余和误差累积，提出连续分层进化树表示，消除冗余并大幅降低传输和显存占用。
+- **[Liquid Neural Networks as a Drop-in Continuous-Time Deformation Field for Dynamic 3D Gaussian Splatting](https://arxiv.org/abs/2606.07670)**  
+  *Mingzhao Li, Arghya Pal, Guan Yuan Tan*  
+  `2026-06-04` · `cs.CV` · [abs](https://arxiv.org/abs/2606.07670) · [pdf](https://arxiv.org/pdf/2606.07670.pdf)
+  > 💡 用液态神经网络替代MLP变形场，实现显式连续时间平滑动态场景重建。
 
   <details><summary>Abstract</summary>
 
-  Streaming 3D Gaussian Splatting requires highly scalable, progressive representations. Existing progressive methods rely on \textit{discrete layering}, accumulating separate splat sets for each level of detail. This structural independence between layers inherently leads to error accumulation, severe splat redundancy, and uncontrolled quality transitions. We propose EvoGS, the first \textit{continuous-layering} representation. Organized as an Evolution Tree, EvoGS generates finer details via an explicit, wavelet-inspired parent-child refinement. This empowers child nodes to structurally correct ancestral errors, yield inherently sparse and highly compressible inter-layer signals. Extensive experiments show EvoGS eliminates splat redundancy from over 65\% to under 25\%. Compared to state-of-the-art baselines, it reduces transmission payload and GPU VRAM footprint by up to 2.4$\times$ and 5.5$\times$, respectively, and achieves smooth quality transitions optimal for real-time adaptive streaming. Project page: https://yuang-ian.github.io/evogs/
+  Deformable 3D Gaussian Splatting (D-3DGS) re-constructs dynamic scenes from monocular video by deforming a canonical set of 3D Gaussians through a positional-encoded MLP of frame time t. Although fitted to a continuous variable, the MLP couples no two values of t in its architecture and effectively predicts discrete per-frame offsets, leaving temporal smoothness to emerge only as a byproduct of optimisation. We redesign the deformation field as a stack of Closed-form Continuous-time (CfC) cells, a Liquid Neural Network (LNN), that is the closed-form solution of the Liquid Time-constant ODE while preserving every other part of the D-3DGS pipeline. Each cell exposes a sigmoidal time gate that interpolates between two candidate hidden states, baking a learned smooth response to t into the loss landscape without invoking any numerical solver. On the eight D-NeRF and seven NeRF-DS scenes the liquid field matches or exceeds the MLP baseline in aggregate, with its largest gains concentrated on the scenes with the most high-frequency articulated motion. The result is a near-zero-friction architectural design that turns the discrete MLP deformation field into an explicit continuous-time function of t.
 
   </details>
 
 
-- **[QuadVerse: An Integrated Framework Aligning Visual-Physical Reality for Quadruped Simulation](https://arxiv.org/abs/2606.07118)**  
-  *Yuxiang Chen, Yuanhao Wang, Ziheng Zhang, Meng Zhang, Yu Liu, Yufei Jia, Tiancai Wang, Erjin Zhou, Jin Xie*  
-  `2026-06-05` · `cs.RO` · [abs](https://arxiv.org/abs/2606.07118) · [pdf](https://arxiv.org/pdf/2606.07118.pdf)
-  > 💡 利用重建场景校准视觉、接触和动力学，通过3DGS与残差补偿缩小仿真到现实差距，实现零样本地形导航。
+</details>
+
+<details><summary><b>Avatar / Human / Face</b> (1) · <a href="topics/avatar-human.md">full list →</a></summary>
+
+- **[Wispy to Voluminous: Prior-free Multi-view Capture of Strand-level Facial Hair](https://arxiv.org/abs/2606.08041)**  
+  *Jaeseong Lee, Giljoo Nam, Adrian Jarabo, Carlos Aliaga*  
+  `2026-06-06` · `cs.GR` · [abs](https://arxiv.org/abs/2606.08041) · [pdf](https://arxiv.org/pdf/2606.08041.pdf)
+  > 💡 将多视图图像的无结构3
 
   <details><summary>Abstract</summary>
 
-  Simulation is central to robot learning, yet the sim-to-real gap remains a major bottleneck.Existing approaches often tackle visual or dynamic gaps separately, overlooking how these individual mismatches accumulate and propagate throughout the robot's state evolution.In this paper, we introduce QuadVerse, an integrated framework that uses reconstructed scenes as a calibration substrate for aligning visual perception, physical interaction, and actuator dynamics.From captured RGB videos, we reconstruct geometry-constrained 3D Gaussian Splatting (3DGS) scenes that support batched photorealistic ego-view rendering and collision-ready semantic mesh extraction. The meshes further enable contact calibration by initializing spatially varying friction priors and refining them through trajectory-based posterior search.To address remaining actuator discrepancies, QuadVerse trains a residual dynamics compensator by replaying real-world trajectories on the contact-calibrated terrain, reducing the entanglement between terrain-induced contact errors and actuator non-idealities.Experiments show that QuadVerse improves reconstruction quality and locomotion tracking over relevant baselines.Leveraging this foundation, we demonstrate robust zero-shot visual-navigation policy deployment without task-specific real-world rollouts.
+  Facial hair is a defining trait of personal identity, yet remains a critical bottleneck for digital avatars. Recent volumetric methods achieve photorealism but bake hair into the underlying face geometry, preventing editability and failing to resolve sparse, strand-like structures. Meanwhile, scalp-hair reconstruction methods target dense hair volumes and do not transfer to the sparse, spatially-varying nature of facial hair. We present a pipeline that automatically reconstructs facial hair -- beard, mustache, lashes, and brows -- from multi-view images, converting an unstructured 3D Gaussian representation into an explicit curve-based strand representation. We resolve geometric ambiguities in four stages: (i) optimizing 3D Gaussians constrained by tracked head geometry to enforce early ray termination and suppress sub-surface noise; (ii) tracing continuous strands robust to frequent crossings and extreme curvature; (iii) grounding strands to the surface and resolving root-tip ambiguity via a physically-motivated prior; and (iv) refining the reconstruction through opacity-driven density control under photometric optimization. To our knowledge, this is the first method to reconstruct high-fidelity facial hair strands from a 3D Gaussian representation. The recovered strands faithfully preserve the orientation and sparsity patterns characteristic of facial hair, and yield assets immediately suitable for downstream production tasks, including facial animation and physical simulation, geometric grooming and transfer, appearance editing, and physics-based rendering.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Generation / Diffusion</b> (2) · <a href="topics/generation.md">full list →</a></summary>
+
+- **[Leveraging NeRF-Rendered Images for 3D Gaussian Splatting](https://arxiv.org/abs/2606.09034)**  
+  *Mizuki Morikawa, Yuta Shimizu, Chunyu Li, Yusuke Monno, Masatoshi Okutomi*  
+  `2026-06-08` · `cs.CV` · [abs](https://arxiv.org/abs/2606.09034) · [pdf](https://arxiv.org/pdf/2606.09034.pdf)
+  > 💡 利用街景NeRF渲染图像辅助3DGS训练，移除瞬态物体并添加鸟瞰视图，结合扩散增强，兼顾渲染速度与质量。
+
+  <details><summary>Abstract</summary>
+
+  Neural radiance field (NeRF) and 3D Gaussian splatting (3DGS) are two mainstream approaches for novel view synthesis. They often show complementary performance, i.e., 3DGS demonstrating faster rendering speed and NeRF demonstrating higher rendering quality. Motivated by this, we propose leveraging NeRF-rendered images for 3DGS. Specifically, we target street scenes and utilize a pre-trained street-specific NeRF method to produce training images for a target 3DGS method. In our 3DGS training, NeRF-rendered images are used to remove transient objects in street-level input views and to generate bird's-eye views as additional views, inheriting the higher-quality rendering of NeRF into 3DGS. We further incorporate a diffusion-based image enhancement to improve the image quality of the additional views. Experimental results on one synthetic and two real datasets demonstrate that our proposed method improves street-scene rendering while preserving the speed of 3DGS and the quality of NeRF.
+
+  </details>
+
+
+- **[LEGS: Laplacian-Enhanced Gaussian Splatting with a Nonlinear Weighted Loss](https://arxiv.org/abs/2606.07932)**  
+  *Yongfei Guo, Qizhou Huo, Xuan Sun, Yuanhao Gong*  
+  `2026-06-06` · `cs.CV` · [abs](https://arxiv.org/abs/2606.07932) · [pdf](https://arxiv.org/pdf/2606.07932.pdf)
+  > 💡 用二阶拉普拉斯非线性加权损失替代一阶梯度，增强高斯溅射的结构感知，渲染质量提升达1.68dB。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) has become an efficient explicit representation for radiance field reconstruction and real-time novel view synthesis. However, its standard photometric loss treats flat and structure-rich regions similarly, which may limit the recovery of sharp contours and fine details. Edge-Guided Gaussian Splatting (EGGS) improves structure awareness through edge-guided weighting, but mainly relies on first-order gradient responses and linear weighting. In this paper, we propose LEGS, a Laplacian-Enhanced Gaussian Splatting method with a nonlinearly weighted loss. LEGS replaces first-order gradient guidance with second-order Laplacian structural guidance and maps the normalized Laplacian response into pixel-wise weights through nonlinear response-to-weight functions. The proposed loss improves structure-aware Gaussian optimization while keeping the original 3DGS rendering pipeline unchanged. Experiments on the full Tanks\&Temples and Mip-NeRF360 datasets show that LEGS improves peak signal-to-noise ratio (PSNR) by up to 1.68 dB over 3DGS and up to 0.52 dB over EGGS. Incorporating the proposed second-order nonlinear weighting strategy into FastGS and FasterGS further improves PSNR by up to 1.69 dB, demonstrating its effectiveness as a general loss-level extension for Gaussian Splatting pipelines with potential applications in AR/VR, immersive visualization, and real-time 3D content generation.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Editing / Stylization / Watermark</b> (2) · <a href="topics/editing.md">full list →</a></summary>
+
+- **[MaterialClusterGS: Palette-Based Material Decomposition and Physically-Based Relighting with 2D Gaussian Splatting](https://arxiv.org/abs/2606.09018)**  
+  *Hao Zhang, Ang Li, Boyan Du, Junke Zhu, Fei Zhu, Meng Gai, Zhangjin Huang, Guoping Wang, Sheng Li*  
+  `2026-06-08` · `cs.GR` · [abs](https://arxiv.org/abs/2606.09018) · [pdf](https://arxiv.org/pdf/2606.09018.pdf)
+  > 💡 用调色板基材质分解和连续空间材质场解决高斯逆渲染材质欠约束问题，实现物理可重光照与编辑。
+
+  <details><summary>Abstract</summary>
+
+  We present MaterialClusterGS, a palette-based material decomposition framework for 2D Gaussian Splatting that enables physically based relighting and material editing. Existing Gaussian inverse rendering methods typically assign independent BRDF parameters to individual primitives. While flexible, this local fitting strategy makes material recovery highly under-constrained: shadows, indirect illumination, geometric errors, and visibility residuals can be absorbed into thousands of slightly different local material estimates. Meanwhile, recent palette-based appearance methods operate solely in RGB space without modeling physical materials or illumination. To bridge this gap, we represent scene materials using a compact global palette of shared BRDF prototypes assigned via a continuous spatial material field. Without shared material structure, editing one region does not propagate consistently to others of the same material, making per-primitive decompositions impractical for editing. We jointly optimize the material field, palette prototypes, and environment lighting under a physically based rendering objective. The resulting framework recovers compact, spatially coherent attributes directly usable for material editing, relighting, and transfer.
+
+  </details>
+
+
+- **[GraspFoM: Towards Reconstruction-Driven Robotic Grasping with 3D Foundation Priors](https://arxiv.org/abs/2606.08440)**  
+  *Dongli Wu, Xiaobao Wei, Hao Wang, Qiaochu Dong, Ying Li, Qingpo Wuwu, Ming Lu, Wufan Zhao*  
+  `2026-06-07` · `cs.RO` · [abs](https://arxiv.org/abs/2606.08440) · [pdf](https://arxiv.org/pdf/2606.08440.pdf)
+  > 💡 利用SAM
+
+  <details><summary>Abstract</summary>
+
+  Robotic grasping is a fundamental capability in robotic manipulation. Yet grasping remains challenging under partial observations. Reliable grasping depends on both local contact cues and object-level 3D structure. Existing geometry-aware grasping methods recognize the value of reconstruction, but they typically treat geometry as an intermediate prediction rather than a reusable object prior for grasping. In this paper, we present GraspFoM, a unified framework that leverages 3D foundation priors (SAM3D) to build a shared 3D object latent for both reconstruction and grasp pose prediction. Built on this shared object latent, we introduce an anchor-initialized truncated pose-reasoning diffuser that predicts continuous and multimodal grasp poses without directly relying on discrete grasp candidates. We further investigate the interaction between reconstruction and grasping through a reconstruction-aware scorer and a residual latent updater. Reconstruction provides grounded geometric cues, while grasp supervision refines the shared object latent toward grasp-relevant affordances. GraspFoM jointly predicts grasp poses and reconstructs high-fidelity 3D assets in mesh and 3DGS forms. Comprehensive experiments demonstrate that GraspFoM achieves state-of-the-art results on both reconstruction and grasping. Notably, these improvements require only a small number of additional trainable parameters. Component-wise ablation studies also demonstrate the contribution of each component.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Compression / Compact / Efficient Storage</b> (1) · <a href="topics/compression.md">full list →</a></summary>
+
+- **[Path-Traced Inverse Rendering with Global Illumination in 3D Gaussian Fields](https://arxiv.org/abs/2606.09606)**  
+  *Junke Zhu, Hao Zhang, Yutian Zhu, Ang Li, Chenxiao Hu, Meng Gai, Fei Zhu, Zhangjin Huang, Sheng Li*  
+  `2026-06-08` · `cs.GR` · [abs](https://arxiv.org/abs/2606.09606) · [pdf](https://arxiv.org/pdf/2606.09606.pdf)
+  > 💡 现有逆渲染因管线不匹配忽略间接光照，提出无splatting的路径追踪框架，用路径空间等价模型统一前后向传播，实现全局光照下材质优化与高质量渲染。
+
+  <details><summary>Abstract</summary>
+
+  Ray tracing enables 3D Gaussian fields to serve as a representation for physically based light transport. Faithful inverse rendering requires forward rendering and backward optimization to be defined within a consistent light-transport pipeline. Existing inverse rendering methods estimate G-buffers via splatting and optimize materials in screen space, tying the recovered properties to a rasterization-based pipeline. This pipeline mismatch, together with simplified rendering equations that neglect indirect illumination, often leads to inconsistent shading, visible artifacts, and inaccurate material-lighting estimation under path-traced rendering. Therefore, we propose a splatting-free path-traced inverse rendering framework for 3D Gaussian fields, where forward light transport and backward gradient propagation are defined within a unified ray-tracing pipeline. Our key idea is to define a path-space equivalent interaction model for overlapping Gaussian primitives, under which Monte-Carlo-based path tracing is unbiased for the induced light-transport integral, while pathwise gradients are replayed over the same ray-traced interactions rather than splatting-derived screen-space buffers. The framework optimizes materials and a compact Spherical-Gaussian environment under the full rendering equation with ray-traced visibility and multi-bounce light transport. Extensive experiments demonstrate competitive material inversion and improved path-traced rendering quality, producing more plausible shadows, reflections, and relighting results under global illumination.
 
   </details>
 

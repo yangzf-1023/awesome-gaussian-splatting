@@ -9,6 +9,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-09
+
+- **[REFINE: Super-efficient 3D Gaussian Splatting Pruning via Rendering-Free Primitive Importance](https://arxiv.org/abs/2606.09074)**  
+  *Zhang Chen, Shuai Wan, Mengting Yu, Fuzheng Yang, Junhui Hou*  
+  `2026-06-08` · `cs.CV` · [abs](https://arxiv.org/abs/2606.09074) · [pdf](https://arxiv.org/pdf/2606.09074.pdf)
+  > 💡 针对3DGS剪枝效率低的问题，提出基于无渲染Hessian场的重要性度量，实现3000倍加速且保持
+
+  <details><summary>Abstract</summary>
+
+  Existing pruning methods for 3D Gaussian splatting (3DGS) suffer from either severe quality degradation or prohibitive computational overhead. In this paper, we propose REFINE, a highly accelerated 3DGS pruning framework centered on a novel rendering-free primitive importance metric. Our approach leverages an analytically approximated, rendering-aware Hessian field to quantify the expected perceptual error induced by the removal of individual primitives. By modeling the joint modulation of visibility, projection geometry and the content adaptive hyperparameter, we entirely bypass costly forward rendering passes and derive an anisotropic perceptual weight field that serves as a high-fidelity proxy for primitive importance. Extensive experiments across multiple benchmark datasets demonstrate that REFINE maintains highly competitive rendering quality while achieving an unprecedented $3,000\times$ reduction in pruning-related computational complexity compared to state-of-the-art pruning methods.
+
+  </details>
+
 ## 2026-06-08
 
 - **[RPC-GS: Gaussian Splatting with native RPC Rendering for Satellite Imagery](https://arxiv.org/abs/2606.06690)**  
