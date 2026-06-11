@@ -7,6 +7,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 ---
 
 
+
+## 2026-06-11
+
+- **[XPR: An Extensible Cross-Platform Point-Based Differentiable Renderer](https://arxiv.org/abs/2606.11529)**  
+  *Steve Rhyner, Sankeerth Durvasula, Aleksandr Kovalev, Hansel Jia, Adrian Zhao, Mrutunjayya Mrutunjayya, Nilesh Ahuja, Selvakumar Panneer, Christina Giannoula, Nandita Vijaykumar*  
+  `2026-06-10` · `cs.GR` · [abs](https://arxiv.org/abs/2606.11529) · [pdf](https://arxiv.org/pdf/2606.11529.pdf)
+  > 💡 针对点基可微渲染开发困难，提出XPR框架，用高层接口分离逻辑，跨平台编译支持多种
+
+  <details><summary>Abstract</summary>
+
+  Point-based differentiable rendering underpins modern 3D reconstruction, novel-view synthesis, and learning-based graphics pipelines, but developing new rendering methods often requires extensive low-level implementation, hardware-specific kernels, and manually written backward passes. This limits rapid prototyping, reproducibility, exploration, and deployment, especially across diverse hardware platforms. This paper presents XPR, an extensible cross-platform framework for point-based differentiable rendering. XPR introduces a high-level programming interface that separates method-specific logic from the shared rendering pipeline, allowing users to implement new methods in a few lines of code. Its pipeline decomposes rendering into modular, statically shaped parallel operations that can be lowered by a cross-platform compiler to GPUs, TPUs, CPUs, and other ML accelerators. We demonstrate implementations of 3DGS, 3DGUT, and LinPrim, with only a few 100s lines of Python code, each of which can be compiled to a range of hardware platforms with the XLA compiler. These results show that XPR enables fast experimentation and portable execution for emerging point-based differentiable rendering systems.
+
+  </details>
+
 ## 2026-06-06
 
 - **[Geometry Gaussians: Decoupling Appearance and Geometry in Gaussian Splatting](https://arxiv.org/abs/2606.05124)**  

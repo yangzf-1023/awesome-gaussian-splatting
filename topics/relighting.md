@@ -6,6 +6,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 ---
 
+
+## 2026-06-11
+
+- **[Wild3R: Feed-Forward 3D Gaussian Splatting from Unconstrained Sparse Photo Collection](https://arxiv.org/abs/2606.11894)**  
+  *Yuto Furutani, Takashi Otonari, Kaede Shiohara, Toshihiko Yamasaki*  
+  `2026-06-10` · `cs.CV` · [abs](https://arxiv.org/abs/2606.11894) · [pdf](https://arxiv.org/pdf/2606.11894.pdf)
+  > 💡 针对前馈3DGS在复杂光照和瞬态物体场景中的困难，提出WildCity数据集及模型学习跨视角外观一致性并去除瞬态内容。
+
+  <details><summary>Abstract</summary>
+
+  Feed-forward 3D Gaussian Splatting (3DGS) removes the need for time-consuming per-scene optimization required by traditional 3DGS. However, existing feed-forward approaches struggle with real-world photo collections that include diverse lighting conditions and transient objects. In this paper, we present Wild3R, a feed-forward approach for unconstrained sparse photo collections. The main bottleneck is the lack of training data that provides multiple viewpoints, a variety of illuminations, and transient variations necessary for learning robust scene representations. To address this, we introduce the WildCity dataset, which comprises 200 scenes, 170 lighting conditions, and transient objects, resulting in 337,500 images in total. By leveraging the dataset, our model learns appearance consistency across viewpoints conditioned on reference views, while removing transient content. Extensive experiments demonstrate that our method outperforms existing feed-forward approaches and achieves results competitive with prior per-scene optimization-based methods.
+
+  </details>
+
 ## 2026-05-30
 
 - **[F-RNG: Feed-Forward Relightable Neural Gaussians](https://arxiv.org/abs/2605.25975)**  
