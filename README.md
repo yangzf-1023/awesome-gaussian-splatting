@@ -130,6 +130,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -139,7 +140,7 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 | # | Topic | Total Papers | Latest-day Δ | Browse |
 |---|---|---|---|---|
 | 1 | **Survey & Benchmark** | 59 | — | [topics/survey.md](topics/survey.md) |
-| 2 | **Dynamic / 4D / Streaming** | 236 | **+2** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
+| 2 | **Dynamic / 4D / Streaming** | 236 | — | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
 | 3 | **Avatar / Human / Face** | 30 | — | [topics/avatar-human.md](topics/avatar-human.md) |
 | 4 | **Generation / Diffusion** | 46 | — | [topics/generation.md](topics/generation.md) |
 | 5 | **Editing / Stylization / Watermark** | 23 | — | [topics/editing.md](topics/editing.md) |
@@ -161,34 +162,8 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-06-12 (UTC) — 2 new paper(s)
+### 2026-06-13 (UTC) — 0 new paper(s)
 
-<details><summary><b>Dynamic / 4D / Streaming</b> (2) · <a href="topics/dynamic-4d.md">full list →</a></summary>
-
-- **[Flex4DHuman: Flexible Multi-view Video Diffusion for 4D Human Reconstruction](https://arxiv.org/abs/2606.13655)**  
-  *Jen-Hao Cheng, Yipeng Wang, Hao Zhang, Gengshan Yang, Jenq-Neng Hwang*  
-  `2026-06-11` · `cs.CV` · [abs](https://arxiv.org/abs/2606.13655) · [pdf](https://arxiv.org/pdf/2606.13655.pdf)
-  > 💡 提出Flex4DHuman，用相对相机姿态编码的多视角视频扩散模型，无需几何先验，从单目视频生成动态4D高斯
-
-  <details><summary>Abstract</summary>
-
-  We present Flex4DHuman, a multi-view video diffusion model that transforms a monocular or sparse multi-view video of a dynamic subject into synchronized dense multi-view videos using only relative camera-pose conditioning. Unlike prior human-centric methods that rely on skeletons, depth maps, normals, or rendered target-view geometry, Flex4DHuman requires no explicit geometry priors and instead conditions generation through relative camera-pose positional encoding. The generated videos can be directly ingested by downstream reconstruction pipelines to create dynamic 4D Gaussian splats. Built on the Wan 2.1 1.3B text-to-video model, Flex4DHuman preserves the backbone architecture and encodes camera and view information through a five-axis positional encoding that extends spatio-temporal RoPE with view indices and continuous SE(3) relative camera geometry. A three-stage curriculum progressively trains the model for pose following, flexible reference-to-target view generation, and temporal rollout. To support temporal rollout, we train with clean historical target-view tokens. We also add multi-view captions to enable test-time text control. Combined with an off-the-shelf 4D Gaussian Splatting stage, our framework lifts monocular static-camera videos into dynamic 4D Gaussian splats. Experiments on DNA-Rendering and ActorsHQ show that Flex4DHuman surpasses prior state-of-the-art methods, while the same formulation generalizes to animal categories after mixed human-animal training. These capabilities make Flex4DHuman a practical step toward scalable 4D content creation from casual monocular videos for simulation, gaming, AR/VR, and video re-shooting.
-
-  </details>
-
-
-- **[MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold](https://arxiv.org/abs/2606.13376)**  
-  *Yang Zhou, Ziheng Wang, Yuqin Lu, Haofeng Liu, Jun Liang, Shengfeng He, Jing Li*  
-  `2026-06-11` · `cs.CV` · [abs](https://arxiv.org/abs/2606.13376) · [pdf](https://arxiv.org/pdf/2606.13376.pdf)
-  > 💡 用单张窄视场图像，通过全景扩散和3D高斯支架构建，再经条件视频生成器实时渲染，支持8FPS交互漫游。
-
-  <details><summary>Abstract</summary>
-
-  We present MoVerse, a real-time video world model that creates an interactively navigable scene from a single narrow-field-of-view image. This setting is challenging because the input observes only a small fraction of the environment, while interactive roaming requires a complete surrounding world, persistent geometry, controllable camera motion, and temporally coherent high-fidelity observations. MoVerse addresses this problem by separating world construction from observation rendering. It first expands the input into a gravity-aligned 360$^\circ$ panorama with topology-aware diffusion, closing the missing field of view before 3D reasoning. It then lifts the panorama into a persistent 3D Gaussian scaffold using panoramic geometry-aware residual prediction, yielding a dense and directly renderable spatial memory. Finally, a Gaussian-conditioned video renderer translates scaffold renderings along user-specified camera trajectories into photorealistic video. To make this renderer practical for interaction, we train a bidirectional diffusion teacher for high-quality conditional rendering and distill it into a causal autoregressive student for bounded-latency streaming. This design combines the controllability and long-range consistency of explicit 3D representations with the perceptual quality of generative video models. MoVerse supports real-time scene roaming at 8~FPS on a single NVIDIA RTX~4090 GPU, demonstrating a practical path toward single-image world creation with interactive video output.
-
-  </details>
-
-
-</details>
+_No new papers today._
 <!-- LATEST-END -->
 <!-- AUTO-GENERATED-END -->
