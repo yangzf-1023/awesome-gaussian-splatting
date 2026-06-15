@@ -13,7 +13,7 @@ Every Gaussian-Splatting paper this repo has ever ingested, grouped by sub-topic
 | 5 | Editing / Stylization / Watermark | 23 | [editing.md](editing.md) |
 | 6 | Compression / Compact / Efficient Storage | 32 | [compression.md](compression.md) |
 | 7 | Rendering / Acceleration / Mobile | 35 | [rendering.md](rendering.md) |
-| 8 | SLAM / Localization / Mapping | 10 | [slam.md](slam.md) |
+| 8 | SLAM / Localization / Mapping | 12 | [slam.md](slam.md) |
 | 9 | Autonomous Driving / Outdoor | 13 | [driving.md](driving.md) |
 | 10 | Medical / Surgical | 2 | [medical.md](medical.md) |
 | 11 | Relighting / Material / BRDF | 3 | [relighting.md](relighting.md) |

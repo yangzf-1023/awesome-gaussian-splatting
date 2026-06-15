@@ -132,6 +132,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -147,7 +148,7 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 | 5 | **Editing / Stylization / Watermark** | 23 | — | [topics/editing.md](topics/editing.md) |
 | 6 | **Compression / Compact / Efficient Storage** | 32 | — | [topics/compression.md](topics/compression.md) |
 | 7 | **Rendering / Acceleration / Mobile** | 35 | — | [topics/rendering.md](topics/rendering.md) |
-| 8 | **SLAM / Localization / Mapping** | 10 | — | [topics/slam.md](topics/slam.md) |
+| 8 | **SLAM / Localization / Mapping** | 12 | **+2** | [topics/slam.md](topics/slam.md) |
 | 9 | **Autonomous Driving / Outdoor** | 13 | — | [topics/driving.md](topics/driving.md) |
 | 10 | **Medical / Surgical** | 2 | — | [topics/medical.md](topics/medical.md) |
 | 11 | **Relighting / Material / BRDF** | 3 | — | [topics/relighting.md](topics/relighting.md) |
@@ -163,8 +164,34 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-06-14 (UTC) — 0 new paper(s)
+### 2026-06-15 (UTC) — 2 new paper(s)
 
-_No new papers today._
+<details><summary><b>SLAM / Localization / Mapping</b> (2) · <a href="topics/slam.md">full list →</a></summary>
+
+- **[MooMIns -- Monocular 3D Reconstruction and Object Pose Estimation from Multiple Instances](https://arxiv.org/abs/2606.14389)**  
+  *Robert Langendörfer, Markus Hillemann, Markus Ulrich*  
+  `2026-06-12` · `cs.CV` · [abs](https://arxiv.org/abs/2606.14389) · [pdf](https://arxiv.org/pdf/2606.14389.pdf)
+  > 💡 利用单目图像中多实例隐含的多视角几何，通过高斯泼溅反向渲染实现3D重建和6D位姿估计。
+
+  <details><summary>Abstract</summary>
+
+  Simultaneous 3D reconstruction and 6D object pose estimation from a single monocular image is an inherently ill-posed problem. In industrial settings, however, multiple instances of an object are often randomly arranged in bins, implicitly providing several views of the same object within a single image. We show that this implicit multi-view geometry can be exploited to simultaneously reconstruct the object in 3D and estimate the 6D pose of each visible object instance. We present MooMIns, a new Gaussian-splatting-based approach that inverts the original Gaussian splatting formulation: instead of rendering a single scene from multiple cameras, we render multiple object instances from a single camera. Our method is initialized with SAM3 instance segmentation masks and a modified Structure from Motion (SfM) pipeline. In contrast to learned monocular depth estimation, we perform true geometry-based reconstruction from image evidence, avoiding hallucinations caused by training data priors. We evaluate MooMIns on synthetic and real bin-picking scenarios, and demonstrate accurate reconstruction of previously unseen objects as well as reliable pose estimation of individual instance
+
+  </details>
+
+
+- **[SplatlessDF: Continuous Distance Field Mapping with Non-Splatting Gaussians](https://arxiv.org/abs/2606.13990)**  
+  *Monisha Mushtary Uttsha, Lan Wu, Teresa Vidal-Calleja*  
+  `2026-06-12` · `cs.RO` · [abs](https://arxiv.org/abs/2606.13990) · [pdf](https://arxiv.org/pdf/2606.13990.pdf)
+  > 💡 用非溅射高斯从空间角度构建连续距离场映射，支持距离梯度查询与联合渲染，适用于机器人导航。
+
+  <details><summary>Abstract</summary>
+
+  Recent Gaussian splatting (GS) methods have shown that scenes can be represented efficiently with optimisable Gaussians for high-quality reconstruction and rendering. In this paper, building on this principle, we introduce SplatlessDF, a continuous distance field (DF) mapping framework that uses anisotropic Gaussian elements from a spatial rather than photometric perspective. SplatlessDF directly parameterises the Gaussians and optimises to recover a differentiable DF, enabling distances and gradients to be queried in the spatial domain for downstream robotic tasks such as navigation. Furthermore, SplatlessDF can be coupled with 2D Gaussian splatting (2DGS), providing a unified framework based solely on Gaussian primitives that can learn continuous DF and surface models and supports photometric rendering. We consider two settings: a standalone DF-only formulation and a joint DF-rendering formulation coupled with 2DGS. Experiments show that the standalone formulation provides efficient and accurate distance and gradient queries, while the joint formulation improves rendering geometry and simultaneously models a continuous DF. These results highlight the potential of GS-style representations not only for surface modelling and rendering but also for mapping representations suited to robotic navigation.
+
+  </details>
+
+
+</details>
 <!-- LATEST-END -->
 <!-- AUTO-GENERATED-END -->
