@@ -7,17 +7,17 @@ Every Gaussian-Splatting paper this repo has ever ingested, grouped by sub-topic
 | # | Topic | Papers | File |
 |---|---|---|---|
 | 1 | Survey & Benchmark | 62 | [survey.md](survey.md) |
-| 2 | Dynamic / 4D / Streaming | 238 | [dynamic-4d.md](dynamic-4d.md) |
-| 3 | Avatar / Human / Face | 30 | [avatar-human.md](avatar-human.md) |
-| 4 | Generation / Diffusion | 46 | [generation.md](generation.md) |
+| 2 | Dynamic / 4D / Streaming | 242 | [dynamic-4d.md](dynamic-4d.md) |
+| 3 | Avatar / Human / Face | 31 | [avatar-human.md](avatar-human.md) |
+| 4 | Generation / Diffusion | 49 | [generation.md](generation.md) |
 | 5 | Editing / Stylization / Watermark | 23 | [editing.md](editing.md) |
 | 6 | Compression / Compact / Efficient Storage | 32 | [compression.md](compression.md) |
-| 7 | Rendering / Acceleration / Mobile | 37 | [rendering.md](rendering.md) |
+| 7 | Rendering / Acceleration / Mobile | 39 | [rendering.md](rendering.md) |
 | 8 | SLAM / Localization / Mapping | 12 | [slam.md](slam.md) |
-| 9 | Autonomous Driving / Outdoor | 13 | [driving.md](driving.md) |
+| 9 | Autonomous Driving / Outdoor | 14 | [driving.md](driving.md) |
 | 10 | Medical / Surgical | 2 | [medical.md](medical.md) |
 | 11 | Relighting / Material / BRDF | 4 | [relighting.md](relighting.md) |
 | 12 | Sparse-View / Few-shot / Generalizable | 14 | [sparse-view.md](sparse-view.md) |
 | 13 | Semantic / Scene Understanding | 9 | [semantic.md](semantic.md) |
 | 14 | Reconstruction / Geometry | 23 | [reconstruction.md](reconstruction.md) |
-| 15 | Others | 7 | [others.md](others.md) |
+| 15 | Others | 9 | [others.md](others.md) |
