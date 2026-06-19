@@ -9,6 +9,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-19
+
+- **[Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration](https://arxiv.org/abs/2606.20103)**  
+  *Kyoleen Kwak, Daeho Kim, Jeong Woon Lee, Hyoseok Hwang*  
+  `2026-06-18` · `cs.CV` · [abs](https://arxiv.org/abs/2606.20103) · [pdf](https://arxiv.org/pdf/2606.20103.pdf)
+  > 💡 针对3DGS标定中几何漂移问题，提出多视图LiDAR深度监督并阻断光度梯度以保留度量几何，提升标定精度。
+
+  <details><summary>Abstract</summary>
+
+  Accurate LiDAR-camera calibration is essential for robust multi-modal perception. Targetless approaches avoid manual setup but remain limited by the scarcity of discriminative cross-modal features. Recent methods address this by reconstructing the scene within a differentiable model, enabling extrinsic optimization through dense photometric supervision. Among these, 3D Gaussian Splatting (3DGS) has been widely adopted as a geometric proxy that bridges LiDAR and camera within a single differentiable framework. However, since 3DGS was originally designed for novel view synthesis, existing methods tend to prioritize rendering quality, causing the proxy geometry to drift from the true LiDAR structure. We propose a framework that preserves the metric geometry of the Gaussian proxy by aggregating multi-view LiDAR observations for dense depth supervision and blocking photometric gradients from updating the Gaussian spatial parameters. We validate our method on public driving datasets, where it consistently outperforms existing targetless methods in calibration accuracy.
+
+  </details>
+
 ## 2026-06-18
 
 - **[TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations](https://arxiv.org/abs/2606.17386)**  
