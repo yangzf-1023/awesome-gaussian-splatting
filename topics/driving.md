@@ -10,6 +10,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-23
+
+- **[Non-line-of-sight imaging with arbitrary relay surface geometries via 3D Gaussian Transient Rendering](https://arxiv.org/abs/2606.21270)**  
+  *Yi Wang, Ziyu Zhan, Yuran Wang, Hao Wang, Qiang Liu, Zuoqiang Shi, Lingyun Qiu, Xing Fu*  
+  `2026-06-19` · `physics.optics` · [abs](https://arxiv.org/abs/2606.21270) · [pdf](https://arxiv.org/pdf/2606.21270.pdf)
+  > 💡 通过3D高斯原语与可微瞬态渲染，解决了非视距成像中任意中继表面几何与稀疏采样下的重建难题。
+
+  <details><summary>Abstract</summary>
+
+  Imaging objects hidden outside the direct line of sight expands the effective field of view and is critical for applications such as autonomous driving and robotic perception. Despite impressive progress in time-of-flight (ToF)-based non-line-of-sight (NLOS) imaging, real-world deployment remains challenging because practical measurements are often collected over spatially limited, arbitrarily shaped relay regions-conditions that violate the planar-wall and dense-sampling assumptions made by most existing methods. To address these limitations, we propose a LOS-guided NLOS imaging pipeline that imposes no geometric assumptions on the relay surface and naturally supports both confocal and non-confocal configurations. Our method represents the hidden scene using 3D Gaussian primitives and couples them with an efficient, differentiable transient rendering model, enabling end-to-end optimization directly from measured transients. We validate our approach on real-world measurements from both a public dataset and a custom-built capture system. Across settings, our method achieves state-of-the-art reconstruction fidelity under spatially limited, sparsely sampled conditions, and significantly outperforms existing methods on complex, arbitrary relay surface geometries.
+
+  </details>
+
 ## 2026-06-19
 
 - **[Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration](https://arxiv.org/abs/2606.20103)**  
