@@ -11,6 +11,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-24
+
+- **[Geometry-Aware Style Transfer in 3D Gaussian Splatting](https://arxiv.org/abs/2606.24144)**  
+  *Min Hyeok Bang, Jun Hyeong Kim, Seung-Wook Kim, Se-Ho Lee*  
+  `2026-06-23` · `cs.CV` · [abs](https://arxiv.org/abs/2606.24144) · [pdf](https://arxiv.org/pdf/2606.24144.pdf)
+  > 💡 针对3DGS风格迁移忽视几何结构的局限，提出解耦优化与几何感知对比特征匹配，实现外观与几何同步迁移并显著提升效果。
+
+  <details><summary>Abstract</summary>
+
+  In this paper, we present a novel geometry-aware style transfer framework for 3D Gaussian splatting (3DGS) that simultaneously transfers appearance attributes and geometric structures. Unlike prior works that primarily focus on color-based stylization and often overlook structural adaptation, our method explicitly incorporates geometry adaptation through a decoupled optimization scheme that alternately updates color and geometry parameters. This strategy alleviates potential interference between color and geometry updates, leading to stable and consistent scene-level geometry transformation. The decoupled optimization is enabled by the proposed geometry-aware contrastive feature matching (GCFM). GCFM integrates RGB, depth, and edge cues into a contrastive objective and is employed in both optimization phases to effectively transfer structural characteristics from style images to Gaussian primitives. Extensive experiments show that our approach achieves superior performance in both qualitative fidelity and quantitative metrics, significantly outperforming existing 3DGS-based stylization methods. Our code is available at \href{https://github.com/oweixx/gast}{https://github.com/oweixx/gast}.
+
+  </details>
+
 ## 2026-06-23
 
 - **[From Uncertainty to Stability and Fidelity: Guiding Sparse-View 3D Gaussian Splatting with Fisher Information](https://arxiv.org/abs/2606.20842)**  
