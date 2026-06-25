@@ -12,6 +12,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-25
+
+- **[Gastroendoscopy View Synthesis: A New Real Dataset and Evaluation](https://arxiv.org/abs/2606.25427)**  
+  *Masaki Minai, Yusuke Monno, Masatoshi Okutomi, Sho Suzuki*  
+  `2026-06-24` · `cs.CV` · [abs](https://arxiv.org/abs/2606.25427) · [pdf](https://arxiv.org/pdf/2606.25427.pdf)
+  > 💡 胃镜视图合成缺乏真实数据集，提出GastroNVS数据集含图像、位姿和点云，评估3DGS方法。
+
+  <details><summary>Abstract</summary>
+
+  Novel view synthesis (NVS) is an active research topic in computer vision, owing to the success of neural radiance field (NeRF) and 3D Gaussian splatting (3DGS) methods. While NVS opens the door to potential applications in gastroendoscopy, such as extending the field of view of endoscopic images and enabling digital twins for 3D archiving and endoscopist manipulation training, the dataset is insufficient to evaluate NVS for gastroendoscopy. In this paper, we present the first real gastroscopy dataset for NVS, namely the GastroNVS dataset, which contains a set of gastroscopic images, camera poses, and a point cloud for real gastroendoscopy inspection. To assess the suitability of the GastroNVS dataset, we evaluate several 3DGS methods and discuss the challenges for future development. The dataset is available on request from our project page.
+
+  </details>
+
+- **[From Sparse and Imperfect 2D Anchors to Consistent 3D Gaussian Street Scenes: Support-Aware Appearance](https://arxiv.org/abs/2606.26007)**  
+  *Long Cao, Zhongquan Wang, Jie Li, Yuhan Chen, Kefei Qian, Xiangfei Huang, Guofa Li*  
+  `2026-06-24` · `cs.CV` · [abs](https://arxiv.org/abs/2606.26007) · [pdf](https://arxiv.org/pdf/2606.26007.pdf)
+  > 💡 教师残差蒸馏与支持感知聚合解决稀疏2D锚点不一致问题，烘焙为固定几何SH系数，平衡目标对齐与跨视图一致性。
+
+  <details><summary>Abstract</summary>
+
+  Image priors can synthesize target conditions for 3D Gaussian street scenes, but independently edited views do not define a coherent 3D target. Direct fitting can propagate view-specific noise, while existing pipelines do not jointly handle imperfect sparse anchors and standard-rasterizer deployment. To address this gap, teacher-relative appearance residual distillation is introduced for appearance baking. A structured space for frequency decomposition, confidence estimation, and primitive-level lifting is formed by residuals between teacher anchors and original renders. The direct optimization signal is supplied by renderer-space matching, while primitive assignment is regularized by support-aware Gaussian-space aggregation. Supported detail is admitted and unsupported noise is suppressed through confidence-gated coarse-to-fine optimization, after which all residuals are baked into fixed-geometry spherical-harmonic coefficients. The teacher and auxiliary training modules are discarded at inference. Evaluation across Waymo street assets, Tanks and Temples scenes, and multiple target conditions shows a favorable overall balance of target alignment, content preservation, artifact suppression, and cross-view consistency over editing-based baselines. Ablations confirm the effectiveness of the main components. Code will be released at https://github.com/Cagares/Baking-for-3D-Gaussian.
+
+  </details>
+
 ## 2026-06-24
 
 - **[Geometry-Aware Style Transfer in 3D Gaussian Splatting](https://arxiv.org/abs/2606.24144)**  
