@@ -143,6 +143,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -152,15 +153,15 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 | # | Topic | Total Papers | Latest-day Δ | Browse |
 |---|---|---|---|---|
 | 1 | **Survey & Benchmark** | 69 | — | [topics/survey.md](topics/survey.md) |
-| 2 | **Dynamic / 4D / Streaming** | 248 | **+1** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
+| 2 | **Dynamic / 4D / Streaming** | 248 | — | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
 | 3 | **Avatar / Human / Face** | 35 | — | [topics/avatar-human.md](topics/avatar-human.md) |
-| 4 | **Generation / Diffusion** | 53 | — | [topics/generation.md](topics/generation.md) |
-| 5 | **Editing / Stylization / Watermark** | 27 | **+2** | [topics/editing.md](topics/editing.md) |
+| 4 | **Generation / Diffusion** | 55 | **+2** | [topics/generation.md](topics/generation.md) |
+| 5 | **Editing / Stylization / Watermark** | 28 | **+1** | [topics/editing.md](topics/editing.md) |
 | 6 | **Compression / Compact / Efficient Storage** | 33 | — | [topics/compression.md](topics/compression.md) |
-| 7 | **Rendering / Acceleration / Mobile** | 45 | — | [topics/rendering.md](topics/rendering.md) |
+| 7 | **Rendering / Acceleration / Mobile** | 46 | **+1** | [topics/rendering.md](topics/rendering.md) |
 | 8 | **SLAM / Localization / Mapping** | 13 | — | [topics/slam.md](topics/slam.md) |
 | 9 | **Autonomous Driving / Outdoor** | 16 | — | [topics/driving.md](topics/driving.md) |
-| 10 | **Medical / Surgical** | 3 | — | [topics/medical.md](topics/medical.md) |
+| 10 | **Medical / Surgical** | 4 | **+1** | [topics/medical.md](topics/medical.md) |
 | 11 | **Relighting / Material / BRDF** | 5 | — | [topics/relighting.md](topics/relighting.md) |
 | 12 | **Sparse-View / Few-shot / Generalizable** | 15 | — | [topics/sparse-view.md](topics/sparse-view.md) |
 | 13 | **Semantic / Scene Understanding** | 9 | — | [topics/semantic.md](topics/semantic.md) |
@@ -174,46 +175,78 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-06-25 (UTC) — 3 new paper(s)
+### 2026-06-26 (UTC) — 5 new paper(s)
 
-<details><summary><b>Dynamic / 4D / Streaming</b> (1) · <a href="topics/dynamic-4d.md">full list →</a></summary>
+<details><summary><b>Generation / Diffusion</b> (2) · <a href="topics/generation.md">full list →</a></summary>
 
-- **[TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy](https://arxiv.org/abs/2606.26092)**  
-  *Hao Sun, Hao Yan, Mengting Chen, Quanjian Song, Yu Li, Juan Cao, Jinsong Lan, Xiaoyong Zhu, Bo Zheng, Sheng Tang*  
-  `2026-06-24` · `cs.CV` · [abs](https://arxiv.org/abs/2606.26092) · [pdf](https://arxiv.org/pdf/2606.26092.pdf)
-  > 💡 通过可渲染4D试穿代理显式解耦人与环境，首个统一DiT框架实现任意相机轨迹下的逼真视频虚拟试穿。
+- **[SatSplatDiff: Geometry-preserving generative refinement for high-fidelity satellite Gaussian Splatting](https://arxiv.org/abs/2606.27223)**  
+  *Jiyong Kim, Shuang Song, Ronjgun Qin*  
+  `2026-06-25` · `cs.CV` · [abs](https://arxiv.org/abs/2606.27223) · [pdf](https://arxiv.org/pdf/2606.27223.pdf)
+  > 💡 卫星高斯泼溅因视角受限导致立面空洞和保真度低，提出单目深度监督与阴影引导生成细化，几何误差降18%，视觉保真度提28-45%。
 
   <details><summary>Abstract</summary>
 
-  While Video Virtual Try-on (VVT) has achieved remarkable progress in synthesizing realistic garment overlays on dynamic subjects, existing paradigms remains fundamentally constrained by a passive dependency on source camera trajectories, failing to accommodate the requisite interactive freedom for omnidirectional viewpoint exploration. To address this limitation, we define a pioneering research frontier: Camera-controllable Video Virtual Try-on (CaM-VVT). Unlike conventional VVT, CaM-VVT not only necessitates viewpoint-agnostic texture hallucination but also strict structural synchronization between non-rigid human dynamics and background contexts under arbitrary, unconstrained camera movements. To tackle these challenges, we present TryOnCrafter, the first unified DiT-based framework specifically architected for the CaM-VVT task. Departing from implicit pixel-space manipulation, we introduce a Renderable 4D Try-on Proxy that explicitly decouples the human subject from the environment. This is achieved by distilling high-fidelity 2D try-on priors into a clothed 3DGS-based avatar, which is subsequently animated via SMPL-X sequences and metric-aligned into a reconstructed background point cloud. This proxy establishes a robust structural foundation with superior texture density and motion integrity. Our Proxy-Anchored Video DiT leverages this robust structural foundation as a primary geometric anchor, ensuring that the synthesized photorealistic videos are strictly constrained by prescribed trajectories and physically plausible deformations. Benefiting from the inherent editability of the 4D proxy, TryOnCrafter facilitates diverse downstream applications, including human relocalization, ``bullet time'' effects, and $360$-degree orbital viewing.
+  Gaussian Splatting has been recently explored for satellite 3D reconstruction, demonstrating flexibility and efficiency in representing radiometrically diverse satellite scenes. However, the limited top viewpoint of satellite imagery results in insufficient supervision on building facades, leaving surface holes and degraded visual fidelity. Generative refinement, which leverages pretrained generative priors to iteratively refine and update the rendered images used as supervision targets, has recently been investigated to improve the visual fidelity of Gaussian-rendered images. However, since these models refine each view independently, the resulting images can generate hallucinations and break photo-consistency, leading to geometric degradation. To address these limitations, we propose SatSplatDiff, which aims to minimize geometric degradation prevalent in generative refinement. Building on photogrammetric DSM initialization and 2DGS-based shadow casting established in our prior work SatSplat, we first introduce monocular depth supervision and multi-scale geometric refinement to establish a geometrically accurate and well-regularized surface representation. We then apply shadow-guided generative refinement, where geometrically calculated shadow maps guide the Gaussians to maintain consistency with the underlying geometry, improving visual fidelity while reducing geometric degradation. Extensive evaluations on the IARPA2016 and DFC2019 datasets demonstrate state-of-the-art performance, reducing geometric MAE by up to 18% and improving visual fidelity (FID-CLIP) by 28-45% over existing baselines. Our method delivers up to 5x resolution enhancement with minimal hallucination and sensor-consistent appearance, demonstrating seamless cross-tile consistency and strong scalability for large-scale reconstruction. Source code is available at https://github.com/GDAOSU/SatSplatDiff
+
+  </details>
+
+
+- **[PanoImager: Geometry-Guided Novel View Synthesis and Reconstruction from Sparse Panoramic Views](https://arxiv.org/abs/2606.27071)**  
+  *Zhisong Xu, Takeshi Oishi*  
+  `2026-06-25` · `cs.CV` · [abs](https://arxiv.org/abs/2606.27071) · [pdf](https://arxiv.org/pdf/2606.27071.pdf)
+  > 💡 针对旋转主导弱视差下稀疏全景图重建难题，提出无SfM框架，结合几何引导扩散补全与3DGS优化，提升稳定性。
+
+  <details><summary>Abstract</summary>
+
+  Panoramic sensing offers wide field-of-view coverage, yet 3D reconstruction from sparse panoramas remains challenging under rotation-dominant, weak-parallax motion. In such regimes, SfM/SLAM initialization is often ill-conditioned and unreliable. We present PanoImager, an SfM-free framework that combines feed-forward pose/depth priors, geometry-conditioned diffusion view completion, and depth-guided 3DGS optimization. Given only a few panoramic images, PanoImager decomposes them into local perspective views, synthesizes auxiliary observations to enrich sparse evidence, and stabilizes Gaussian optimization for improved cross-view consistency. Experiments on multiple benchmarks show improved stability under extreme sparsity, suggesting PanoImager as an offline/background component for map refinement when SfM/SLAM fails to initialize.
 
   </details>
 
 
 </details>
 
-<details><summary><b>Editing / Stylization / Watermark</b> (2) · <a href="topics/editing.md">full list →</a></summary>
+<details><summary><b>Editing / Stylization / Watermark</b> (1) · <a href="topics/editing.md">full list →</a></summary>
 
-- **[Gastroendoscopy View Synthesis: A New Real Dataset and Evaluation](https://arxiv.org/abs/2606.25427)**  
-  *Masaki Minai, Yusuke Monno, Masatoshi Okutomi, Sho Suzuki*  
-  `2026-06-24` · `cs.CV` · [abs](https://arxiv.org/abs/2606.25427) · [pdf](https://arxiv.org/pdf/2606.25427.pdf)
-  > 💡 胃镜视图合成缺乏真实数据集，提出GastroNVS数据集含图像、位姿和点云，评估3DGS方法。
+- **[Capacity-Controlled Multi-View Stylization of 3D Gaussian Splatting](https://arxiv.org/abs/2606.26754)**  
+  *Zhihao Wen, Yixin Yang, Bojian Wu, Yang Zhou, Dani Lischinski, Daniel Cohen-Or, Hui Huang*  
+  `2026-06-25` · `cs.CV` · [abs](https://arxiv.org/abs/2606.26754) · [pdf](https://arxiv.org/pdf/2606.26754.pdf)
+  > 💡 提出容量控制的最优传输框架，通过半平衡运输与列容量约束，解决多视角风格化中特征重用和一致性不足。
 
   <details><summary>Abstract</summary>
 
-  Novel view synthesis (NVS) is an active research topic in computer vision, owing to the success of neural radiance field (NeRF) and 3D Gaussian splatting (3DGS) methods. While NVS opens the door to potential applications in gastroendoscopy, such as extending the field of view of endoscopic images and enabling digital twins for 3D archiving and endoscopist manipulation training, the dataset is insufficient to evaluate NVS for gastroendoscopy. In this paper, we present the first real gastroscopy dataset for NVS, namely the GastroNVS dataset, which contains a set of gastroscopic images, camera poses, and a point cloud for real gastroendoscopy inspection. To assess the suitability of the GastroNVS dataset, we evaluate several 3DGS methods and discuss the challenges for future development. The dataset is available on request from our project page.
+  While 3D Gaussian Splatting (3DGS) provides an efficient and explicit representation for novel view synthesis, enforcing stylistic coherence across viewpoints remains challenging. Existing 3D stylization methods typically apply 2D feature-matching losses independently per rendered view, which leads to unstable style allocation, many-to-one feature reuse, and limited cross-view consistency. We propose a capacity-controlled framework for multi-view stylization of 3DGS, grounded in optimal transport. Specifically, we reformulate local style matching as a semi-balanced optimal transport problem. By introducing explicit column-capacity constraints with tunable strength, our formulation mitigates many-to-one matching and enables controllable allocation of style features. This transport-based objective provides a principled mechanism for balancing feature coverage and stylistic diversity while maintaining stable correspondences across viewpoints. To further enhance cross-view coherence, we incorporate a novel cross-view matching guidance to constrain correspondences between scene content and style patterns. In addition, we introduce several geometric regularizations to enhance the vanilla 3DGS, thereby enabling optimized Gaussian primitives to represent finer-grained textures during stylization. Extensive experiments demonstrate that our approach significantly improves multi-view stylistic consistency and produces stable, expressive 3D stylizations while preserving the core semantic structure of the scene.
 
   </details>
 
 
-- **[From Sparse and Imperfect 2D Anchors to Consistent 3D Gaussian Street Scenes: Support-Aware Appearance](https://arxiv.org/abs/2606.26007)**  
-  *Long Cao, Zhongquan Wang, Jie Li, Yuhan Chen, Kefei Qian, Xiangfei Huang, Guofa Li*  
-  `2026-06-24` · `cs.CV` · [abs](https://arxiv.org/abs/2606.26007) · [pdf](https://arxiv.org/pdf/2606.26007.pdf)
-  > 💡 教师残差蒸馏与支持感知聚合解决稀疏2D锚点不一致问题，烘焙为固定几何SH系数，平衡目标对齐与跨视图一致性。
+</details>
+
+<details><summary><b>Rendering / Acceleration / Mobile</b> (1) · <a href="topics/rendering.md">full list →</a></summary>
+
+- **[Vis4GS: A Visual Analytic Tool for 3D Gaussian Splatting Reconstruction](https://arxiv.org/abs/2606.26985)**  
+  *Kai-Yuan Lin, Aryabima Mandala Putra, Jui-Chi Lee, Shih-Hsuan Hung*  
+  `2026-06-25` · `cs.GR` · [abs](https://arxiv.org/abs/2606.26985) · [pdf](https://arxiv.org/pdf/2606.26985.pdf)
+  > 💡 提出Vis4GS多视图可视分析工具，连接3DGS伪影与高斯属性及优化历史，实现原始级诊断。
 
   <details><summary>Abstract</summary>
 
-  Image priors can synthesize target conditions for 3D Gaussian street scenes, but independently edited views do not define a coherent 3D target. Direct fitting can propagate view-specific noise, while existing pipelines do not jointly handle imperfect sparse anchors and standard-rasterizer deployment. To address this gap, teacher-relative appearance residual distillation is introduced for appearance baking. A structured space for frequency decomposition, confidence estimation, and primitive-level lifting is formed by residuals between teacher anchors and original renders. The direct optimization signal is supplied by renderer-space matching, while primitive assignment is regularized by support-aware Gaussian-space aggregation. Supported detail is admitted and unsupported noise is suppressed through confidence-gated coarse-to-fine optimization, after which all residuals are baked into fixed-geometry spherical-harmonic coefficients. The teacher and auxiliary training modules are discarded at inference. Evaluation across Waymo street assets, Tanks and Temples scenes, and multiple target conditions shows a favorable overall balance of target alignment, content preservation, artifact suppression, and cross-view consistency over editing-based baselines. Ablations confirm the effectiveness of the main components. Code will be released at https://github.com/Cagares/Baking-for-3D-Gaussian.
+  3D Gaussian Splatting (3DGS) supports fast training and real-time rendering, but its optimization process remains difficult to interpret. Existing viewers mainly expose the final reconstructed scene and offer limited support for explaining how Gaussian properties contribute to visible artifacts or evolve during training. We present Vis4GS, a multi-view visual analytics tool for primitive-level diagnosis of 3DGS reconstruction artifacts. Built on the original 3DGS viewer and training framework, Vis4GS links rendered artifacts to Gaussian properties, View Coverage, training progress, and Gaussian genealogy through four linked views: an interactive Gaussian analysis view, a property timeline view, a Gaussian densification tree view, and a log and control panel. The system supports Gaussian selection, blur and needle-like artifact scoring, View Coverage analysis, and multiscale genealogy exploration of clone, split, prune, and clone-split events. By connecting scene-level artifacts with primitive-level evidence and optimization history, Vis4GS enables a structured workflow for diagnosing reconstruction failures beyond final-image inspection and global metrics. A user study also shows that Vis4GS provides stronger support for usability and artifact understanding than the original 3DGS viewer.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Medical / Surgical</b> (1) · <a href="topics/medical.md">full list →</a></summary>
+
+- **[Rendering Novel Views of MRI Using 3D Gaussian Splatting](https://arxiv.org/abs/2606.26236)**  
+  *Robin Y. Park, Mark C. Eid, Rhydian Windsor, Amir Jamaludin, Ana I. L. Namburete, João F. Henriques, Andrew Zisserman*  
+  `2026-06-24` · `eess.IV` · [abs](https://arxiv.org/abs/2606.26236) · [pdf](https://arxiv.org/pdf/2606.26236.pdf)
+  > 💡 通过3D高斯泼溅对稀疏各向异性MRI进行体积重建并渲染新视角，提升脊柱狭窄分级的准确性。
+
+  <details><summary>Abstract</summary>
+
+  The objective of this paper is to improve radiological gradings measured on MRIs of spines, by resampling scans so that the new view planes are better aligned with the target anatomy than the original sparse images. To this end, we adapt 3D Gaussian Splatting to form a volumetric reconstruction starting from sparse anisotropic MRIs, and imaging planes aligned with the anatomy relevant for clinical evaluation are then sampled and rendered. The novel view plane is optimal for diagnostic radiological grading of the target anatomy, whereas the original MRI is not. The resampled scans are then used to predict ordinal severity grades of localised stenosis conditions in spinal MRIs. We compare our method against Voxel Interpolation resampling, which takes the average of inverse-distance weighted nearest neighbour intensities for each target coordinate. Experiments show that across all stenosis conditions, resampled scans using Gaussian Splatting produce more accurate stenosis gradings compared to the raw scans which do not include the complete anatomy in-plane, as well as images resampled using Voxel Interpolation.
 
   </details>
 

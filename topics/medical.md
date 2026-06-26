@@ -7,6 +7,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 ---
 
 
+
+## 2026-06-26
+
+- **[Rendering Novel Views of MRI Using 3D Gaussian Splatting](https://arxiv.org/abs/2606.26236)**  
+  *Robin Y. Park, Mark C. Eid, Rhydian Windsor, Amir Jamaludin, Ana I. L. Namburete, João F. Henriques, Andrew Zisserman*  
+  `2026-06-24` · `eess.IV` · [abs](https://arxiv.org/abs/2606.26236) · [pdf](https://arxiv.org/pdf/2606.26236.pdf)
+  > 💡 通过3D高斯泼溅对稀疏各向异性MRI进行体积重建并渲染新视角，提升脊柱狭窄分级的准确性。
+
+  <details><summary>Abstract</summary>
+
+  The objective of this paper is to improve radiological gradings measured on MRIs of spines, by resampling scans so that the new view planes are better aligned with the target anatomy than the original sparse images. To this end, we adapt 3D Gaussian Splatting to form a volumetric reconstruction starting from sparse anisotropic MRIs, and imaging planes aligned with the anatomy relevant for clinical evaluation are then sampled and rendered. The novel view plane is optimal for diagnostic radiological grading of the target anatomy, whereas the original MRI is not. The resampled scans are then used to predict ordinal severity grades of localised stenosis conditions in spinal MRIs. We compare our method against Voxel Interpolation resampling, which takes the average of inverse-distance weighted nearest neighbour intensities for each target coordinate. Experiments show that across all stenosis conditions, resampled scans using Gaussian Splatting produce more accurate stenosis gradings compared to the raw scans which do not include the complete anatomy in-plane, as well as images resampled using Voxel Interpolation.
+
+  </details>
+
 ## 2026-06-23
 
 - **[Projection-Volume Fidelity Divergence: Diagnosing and Controlling Optimization Drift in Sparse-View 3D Gaussian Tomography](https://arxiv.org/abs/2606.22525)**  
