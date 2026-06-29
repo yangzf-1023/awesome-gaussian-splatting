@@ -14,6 +14,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-06-29
+
+- **[Structured-Li-GS: Structured 3D Gaussians Splatting with LiDAR Incorporation and Spatial Constraints](https://arxiv.org/abs/2606.27509)**  
+  *Huaiyuan Weng, Huibin Li, Chul Min Yeum*  
+  `2026-06-25` · `cs.CV` · [abs](https://arxiv.org/abs/2606.27509) · [pdf](https://arxiv.org/pdf/2606.27509.pdf)
+  > 💡 利用LiDAR-SLAM生成稠密彩色点云锚定高斯原语，并通过多种空间损失实现无致密化高质量3D重建，减少高斯数量。
+
+  <details><summary>Abstract</summary>
+
+  In this study, we develop a Structured framework for Gaussian Splatting (3DGS) with LiDAR integration (Structured-Li-GS). It is a lightweight Gaussian Splatting pipeline that leverages LiDAR-inertial-visual SLAM. Structured-Li-GS achieves high-quality 3D reconstructions with fewer Gaussians by training on accurate, dense, colorized point clouds. Gaussian primitives are anchored using sub-sampled point clouds, and their ellipsoidal parameters are initialized from local surface geometry. Our training strategy integrates a comprehensive set of loss terms, including photometric, flattening, offset, depth, and normal losses, guided by the dense point cloud, enabling accurate reconstruction without Gaussian densification. This approach produces up-to-scale, high-fidelity results with a moderate model size. For experimental validation, we develop a custom hardware-synchronized LiDAR-camera handheld scanner. Experiments on both benchmark datasets and our real-world in-house dataset demonstrate that Structured-Li-GS surpasses state-of-the-art methods while using fewer Gaussians.
+
+  </details>
+
 ## 2026-06-24
 
 - **[FLUX3D: High-Fidelity 3D Gaussian Generation with Diffusion-Aligned Sparse Representation](https://arxiv.org/abs/2606.24874)**  

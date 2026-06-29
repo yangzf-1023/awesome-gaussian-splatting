@@ -146,6 +146,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -154,10 +155,10 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 
 | # | Topic | Total Papers | Latest-day Δ | Browse |
 |---|---|---|---|---|
-| 1 | **Survey & Benchmark** | 69 | — | [topics/survey.md](topics/survey.md) |
+| 1 | **Survey & Benchmark** | 70 | **+1** | [topics/survey.md](topics/survey.md) |
 | 2 | **Dynamic / 4D / Streaming** | 248 | — | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
 | 3 | **Avatar / Human / Face** | 35 | — | [topics/avatar-human.md](topics/avatar-human.md) |
-| 4 | **Generation / Diffusion** | 55 | — | [topics/generation.md](topics/generation.md) |
+| 4 | **Generation / Diffusion** | 56 | **+1** | [topics/generation.md](topics/generation.md) |
 | 5 | **Editing / Stylization / Watermark** | 28 | — | [topics/editing.md](topics/editing.md) |
 | 6 | **Compression / Compact / Efficient Storage** | 33 | — | [topics/compression.md](topics/compression.md) |
 | 7 | **Rendering / Acceleration / Mobile** | 46 | — | [topics/rendering.md](topics/rendering.md) |
@@ -165,7 +166,7 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 | 9 | **Autonomous Driving / Outdoor** | 16 | — | [topics/driving.md](topics/driving.md) |
 | 10 | **Medical / Surgical** | 4 | — | [topics/medical.md](topics/medical.md) |
 | 11 | **Relighting / Material / BRDF** | 5 | — | [topics/relighting.md](topics/relighting.md) |
-| 12 | **Sparse-View / Few-shot / Generalizable** | 15 | — | [topics/sparse-view.md](topics/sparse-view.md) |
+| 12 | **Sparse-View / Few-shot / Generalizable** | 16 | **+1** | [topics/sparse-view.md](topics/sparse-view.md) |
 | 13 | **Semantic / Scene Understanding** | 9 | — | [topics/semantic.md](topics/semantic.md) |
 | 14 | **Reconstruction / Geometry** | 23 | — | [topics/reconstruction.md](topics/reconstruction.md) |
 | 15 | **Others** | 9 | — | [topics/others.md](topics/others.md) |
@@ -177,8 +178,54 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-06-28 (UTC) — 0 new paper(s)
+### 2026-06-29 (UTC) — 3 new paper(s)
 
-_No new papers today._
+<details><summary><b>Survey & Benchmark</b> (1) · <a href="topics/survey.md">full list →</a></summary>
+
+- **[Structured-Li-GS: Structured 3D Gaussians Splatting with LiDAR Incorporation and Spatial Constraints](https://arxiv.org/abs/2606.27509)**  
+  *Huaiyuan Weng, Huibin Li, Chul Min Yeum*  
+  `2026-06-25` · `cs.CV` · [abs](https://arxiv.org/abs/2606.27509) · [pdf](https://arxiv.org/pdf/2606.27509.pdf)
+  > 💡 利用LiDAR-SLAM生成稠密彩色点云锚定高斯原语，并通过多种空间损失实现无致密化高质量3D重建，减少高斯数量。
+
+  <details><summary>Abstract</summary>
+
+  In this study, we develop a Structured framework for Gaussian Splatting (3DGS) with LiDAR integration (Structured-Li-GS). It is a lightweight Gaussian Splatting pipeline that leverages LiDAR-inertial-visual SLAM. Structured-Li-GS achieves high-quality 3D reconstructions with fewer Gaussians by training on accurate, dense, colorized point clouds. Gaussian primitives are anchored using sub-sampled point clouds, and their ellipsoidal parameters are initialized from local surface geometry. Our training strategy integrates a comprehensive set of loss terms, including photometric, flattening, offset, depth, and normal losses, guided by the dense point cloud, enabling accurate reconstruction without Gaussian densification. This approach produces up-to-scale, high-fidelity results with a moderate model size. For experimental validation, we develop a custom hardware-synchronized LiDAR-camera handheld scanner. Experiments on both benchmark datasets and our real-world in-house dataset demonstrate that Structured-Li-GS surpasses state-of-the-art methods while using fewer Gaussians.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Generation / Diffusion</b> (1) · <a href="topics/generation.md">full list →</a></summary>
+
+- **[CoIn: Comprehensive 2D-3D Inpainting with Gaussian Splatting Guidance](https://arxiv.org/abs/2606.27584)**  
+  *Hana Kim, Minje Kim, Tae-Kyun Kim*  
+  `2026-06-25` · `cs.CV` · [abs](https://arxiv.org/abs/2606.27584) · [pdf](https://arxiv.org/pdf/2606.27584.pdf)
+  > 💡 针对3D修复依赖精确分割掩码的问题，提出CoIn框架，利用GS引导的双向一致性管道，实现灵活掩码的物体移除与插入，性能领先。
+
+  <details><summary>Abstract</summary>
+
+  3D scene inpainting is essential for reconstructing areas corrupted by occlusions or limited viewpoints. While recent methods leverage Gaussian Splatting (GS) for efficient 3D editing, they often depend on precise multi-view segmentation masks and are inherently constrained to object removal tasks. We propose CoIn, a novel framework that bridges 2D inpainting models and 3DGS through a multi-stage consistency pipeline. Our approach first generates initial inpainted images using a diffusion model, enabling the use of arbitrary-shaped masks and diverse tasks like object insertion. We then introduce Reference Adaptive GS with Feature Attention to reconstruct a coarse 3D scene by adaptively weighing towards a reference view (2D -> 3D). This 3D representation provides geometric guidance to the diffusion process via GS-based Reference Feature Warping, ensuring multi-view consistency (3D -> 2D). Finally, a Texture-Enhancing Discriminator refines the 3D scene to achieve high photometric realism (2D -> 3D). Experiments show that CoIn, effectively leveraging bidirectional information flow, achieves state-of-the-art performance and effectively handles both object removal and object insertion with flexible mask input.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Sparse-View / Few-shot / Generalizable</b> (1) · <a href="topics/sparse-view.md">full list →</a></summary>
+
+- **[StructSplat: Generalizable 3D Gaussian Splatting from Uncalibrated Sparse Views](https://arxiv.org/abs/2606.28321)**  
+  *Jia-Chen Zhao, Beiqi Chen, Xinyang Chen, Guangcong Wang, Liqiang Nie*  
+  `2026-06-26` · `cs.CV` · [abs](https://arxiv.org/abs/2606.28321) · [pdf](https://arxiv.org/pdf/2606.28321.pdf)
+  > 💡 针对未标定稀疏视图，提出结构化表示解耦几何、语义和纹理，实现通用3D高斯重建，显著提升跨数据集性能。
+
+  <details><summary>Abstract</summary>
+
+  We present StructSplat, a feed-forward and generalizable 3D Gaussian reconstruction framework that operates directly on uncalibrated images without requiring camera parameters. Existing methods either rely on per-scene optimization or assume known camera poses, and often entangle geometry and appearance within a unified backbone, limiting reconstruction fidelity and generalization. Our key idea is to adopt a structured representation that organizes geometry, semantic, and texture cues with explicit roles in the reconstruction process. Specifically, we introduce a pixel-aligned feature injection mechanism to enable accurate texture modeling from 2D observations, incorporate semantic-aware priors to improve global consistency, and design a camera alignment strategy to prevent information leakage and improve generalization. Experiments show that our method significantly outperforms prior approaches on challenging benchmarks. On DL3DV, our method achieves 28.045 PSNR, surpassing AnySplat (22.377) by +5.67 dB. In cross-dataset evaluation, our method achieves +1.94 dB over AnySplat on ACID and +1.72 dB on RealEstate10K. Project page: https://structsplat.github.io Code: https://github.com/J-C-Zhao/StructSplat
+
+  </details>
+
+
+</details>
 <!-- LATEST-END -->
 <!-- AUTO-GENERATED-END -->
