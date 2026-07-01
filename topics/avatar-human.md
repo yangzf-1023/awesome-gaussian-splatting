@@ -14,6 +14,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-01
+
+- **[Practical High-Fidelity Novel-View Synthesis of Mounted Lepidoptera](https://arxiv.org/abs/2606.31679)**  
+  *Kristof Overdulve, Lode Jorissen, Nick Michiels*  
+  `2026-06-30` · `cs.GR` · [abs](https://arxiv.org/abs/2606.31679) · [pdf](https://arxiv.org/pdf/2606.31679.pdf)
+  > 💡 针对蝴蝶标本微距景深小和腹面不可见难题，结合焦点堆叠、非接触镜面和镜面感知3DGS实现全方位高保真新视角合成。
+
+  <details><summary>Abstract</summary>
+
+  Mounted butterflies are among the most striking objects in natural history collections. However, their beauty is notoriously hard to digitize in 3D: they are small and fragile, with microscopic hairs and vein structures. Capturing them in sufficient detail, therefore, requires a macro lens, which has a very limited Depth of Field (DoF). Moreover, a camera body cannot be maneuvered beneath a pinned specimen to photograph its ventral surface (the underside of the wings). We introduce an end-to-end pipeline that resolves these challenges to turn such specimens into photo-realistic 3D models viewable from every direction. It combines three ingredients: handheld focus stacking for all-in-focus macro capture without a tripod, a non-contact first-surface mirror system that exposes the ventral surface without touching the specimen, and a segmentation-free, mirror-aware 3D Gaussian Splatting extension. We validate the reconstructions on four diverse specimens.
+
+  </details>
+
 ## 2026-06-30
 
 - **[VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes](https://arxiv.org/abs/2606.30645)**  
