@@ -7,6 +7,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 ---
 
 
+
+## 2026-07-02
+
+- **[Relation-Centric Open-Vocabulary 3D Gaussian Segmentation](https://arxiv.org/abs/2607.01140)**  
+  *Eunsung Cha, Hyunjoon Lee, Jaesik Park*  
+  `2026-07-01` · `cs.CV` · [abs](https://arxiv.org/abs/2607.01140) · [pdf](https://arxiv.org/pdf/2607.01140.pdf)
+  > 💡 将分割任务转化为高斯对间成对关系建模，利用视图贡献和多视图掩码构建关系图，实现快速且准确的开放词汇3D高斯分割。
+
+  <details><summary>Abstract</summary>
+
+  Open-vocabulary 3D Gaussian segmentation is challenging because it requires language understanding for diverse queries and accurate separation of Gaussians along object boundaries. Prior approaches either embed language knowledge into individual Gaussians to improve query responsiveness or optimize per-Gaussian instance features to encode object identity. However, these strategies may produce noisy Gaussian segmentations or rely on cost-inefficient per-scene optimization. We propose PairGS, a framework that reframes Gaussian segmentation as modeling pairwise relations between Gaussians. 3D Gaussian representations provide rich signals for relation estimation, such as view contribution weights and multi-view mask evidence. By leveraging these cues, PairGS explicitly constructs a relation graph for segmentation without a heavy optimization process. PairGS first proposes sparse edge candidates using low-dimensional descriptors, computes precise pairwise affinities only on those candidates, and builds a hierarchical cluster tree for multi-granular querying. It achieves state-of-the-art results on open-vocabulary 3D Gaussian segmentation benchmarks, while the fast variant is 50x faster than optimization-based instance-feature approaches.
+
+  </details>
+
+- **[GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception](https://arxiv.org/abs/2607.00746)**  
+  *Xiao Zhao, Chang Liu, Mingxu Zhu, Zheyuan Zhang, Linna Song, Qingliang Luo, Chufan Guo, Kuifeng Su*  
+  `2026-07-01` · `cs.CV` · [abs](https://arxiv.org/abs/2607.00746) · [pdf](https://arxiv.org/pdf/2607.00746.pdf)
+  > 💡 提出基于3D高斯表示的多模态融合框架，替代BEV范式，通过高斯初始化与注意力更新，提升感知精度与速度。
+
+  <details><summary>Abstract</summary>
+
+  The bird's-eye view (BEV) representation enables multi-sensor features to be fused within a unified space, serving as the primary approach for achieving comprehensive 3D perception. However, the discrete grid representation of BEV leads to significant detail loss and limits feature alignment and cross-modal information interaction in multimodal fusion perception. In this work, we break from the conventional BEV paradigm and propose a new universal framework for multi-modal fusion based on 3D Gaussian representation. This approach naturally unifies multi-modal features within a shared and continuous 3D Gaussian space, effectively preserving edge and fine texture details. To achieve this, we design a novel forward-projection-based multi-modal Gaussian initialization module and a shared cross-modal Gaussian encoder that iteratively updates Gaussian properties based on an attention mechanism. GaussianFusion is inherently a task-agnostic model, with its unified Gaussian representation naturally supporting various 3D perception tasks. Extensive experiments demonstrate the generality and robustness of GaussianFusion. On the nuScenes dataset, it outperforms the 3D object detection baseline BEVFusion by 2.6 NDS. Its variant surpasses GaussFormer on 3D semantic occupancy with 1.55 mIoU improvement while using only 30% of the Gaussians and achieving a 450% speedup.
+
+  </details>
+
 ## 2026-06-30
 
 - **[Open-Vocabulary and Referring Segmentation for 3D Gaussians Using 2D Detectors](https://arxiv.org/abs/2606.30638)**  

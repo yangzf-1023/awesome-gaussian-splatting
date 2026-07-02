@@ -17,6 +17,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-02
+
+- **[FastBridge: Closing the Model-Based Realization Gap in Safety Filters on 3D Gaussian Splatting for Fast Quadrotor Flight](https://arxiv.org/abs/2607.01200)**  
+  *Tscholl Dario, Nakka Yashwanth Kumar, Gunter Brian*  
+  `2026-07-01` · `cs.RO` · [abs](https://arxiv.org/abs/2607.01200) · [pdf](https://arxiv.org/pdf/2607.01200.pdf)
+  > 💡 针对3DGS安全滤波器忽略执行器限制问题，提出全四旋翼动力学的执行器感知碰撞锥CBF，降低急动度47%、加速2.25倍。
+
+  <details><summary>Abstract</summary>
+
+  Fast quadrotor flight requires safe obstacle avoidance under tight onboard compute limits. While 3D Gaussian Splatting (3DGS) provides a continuous, geometry-aware scene representation for perception-driven navigation, existing 3DGS safety filters use reduced-order models such as single- and double-integrators that ignore actuator limits and assume commanded accelerations are realized instantaneously. Building on an analytic collision cone barrier for 3DGS, we introduce a nonlinear, actuator-aware safety filter enforced through the full quadrotor dynamics. We derive a high-relative-degree collision cone exponential CBF and a backup CBF that preserves QP feasibility under input constraints using a forward-simulated backup policy. Compared with a state-of-the-art 3DGS safety filter, our approach reduces trajectory jerk by 47% and runs 2.25 times faster. We validate the method in simulation and on hardware for real-time navigation in cluttered, perception-derived environments.
+
+  </details>
+
 ## 2026-07-01
 
 - **[AugSplat: Radiance Field-Informed Gaussian Splatting for Sparse-View Settings](https://arxiv.org/abs/2606.31556)**  
