@@ -16,6 +16,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-04
+
+- **[Consistent Scene Understanding in 3D Gaussian Splatting via Multi-Cue Mask Refinement](https://arxiv.org/abs/2607.01708)**  
+  *Hyunjoon Park, Donghyeon Cho*  
+  `2026-07-02` · `cs.CV` · [abs](https://arxiv.org/abs/2607.01708) · [pdf](https://arxiv.org/pdf/2607.01708.pdf)
+  > 💡 利用多线索引导掩码合并与跨视图匹配，解决2D分割碎片化和不一致，提升3DGS场景理解的跨视图一致性与稳定性。
+
+  <details><summary>Abstract</summary>
+
+  Reliable instance-level scene understanding is a fundamental prerequisite for object-level interactions and high-fidelity 3D representations. While current methods often leverage 2D foundation segmentation models to obtain these priors, their 2D-centric design typically yields fragmented masks and inconsistent predictions across different views. To address these issues, we propose a novel framework that produces consistent 2D instance masks to guide the optimization of 3D Gaussian Splatting (3DGS) feature fields. Our framework consists of three main stages. (1) Multi-Cue Extraction that generates synergistic semantic, geometric, and structural priors from input images. (2) Multi-Cue-Guided Mask Merging process that consolidates fragmented masks using a composite merge score derived from semantic, depth, and edge cues. (3) Cross-View Mask Matching that establishes globally consistent identity assignments across all viewpoints. By transforming viewpoint-specific segments into coherent 3D primitives, our approach enables stable 3D instance segmentation and effective downstream editing tasks. Experiments demonstrate that our method significantly improves cross-view consistency and segmentation stability over existing baselines while maintaining high-fidelity photometric reconstruction.
+
+  </details>
+
+- **[Online Segment 3D Gaussians via Launching Virtual Drones](https://arxiv.org/abs/2607.01628)**  
+  *Liwei Liao, Rongjie Wang, Ronggang Wang*  
+  `2026-07-02` · `cs.CV` · [abs](https://arxiv.org/abs/2607.01628) · [pdf](https://arxiv.org/pdf/2607.01628.pdf)
+  > 💡 针对耗时设置瓶颈，
+
+  <details><summary>Abstract</summary>
+
+  Interactive segmentation of 3D Gaussians offers a compelling opportunity for real-time manipulation of 3D scenes, thanks to the real-time rendering capability of 3D Gaussian Splatting (3DGS). However, existing methods require a time-consuming per-scene setup - typically tens of seconds or even minutes - before interactive segmentation can begin on a raw 3DGS scene. This setup involves multi-view mask preparation, mask lifting, and feature distillation, creating a major bottleneck for online applications. To address this limitation, we aim to completely eliminate the setup stage for interactive 3DGS segmentation while keeping the segmentation time practical (under 1 second). In this work, we present SAGO (Segment Any Gaussians Online), a novel setup-free framework for interactive 3DGS segmentation. By introducing virtual drones, our method reframes the 3D segmentation problem as an online Next-Best-View (NBV) planning task formulated within a Markov process. Extensive experiments demonstrate that SAGO can extract clean 3D assets directly from 3D Gaussians with sub-second latency, thereby enabling a broad range of downstream applications such as object manipulation and scene editing. Moreover, our method achieves over a 50x speedup compared to the previous setup-free 3DGS segmentation frameworks.
+
+  </details>
+
 ## 2026-07-01
 
 - **[Intrinsic decomposition and editing of 3D Gaussian splats](https://arxiv.org/abs/2606.31637)**  
