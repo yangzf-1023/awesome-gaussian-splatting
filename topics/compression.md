@@ -11,6 +11,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-07
+
+- **[Real-Time LiDAR Gaussian Splatting SLAM](https://arxiv.org/abs/2607.04127)**  
+  *Seungjun Tak, Yewon Jeon, Jaeik Hwang, SukMin Hwang, Seongbo Ha, Hyeonwoo Yu*  
+  `2026-07-05` · `cs.CV` · [abs](https://arxiv.org/abs/2607.04127) · [pdf](https://arxiv.org/pdf/2607.04127.pdf)
+  > 💡 将G-ICP配准与球形光栅化高斯建图紧耦合，利用LiDAR几何先验优化地图并实时反馈提升跟踪鲁棒性，实现86.78% F-score的实时SLAM。
+
+  <details><summary>Abstract</summary>
+
+  We present a real-time LiDAR-based framework for Gaussian Splatting SLAM that tightly couples fast G-ICP registration with spherical rasterization-based dense mapping for large-scale sequences. Leveraging LiDAR geometry rather than appearance, we reuse tracking-estimated local covariances to initialize Gaussians with range-aware scales and to derive surface normals for geometry-aware map optimization. We further introduce a covariance-derived geometry score that measures local complexity and drives pruning in planar regions and selective densification in structurally rich areas, while optimized Gaussians and LiDAR-specific confidence cues are fed back to improve tracking robustness. On the Newer College dataset, our method achieves an F-score of 86.78\% using purely online trajectories at real-time speed ($>$20 FPS), and additional experiments on other datasets confirm its stability and scalability.
+
+  </details>
+
+- **[Provable Pruning for Efficient 3D Gaussian Splatting via Coresets](https://arxiv.org/abs/2607.02721)**  
+  *Waseem Mousa, Alaa Maalouf*  
+  `2026-07-02` · `cs.CV` · [abs](https://arxiv.org/abs/2607.02721) · [pdf](https://arxiv.org/pdf/2607.02721.pdf)
+  > 💡 通过敏感性加权子集实现对3DGS的可证明剪枝，在激进压缩下达到SOTA且无需或极少微调。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) enables high-quality real-time novel-view synthesis, but practical scenes often contain millions of Gaussians, making compression essential for deployment on limited hardware. Existing reduction methods are effective but mostly heuristic: they provide no multiplicative approximation guarantee for the rendered objective, and thus rely heavily on costly post-pruning finetuning to recover quality. We ask a basic question: can a 3DGS scene be provably replaced by a much smaller weighted subset (coreset) while preserving the objective of interest? We first show that, in the unrestricted setting, no non-trivial multiplicative 3DGS coreset exists. We then show that multiplicative guarantees are not impossible, but resolution-dependent. For a prescribed rendering resolution, such as representative views or grids of views/rays, we provide the first weighted coreset construction theorem for 3DGS. The construction samples Gaussians by sensitivity: provable importance scores measuring each Gaussian's role in the full-scene objective. Finally, under explicit validity and log-transmittance stability assumptions, we turn this objective guarantee into a rendering guarantee. Empirically, our method is strongest where deployment needs it most: aggressive compression with no or minimal recovery compute. In prune-only and very short finetuning regimes, it achieves state-of-the-art performance, showing that principled importance estimation can be both theoretically meaningful and practically useful. Open-source code is available at https://github.com/waseem-m/3dgs_provable_coresets.
+
+  </details>
+
 ## 2026-07-02
 
 - **[Efficient Compression of Structured and Unstructured Volumes via Learned 3D Gaussian Representation](https://arxiv.org/abs/2607.01164)**  

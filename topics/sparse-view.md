@@ -12,6 +12,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-07
+
+- **[Sparse-View Surface Reconstruction using Gaussian Splatting through High-Confidence Depth Propagation with Normal Priors](https://arxiv.org/abs/2607.03765)**  
+  *Liang Han, Bangcai Wei, Junsheng Zhou, Yu-Shen Liu, Zhizhong Han*  
+  `2026-07-04` · `cs.CV` · [abs](https://arxiv.org/abs/2607.03765) · [pdf](https://arxiv.org/pdf/2607.03765.pdf)
+  > 💡 针对稀疏视图表面重建，提出法线引导的高置信深度传播与异常深度边缘感知正则化，显著提升几何质量。
+
+  <details><summary>Abstract</summary>
+
+  3D reconstruction from sparse views is a challenging task in 3D computer vision. Recent studies on 3D Gaussian Splatting (3DGS) have achieved remarkable results with sparse views in novel view synthesis, yet reconstructing high-quality geometric surfaces from sparse views remains a challenge, due to the limited geometry clues and the discreteness of Gaussians. In this paper, we propose a novel 3DGS-based method for high-fidelity surface reconstruction from sparse views. Our key insight is to introduce a normal-guided depth propagation approach, which can extend depth information from high-confidence regions to constrain the depth in low-confidence areas. Additionally, we propose an abnormal depth edge-aware regularization to address depth discontinuities caused by the discreteness of Gaussians. Extensive experiments on DTU and Tanks-and-Temples datasets demonstrate that our method outperforms the state-of-the-art methods in sparse view surface reconstruction. Project page: https://hanl2010.github.io/DP-GS.
+
+  </details>
+
 ## 2026-07-04
 
 - **[The Turning Point of 3D Plant Phenotyping: 3D Foundation Models Enable Minute-to-Second Cross-Crop Reconstruction and Beyond](https://arxiv.org/abs/2607.01753)**  

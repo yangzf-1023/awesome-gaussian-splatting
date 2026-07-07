@@ -12,6 +12,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-07
+
+- **[SharpSplat: Edge-Regularized 3D Gaussian Splatting for High Fidelity Urban Building Reconstruction from UAV images](https://arxiv.org/abs/2607.03872)**  
+  *Porus Vaid, Shivam Chopra, Vaibhav Kumar*  
+  `2026-07-04` · `cs.CV` · [abs](https://arxiv.org/abs/2607.03872) · [pdf](https://arxiv.org/pdf/2607.03872.pdf)
+  > 💡 针对3DGS重建建筑边缘模糊问题，提出语义边缘正则化框架，利用SAM边缘监督提升锐利度。
+
+  <details><summary>Abstract</summary>
+
+  Reconstructing high-fidelity 3D building models from UAV imagery is essential for large-scale digital twin development. However, existing 3D Gaussian Splatting (3DGS) techniques often struggle with building facades, failing to capture sharp geometric transitions. To address this, we propose a semantic edge regularization framework that supervises 3DGS to produce crisp architectural boundaries. Our method leverages SAM 3 to generate precise building masks, from which we extract architecturally significant edges. During training, we align rendered image gradients with these extracted edges, forcing the Gaussians to converge into sharp structural geometries. Evaluations across campus environments, dense urban centers, and custom residential datasets demonstrate significant improvements in edge fidelity without requiring architectural modifications to the 3DGS pipeline. Our approach proves robust across diverse building types, roof geometries, and urban densities.
+
+  </details>
+
 ## 2026-06-30
 
 - **[Shell-Supervised Gaussian Splatting for Urban Real-to-Sim Reconstruction](https://arxiv.org/abs/2606.30014)**  
