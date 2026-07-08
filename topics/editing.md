@@ -18,6 +18,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-08
+
+- **[SSA-3DGS: Unsupervised Removal of Screen-Space Artifacts for 3D Gaussian Splatting](https://arxiv.org/abs/2607.05598)**  
+  *Kristof Overdulve, Lode Jorissen, Nick Michiels*  
+  `2026-07-06` · `cs.GR` · [abs](https://arxiv.org/abs/2607.05598) · [pdf](https://arxiv.org/pdf/2607.05598.pdf)
+  > 💡 提出SSA-3DGS无监督框架，通过联合优化3D场景与可学习2D覆盖层消除屏幕空间伪影，有效提升重建保真度。
+
+  <details><summary>Abstract</summary>
+
+  Novel View Synthesis (NVS) methods, such as 3D Gaussian Splatting (3DGS), rely heavily on the assumption of clean, multi-view consistent, posed input images. Real-world captures can violate this assumption due to screen-space artifacts-static occlusions fixed to the 2D image plane rather than to the 3D world. Common examples include physical sensor defects, environmental obstructions (such as rain or mud on the lens enclosure), capture obstructions (such as a thumb over the camera sensor or a dashboard visible in dashcam footage), and digital overlays (such as watermarks or UI elements). When present, they are erroneously baked into the 3D geometry as "floaters" or near-camera artifacts, degrading the quality of novel-view rendering. In this work, we propose SSA-3DGS, an unsupervised framework that jointly optimizes a 3D scene and a learnable 2D overlay to recover a clean 3D scene and the corrupting artifacts. By exploiting geometric consensus across views, our method effectively disentangles static artifacts from the 3D scene geometry without supervision or manual input. Across diverse synthetic corruptions and a self-captured real-world dataset, SSA-3DGS improves reconstruction fidelity by up to 9 dB PSNR over 3DGS trained on the same corrupted inputs, while faithfully preserving the corrupting artifact.
+
+  </details>
+
 ## 2026-07-07
 
 - **[WildSplat: Feedforward Gaussian Splatting from Unposed In-the-Wild Images](https://arxiv.org/abs/2607.05347)**  

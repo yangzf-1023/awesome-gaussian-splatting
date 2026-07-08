@@ -19,6 +19,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-08
+
+- **[APVI-SLAM: Real-Time Acoustic-Pressure-Visual-Inertial Localization and Photorealistic Mapping System in Complex Underwater Environment](https://arxiv.org/abs/2607.06222)**  
+  *Hanwen Zhang, Yipeng Zhu, Xiaopeng Guo, Huajian Huang, Sai-Kit Yeung*  
+  `2026-07-07` · `cs.RO` · [abs](https://arxiv.org/abs/2607.06222) · [pdf](https://arxiv.org/pdf/2607.06222.pdf)
+  > 💡 水下视觉惯性SLAM面临特征退化，提出可靠性感知定位与四叉树引导3D高斯映射，实现实时高精度定位和逼真重建。
+
+  <details><summary>Abstract</summary>
+
+  Extreme subsea environments often cause severe feature de-gradation and estimator divergence in underwater visual-inertial SLAM. Although sensors like Doppler Velocity Logs (DVL) and pressure gauges provide auxiliary constraints, robust multi-sensor fusion during intermittent visual failure remains challenging. To address this, we present APVI-SLAM, a real-time multi-sensor fusion SLAM system that achieves both accurate underwater localization and photorealistic mapping. Our approach introduces a reliability-aware localization framework that dynamically reweights sensor estimators and employs a sliding-window freezing strategy to recover from tracking failures, substantially enhancing system robustness. Furthermore, for high-fidelity scenes reconstruction, we propose an efficient quadtree-guided mapping module that facilitates incremental water-medium modeling and 3D Gaussian optimization. Recognizing the lack of benchmark for underwater mapping evaluation, we also contribute a coral reef surveying dataset with synchronized multi-modality data. Extensive experiments on public and our proposed benchmarks demonstrate that APVI-SLAM achieves state-of-the-art localization and reconstruction quality at real-time speeds.
+
+  </details>
+
 ## 2026-07-07
 
 - **[PRISM3D: Probabilistic Refinement and Robust Initialization for Physically Consistent Scene Modeling under Extreme Motion Blur](https://arxiv.org/abs/2607.03855)**  

@@ -17,6 +17,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-08
+
+- **[Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control](https://arxiv.org/abs/2607.05522)**  
+  *Gaoxiang Jia, Vikram Appia, Junzhou Huang, Xinlei Wang*  
+  `2026-07-06` · `cs.CV` · [abs](https://arxiv.org/abs/2607.05522) · [pdf](https://arxiv.org/pdf/2607.05522.pdf)
+  > 💡 提出渲染感知贝叶斯3DGS框架，用Normal-Inverse-Wishart后验实现不确定性量化与自适应复杂度控制，在主动视图选择任务中PSNR提升0.453dB。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian splatting (3DGS) is a strong representation for real-time novel-view synthesis, but its standard training pipeline relies on point estimates and hand-tuned heuristics, providing no native uncertainty or principled complexity control. This is most limiting under sparse views or fixed acquisition budgets, where a model must identify weakly supported geometry and select informative views. We introduce a rendering-aware Bayesian 3DGS framework that tracks Gaussian geometry with a Normal-Inverse-Wishart posterior over means and covariances using renderer-derived surrogate summaries. An optional Dirichlet-process extension adds a probabilistic component-usage signal, and the training schedule makes the closed-form versus approximate inference boundary explicit. Re-rendering posterior geometry samples yields native predictive uncertainty for interval calibration and active view selection. In a fixed-budget 16-to-32 active-view task, native NIW acquisition improves PSNR by +0.453 dB and LPIPS by -0.0146 over a scoring-only 3-member standard-ensemble baseline, winning 29/39 scene-seed pairs and 10/13 scene means; it also improves over PPU-style (+0.355 dB) and NIW-proxy (+0.401 dB) acquisition. NIW native intervals reduce 95% coverage error by about 17x relative to a shared proxy (0.046 vs. 0.796) and are about 10x closer to nominal coverage than a 3-member deep ensemble (0.047 vs. 0.454) at roughly one-third the training cost. As a reconstruction compatibility check, paired NIW-vs-standard analysis over 39 scene-seed runs yields +0.030 dB PSNR with 1.6% additional training time. These results position Bayesian 3DGS as a practical probabilistic scene representation for decision-facing tasks such as active view selection.
+
+  </details>
+
 ## 2026-07-07
 
 - **[AdaptiveSplat:Texture Aware Controllable 3D Gaussian Allocation for Feed-Forward Reconstruction](https://arxiv.org/abs/2607.04256)**  

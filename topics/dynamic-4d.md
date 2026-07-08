@@ -23,6 +23,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-08
+
+- **[PhyMRI-SR: Toward Physics-Aware MRI Image Super-Resolution](https://arxiv.org/abs/2607.06238)**  
+  *Lihua Wei, Huatong Gao, Jia Gong, Zhiyu Tan, Hao Li, Jun Liu, Zhihua Ren*  
+  `2026-07-07` · `cs.CV` · [abs](https://arxiv.org/abs/2607.06238) · [pdf](https://arxiv.org/pdf/2607.06238.pdf)
+  > 💡 针对MRI超分辨忽略分辨率-SNR物理耦合，提出物理感知重建方法，结合
+
+  <details><summary>Abstract</summary>
+
+  Magnetic resonance imaging (MRI) super-resolution is vital for improving diagnostic accessibility, yet most methods treat it as a deterministic mapping from a fixed low-resolution input to a high-resolution target. This overlooks a key property of MRI acquisition physics: spatial resolution and signal-to-noise ratio (SNR) are inherently coupled, making any given low-resolution scan merely one of many possible realizations under varying acquisition trade-offs. We rethink MRI super-resolution as a physics-aware reconstruction problem, in which the goal is to identify the optimal resolution-SNR configuration and then super-resolve it to obtain high-quality MRI results. A key implication of this formulation is that MRI resolution becomes dynamic rather than fixed. To handle such resolution-heterogeneous inputs, we adapt 2D Gaussian Splatting (2D GS) to MRI by formulating reconstruction as a coordinate-based, resolution-agnostic rendering problem. To further enhance fidelity, we introduce three innovations: (1) a prior-aware Gaussian representation that combines an Anatomical Structure Prior for tissue-specific kernel initialization with an Imaging System Prior that captures hardware characteristics via a covariance dictionary; (2) a physics-constrained signal modeling scheme that predicts intrinsic tissue parameters (proton density rho and effective relaxation rate R2) and synthesizes intensities through governing physical equations, ensuring biophysically plausible contrast; and (3) a meta-learning framework that alleviates paired-data scarcity by pretraining on simulated data and adapting to real-world conditions. Extensive experiments on dynamic-resolution datasets and standard benchmarks demonstrate that our method achieves state-of-the-art performance, highlighting its strong potential for clinical deployment.
+
+  </details>
+
 ## 2026-07-07
 
 - **[GUSH3R: Everyone Everywhere All at Once as Gaussians](https://arxiv.org/abs/2607.05243)**  
