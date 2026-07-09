@@ -156,6 +156,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -164,19 +165,19 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 
 | # | Topic | Total Papers | Latest-day Δ | Browse |
 |---|---|---|---|---|
-| 1 | **Survey & Benchmark** | 79 | **+1** | [topics/survey.md](topics/survey.md) |
-| 2 | **Dynamic / 4D / Streaming** | 273 | **+1** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
-| 3 | **Avatar / Human / Face** | 42 | **+1** | [topics/avatar-human.md](topics/avatar-human.md) |
-| 4 | **Generation / Diffusion** | 64 | — | [topics/generation.md](topics/generation.md) |
-| 5 | **Editing / Stylization / Watermark** | 37 | **+1** | [topics/editing.md](topics/editing.md) |
+| 1 | **Survey & Benchmark** | 79 | — | [topics/survey.md](topics/survey.md) |
+| 2 | **Dynamic / 4D / Streaming** | 274 | **+1** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
+| 3 | **Avatar / Human / Face** | 42 | — | [topics/avatar-human.md](topics/avatar-human.md) |
+| 4 | **Generation / Diffusion** | 67 | **+3** | [topics/generation.md](topics/generation.md) |
+| 5 | **Editing / Stylization / Watermark** | 37 | — | [topics/editing.md](topics/editing.md) |
 | 6 | **Compression / Compact / Efficient Storage** | 37 | — | [topics/compression.md](topics/compression.md) |
 | 7 | **Rendering / Acceleration / Mobile** | 55 | — | [topics/rendering.md](topics/rendering.md) |
-| 8 | **SLAM / Localization / Mapping** | 16 | — | [topics/slam.md](topics/slam.md) |
+| 8 | **SLAM / Localization / Mapping** | 17 | **+1** | [topics/slam.md](topics/slam.md) |
 | 9 | **Autonomous Driving / Outdoor** | 18 | — | [topics/driving.md](topics/driving.md) |
 | 10 | **Medical / Surgical** | 4 | — | [topics/medical.md](topics/medical.md) |
 | 11 | **Relighting / Material / BRDF** | 7 | — | [topics/relighting.md](topics/relighting.md) |
 | 12 | **Sparse-View / Few-shot / Generalizable** | 20 | — | [topics/sparse-view.md](topics/sparse-view.md) |
-| 13 | **Semantic / Scene Understanding** | 15 | **+1** | [topics/semantic.md](topics/semantic.md) |
+| 13 | **Semantic / Scene Understanding** | 15 | — | [topics/semantic.md](topics/semantic.md) |
 | 14 | **Reconstruction / Geometry** | 26 | — | [topics/reconstruction.md](topics/reconstruction.md) |
 | 15 | **Others** | 9 | — | [topics/others.md](topics/others.md) |
 <!-- TOPIC-INDEX-END -->
@@ -187,82 +188,74 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-07-08 (UTC) — 5 new paper(s)
-
-<details><summary><b>Survey & Benchmark</b> (1) · <a href="topics/survey.md">full list →</a></summary>
-
-- **[APVI-SLAM: Real-Time Acoustic-Pressure-Visual-Inertial Localization and Photorealistic Mapping System in Complex Underwater Environment](https://arxiv.org/abs/2607.06222)**  
-  *Hanwen Zhang, Yipeng Zhu, Xiaopeng Guo, Huajian Huang, Sai-Kit Yeung*  
-  `2026-07-07` · `cs.RO` · [abs](https://arxiv.org/abs/2607.06222) · [pdf](https://arxiv.org/pdf/2607.06222.pdf)
-  > 💡 水下视觉惯性SLAM面临特征退化，提出可靠性感知定位与四叉树引导3D高斯映射，实现实时高精度定位和逼真重建。
-
-  <details><summary>Abstract</summary>
-
-  Extreme subsea environments often cause severe feature de-gradation and estimator divergence in underwater visual-inertial SLAM. Although sensors like Doppler Velocity Logs (DVL) and pressure gauges provide auxiliary constraints, robust multi-sensor fusion during intermittent visual failure remains challenging. To address this, we present APVI-SLAM, a real-time multi-sensor fusion SLAM system that achieves both accurate underwater localization and photorealistic mapping. Our approach introduces a reliability-aware localization framework that dynamically reweights sensor estimators and employs a sliding-window freezing strategy to recover from tracking failures, substantially enhancing system robustness. Furthermore, for high-fidelity scenes reconstruction, we propose an efficient quadtree-guided mapping module that facilitates incremental water-medium modeling and 3D Gaussian optimization. Recognizing the lack of benchmark for underwater mapping evaluation, we also contribute a coral reef surveying dataset with synchronized multi-modality data. Extensive experiments on public and our proposed benchmarks demonstrate that APVI-SLAM achieves state-of-the-art localization and reconstruction quality at real-time speeds.
-
-  </details>
-
-
-</details>
+### 2026-07-09 (UTC) — 5 new paper(s)
 
 <details><summary><b>Dynamic / 4D / Streaming</b> (1) · <a href="topics/dynamic-4d.md">full list →</a></summary>
 
-- **[PhyMRI-SR: Toward Physics-Aware MRI Image Super-Resolution](https://arxiv.org/abs/2607.06238)**  
-  *Lihua Wei, Huatong Gao, Jia Gong, Zhiyu Tan, Hao Li, Jun Liu, Zhihua Ren*  
-  `2026-07-07` · `cs.CV` · [abs](https://arxiv.org/abs/2607.06238) · [pdf](https://arxiv.org/pdf/2607.06238.pdf)
-  > 💡 针对MRI超分辨忽略分辨率-SNR物理耦合，提出物理感知重建方法，结合
+- **[NoDrift3R: Raymap-Guided Coupling for Drift-Robust Unposed Feed-Forward 3D Reconstruction](https://arxiv.org/abs/2607.07168)**  
+  *Xiangyu Sun, Liu Liu, Seungkwon Yang, Jingbing Han, Seungtae Nam, Zhizhong Su, Eunbyung Park*  
+  `2026-07-08` · `cs.CV` · [abs](https://arxiv.org/abs/2607.07168) · [pdf](https://arxiv.org/pdf/2607.07168.pdf)
+  > 💡 针对长序列位姿漂移，提出Raymap引导耦合模块联合优化几何与外观，实现鲁棒的无位姿前馈3D重建。
 
   <details><summary>Abstract</summary>
 
-  Magnetic resonance imaging (MRI) super-resolution is vital for improving diagnostic accessibility, yet most methods treat it as a deterministic mapping from a fixed low-resolution input to a high-resolution target. This overlooks a key property of MRI acquisition physics: spatial resolution and signal-to-noise ratio (SNR) are inherently coupled, making any given low-resolution scan merely one of many possible realizations under varying acquisition trade-offs. We rethink MRI super-resolution as a physics-aware reconstruction problem, in which the goal is to identify the optimal resolution-SNR configuration and then super-resolve it to obtain high-quality MRI results. A key implication of this formulation is that MRI resolution becomes dynamic rather than fixed. To handle such resolution-heterogeneous inputs, we adapt 2D Gaussian Splatting (2D GS) to MRI by formulating reconstruction as a coordinate-based, resolution-agnostic rendering problem. To further enhance fidelity, we introduce three innovations: (1) a prior-aware Gaussian representation that combines an Anatomical Structure Prior for tissue-specific kernel initialization with an Imaging System Prior that captures hardware characteristics via a covariance dictionary; (2) a physics-constrained signal modeling scheme that predicts intrinsic tissue parameters (proton density rho and effective relaxation rate R2) and synthesizes intensities through governing physical equations, ensuring biophysically plausible contrast; and (3) a meta-learning framework that alleviates paired-data scarcity by pretraining on simulated data and adapting to real-world conditions. Extensive experiments on dynamic-resolution datasets and standard benchmarks demonstrate that our method achieves state-of-the-art performance, highlighting its strong potential for clinical deployment.
+  Pose-Free Feed-forward 3D Gaussian Splatting (3DGS) has recently emerged as a powerful paradigm for fast scene reconstruction. However, its performance degrades significantly in long image sequences due to cumulative camera pose estimation drift, which propagates errors into geometric modeling and severely limits rendering fidelity. In this work, we revisit the long-sequence bottleneck and identify pose drift as the primary factor restricting reconstruction quality. Furthermore, while SfM-based pseudo ground-truth poses introduce sensor noise, purely rendering-based supervision often leads to optimization instability and local minima due to the entangled optimization of geometry and pose. To address the challenges, we propose a synergistic pose-free framework that explicitly couples geometry and appearance via a Raymap-Guided Coupling Module (RGC). Concretely, we anchor Gaussian centers to raymap-induced geometry and jointly optimize RGB reconstruction, raymap consistency, and camera regularization under a unified objective, yielding a bidirectional feedback loop: stronger geometry improves rendering, and appearance supervision in turn refines geometry and pose. To further stabilize learning across wide temporal ranges, we introduce a Dual-Frequency Viewpoint Scheduling strategy that combines easy-to-hard interval expansion with replay of short-interval pairs. Extensive experiments across in-domain and cross-domain datasets show consistent gains in both rendering and pose estimation, with notably improved robustness on long sequences. Ablation studies validate our central insight: explicitly designed geometry-appearance synergy is the key to scalable and drift-robust pose-free feed-forward 3D reconstruction.
 
   </details>
 
 
 </details>
 
-<details><summary><b>Avatar / Human / Face</b> (1) · <a href="topics/avatar-human.md">full list →</a></summary>
+<details><summary><b>Generation / Diffusion</b> (3) · <a href="topics/generation.md">full list →</a></summary>
 
-- **[Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control](https://arxiv.org/abs/2607.05522)**  
-  *Gaoxiang Jia, Vikram Appia, Junzhou Huang, Xinlei Wang*  
-  `2026-07-06` · `cs.CV` · [abs](https://arxiv.org/abs/2607.05522) · [pdf](https://arxiv.org/pdf/2607.05522.pdf)
-  > 💡 提出渲染感知贝叶斯3DGS框架，用Normal-Inverse-Wishart后验实现不确定性量化与自适应复杂度控制，在主动视图选择任务中PSNR提升0.453dB。
+- **[EscFOA: Enhancing Spatial Learning for Visually Impaired Learners via Generative Spatial Audio in 360-Degree Educational Environments](https://arxiv.org/abs/2607.07015)**  
+  *Ziyu Luo, Xiaowei Dai, Siying Zhu, Xiaoming Chen*  
+  `2026-07-08` · `cs.SD` · [abs](https://arxiv.org/abs/2607.07015) · [pdf](https://arxiv.org/pdf/2607.07015.pdf)
+  > 💡 针对360度教育环境中视障学习者空间定向困难，提出基于3DGS与条件扩散模型的几何感知空间音频生成框架，显著提升空间学习。
 
   <details><summary>Abstract</summary>
 
-  3D Gaussian splatting (3DGS) is a strong representation for real-time novel-view synthesis, but its standard training pipeline relies on point estimates and hand-tuned heuristics, providing no native uncertainty or principled complexity control. This is most limiting under sparse views or fixed acquisition budgets, where a model must identify weakly supported geometry and select informative views. We introduce a rendering-aware Bayesian 3DGS framework that tracks Gaussian geometry with a Normal-Inverse-Wishart posterior over means and covariances using renderer-derived surrogate summaries. An optional Dirichlet-process extension adds a probabilistic component-usage signal, and the training schedule makes the closed-form versus approximate inference boundary explicit. Re-rendering posterior geometry samples yields native predictive uncertainty for interval calibration and active view selection. In a fixed-budget 16-to-32 active-view task, native NIW acquisition improves PSNR by +0.453 dB and LPIPS by -0.0146 over a scoring-only 3-member standard-ensemble baseline, winning 29/39 scene-seed pairs and 10/13 scene means; it also improves over PPU-style (+0.355 dB) and NIW-proxy (+0.401 dB) acquisition. NIW native intervals reduce 95% coverage error by about 17x relative to a shared proxy (0.046 vs. 0.796) and are about 10x closer to nominal coverage than a 3-member deep ensemble (0.047 vs. 0.454) at roughly one-third the training cost. As a reconstruction compatibility check, paired NIW-vs-standard analysis over 39 scene-seed runs yields +0.030 dB PSNR with 1.6% additional training time. These results position Bayesian 3DGS as a practical probabilistic scene representation for decision-facing tasks such as active view selection.
+  Immersive 360-degree educational environments often lack accessible spatial structure, limiting visually impaired learners' ability to orient, explore, and construct mental representations. This paper proposes EscFOA, a geometry-aware spatial audio generation framework designed as an \emph{acoustic scaffolding} to support spatial cognition. By integrating 3D Gaussian Splatting (3DGS) with conditional diffusion models, EscFOA reconstructs scene geometry from 360-degree videos to synthesize high-fidelity spatial audio consistent with the environmental structure. Explicitly targeting learning outcomes like independent spatial orientation and reduced cognitive load, EscFOA significantly outperforms conventional monaural and stereo audio in supporting spatial learning behaviors among blindfolded sighted participants (simulating visually impaired learners). These findings demonstrate that geometry-consistent generative audio can effectively enable inclusive access to complex spatial learning materials.
+
+  </details>
+
+
+- **[PUF: Plug-and-Play Uncertainty-Aware Fusion for Online 3D Scene Graph Generation](https://arxiv.org/abs/2607.07170)**  
+  *Yi Yang, Myrna Castillo, Bodo Rosenhahn, Michael Ying Yang*  
+  `2026-07-08` · `cs.CV` · [abs](https://arxiv.org/abs/2607.07170) · [pdf](https://arxiv.org/pdf/2607.07170.pdf)
+  > 💡 针对在线3D场景图生成中确定性融合忽视不确定性问题，提出即插即用不确定性感知融合框架，用概率似然和狄利克雷证据累积提升性能。
+
+  <details><summary>Abstract</summary>
+
+  Online 3D scene graph generation builds a persistent, structured representation of a scene by incrementally fusing 2D observations into a global 3D graph. Existing online methods treat this fusion as a fully deterministic pipeline, where we identify three sources of uncertainty that are overlooked: observation, 2D model, and 3D representation. We propose PUF: a Plug-and-play, Uncertainty-aware, and training-free Fusion framework. Scene graph node association is reformulated as a probabilistic likelihood over semantic and spatial factors, replacing binary accept/reject gates. Dirichlet evidence accumulation distributes class and relationship evidence across plausible candidates proportional to association likelihood. An optional class-conditional prior completes edges for sparsely or never co-observed object pairs. We instantiate PUF with both a 3D Gaussian and a 3D voxel backend and observe consistent improvements, demonstrating its ability to generalize across different representations. Experiments on the 3DSSG and ReplicaSSG benchmarks show that our method substantially outperforms existing approaches while maintaining real-time latency. These results establish uncertainty-aware fusion as a principled and effective paradigm for online 3D scene understanding. The source code is publicly available at https://github.com/yyyyangyi/PUF.
+
+  </details>
+
+
+- **[RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation](https://arxiv.org/abs/2607.06699)**  
+  *Shujie Zhang, Jingkun Yi, Weipeng Zhong, Zirui Zhou, Yangkun Zhu, Hanqing Wang, Xudong Xu, Weinan Zhang, Chunhua Shen*  
+  `2026-07-07` · `cs.RO` · [abs](https://arxiv.org/abs/2607.06699) · [pdf](https://arxiv.org/pdf/2607.06699.pdf)
+  > 💡 通过分层设计融合碰撞感知前景和3D高斯泼溅背景，将单张RGB图转化为稳定仿真场景，支持机器人泛化学习与评估。
+
+  <details><summary>Abstract</summary>
+
+  Recovering real-world scenes as interactive simulation environments can enable generalizable robot learning and reproducible policy evaluation. However, constructing scenes that are both physically stable and visually faithful remains slow and expensive. In this work, we present RoboSnap, a real-to-sim framework that turns a single RGB image into a simulation-ready scene. The key idea is a layered design that separates the physics-critical interaction area from the surrounding visual context: collision-aware foreground assets are refined for stable robot interaction, while a 3D Gaussian splatting visual layer preserves faithful background appearance under novel views. Experiments on DROID scenes and real-robot tasks show that RoboSnap achieves reliable trajectory replay in the recovered scenes, supports task-specific synthetic data generation for policy training, and yields meaningful sim-real correlation for policy evaluation. To further support real-to-sim research, we introduce DROID-Sim, a real-to-sim companion dataset constructed from 564 real-world scenes in DROID. Extensive experiments suggest that the value of real-to-sim methods lies not only in high-fidelity visual reconstruction, but in turning real environments into reusable infrastructure for robot learning and evaluation.
 
   </details>
 
 
 </details>
 
-<details><summary><b>Editing / Stylization / Watermark</b> (1) · <a href="topics/editing.md">full list →</a></summary>
+<details><summary><b>SLAM / Localization / Mapping</b> (1) · <a href="topics/slam.md">full list →</a></summary>
 
-- **[SSA-3DGS: Unsupervised Removal of Screen-Space Artifacts for 3D Gaussian Splatting](https://arxiv.org/abs/2607.05598)**  
-  *Kristof Overdulve, Lode Jorissen, Nick Michiels*  
-  `2026-07-06` · `cs.GR` · [abs](https://arxiv.org/abs/2607.05598) · [pdf](https://arxiv.org/pdf/2607.05598.pdf)
-  > 💡 提出SSA-3DGS无监督框架，通过联合优化3D场景与可学习2D覆盖层消除屏幕空间伪影，有效提升重建保真度。
-
-  <details><summary>Abstract</summary>
-
-  Novel View Synthesis (NVS) methods, such as 3D Gaussian Splatting (3DGS), rely heavily on the assumption of clean, multi-view consistent, posed input images. Real-world captures can violate this assumption due to screen-space artifacts-static occlusions fixed to the 2D image plane rather than to the 3D world. Common examples include physical sensor defects, environmental obstructions (such as rain or mud on the lens enclosure), capture obstructions (such as a thumb over the camera sensor or a dashboard visible in dashcam footage), and digital overlays (such as watermarks or UI elements). When present, they are erroneously baked into the 3D geometry as "floaters" or near-camera artifacts, degrading the quality of novel-view rendering. In this work, we propose SSA-3DGS, an unsupervised framework that jointly optimizes a 3D scene and a learnable 2D overlay to recover a clean 3D scene and the corrupting artifacts. By exploiting geometric consensus across views, our method effectively disentangles static artifacts from the 3D scene geometry without supervision or manual input. Across diverse synthetic corruptions and a self-captured real-world dataset, SSA-3DGS improves reconstruction fidelity by up to 9 dB PSNR over 3DGS trained on the same corrupted inputs, while faithfully preserving the corrupting artifact.
-
-  </details>
-
-
-</details>
-
-<details><summary><b>Semantic / Scene Understanding</b> (1) · <a href="topics/semantic.md">full list →</a></summary>
-
-- **[GaussFusion: Towards Multimodal 3D Gaussian Pretraining](https://arxiv.org/abs/2607.05906)**  
-  *Zhixuan You, Jihua Zhu, Yiding Sun, Zihao Guo, Haozhe Cheng, Dongxu Zhang, Lin Chen, Hainan Luo*  
-  `2026-07-07` · `cs.CV` · [abs](https://arxiv.org/abs/2607.05906) · [pdf](https://arxiv.org/pdf/2607.05906.pdf)
-  > 💡 针对3D高斯预训练缺乏语义监督，提出跨模态对齐和显著性引导掩码，提升表征可迁移性。
+- **[GeoGS-SLAM: Geometry-Only Gaussian Splatting for Dense Monocular SLAM](https://arxiv.org/abs/2607.07452)**  
+  *Lipu Zhou, Yaoyun Kang, Junxiang Pang, Shengkai Sun, Tingting Bao, Kehan Wang*  
+  `2026-07-08` · `cs.RO` · [abs](https://arxiv.org/abs/2607.07452) · [pdf](https://arxiv.org/pdf/2607.07452.pdf)
+  > 💡 提出仅几何高斯点表示用于稠密单目SLAM，减少80%参数并加速收敛，回环更新防止地图撕裂，性能领先。
 
   <details><summary>Abstract</summary>
 
-  3D Gaussian Splatting provides an explicit representation that jointly models geometry and appearance, serving as a scalable foundation for 3D representation learning. Existing pre-training methods for Gaussian representations, such as masked Gaussian reconstruction, primarily capture local structures but offer limited semantic supervision. In this paper, we propose GaussFusion, a multimodal pre-training framework for 3D Gaussian representations. GaussFusion integrates image and text supervision into masked Gaussian modeling through cross-modal semantic alignment, enabling the Gaussian encoder to learn both visual and language-level semantic information during pre-training. To better adapt masked modeling to the non-uniform distribution of Gaussian primitives, we further propose Gaussian Salience-guided Multi-scale Hole Masking (GSHM). GSHM constructs spatially continuous masked regions based on Gaussian salience. By applying hole masks at multiple scales, GSHM encourages the encoder to capture both fine-grained local patterns and broader structural dependencies. Extensive experiments on downstream tasks demonstrate that GaussFusion improves the transferability of Gaussian representations. Notably, GaussFusion outperforms Gaussian-MAE on ModelNet40 and ScanObjectNN (PB-T50-RS) by 0.61\% and 3.85\%, respectively.
+  Dense visual SLAM is a fundamental problem in robotics. Recent advances in 3DGS have demonstrated its potential for dense SLAM. Existing 3DGS frameworks focus on both appearance and geometry modeling. However, scene geometry is typically more critical for SLAM than novel view synthesis because downstream robotic tasks, such as navigation and obstacle avoidance, rely primarily on accurate spatial geometry rather than photorealistic rendering. This observation raises a natural question: Is it feasible for 3DGS to perform 3D reconstruction without scene appearance modeling? Motivated by this, we propose Geometry-only Gaussian Splatting (GeoGS), which directly reconstructs scene geometry, and further present GeoGS-SLAM, a dense visual SLAM system built upon this representation. Specifically, GeoGS retains only spatial parameters to reduce the number of per-primitive parameters by over 80%. In contrast to existing 3DGS methods, GeoGS focuses solely on geometric reconstruction, which significantly reduces the number of Gaussian primitives, accelerates geometric convergence, and enhances robustness to illumination variations. In addition, we present an effective training framework that optimizes the Gaussian primitives via single-view and multi-view geometric and photometric supervision, and speeds up geometry convergence with a local-plane driven initialization that better aligns primitives with local structures. Furthermore, we introduce a map update strategy for loop closure that globally transforms the Gaussian map to align it with the corrected pose estimates, thereby preventing map tearing caused by inconsistent per-viewpoint pose corrections in existing methods. Extensive experiments on synthetic and real-world benchmarks demonstrate that our method outperforms SOTA methods in terms of online mapping efficiency and geometric reconstruction quality.
 
   </details>
 
