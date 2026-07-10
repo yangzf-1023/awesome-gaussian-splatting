@@ -6,8 +6,8 @@ Every Gaussian-Splatting paper this repo has ever ingested, grouped by sub-topic
 
 | # | Topic | Papers | File |
 |---|---|---|---|
-| 1 | Survey & Benchmark | 79 | [survey.md](survey.md) |
-| 2 | Dynamic / 4D / Streaming | 274 | [dynamic-4d.md](dynamic-4d.md) |
+| 1 | Survey & Benchmark | 80 | [survey.md](survey.md) |
+| 2 | Dynamic / 4D / Streaming | 276 | [dynamic-4d.md](dynamic-4d.md) |
 | 3 | Avatar / Human / Face | 42 | [avatar-human.md](avatar-human.md) |
 | 4 | Generation / Diffusion | 67 | [generation.md](generation.md) |
 | 5 | Editing / Stylization / Watermark | 37 | [editing.md](editing.md) |
