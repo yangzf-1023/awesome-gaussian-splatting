@@ -160,6 +160,7 @@ Found a missing paper, wrong classification, or bad TL;DR? Open an issue or PR �
 
 
 
+
 ## Browse by topic
 
 Each topic file accumulates every paper this repo has ever ingested in that bucket, newest first.
@@ -169,12 +170,12 @@ Each topic file accumulates every paper this repo has ever ingested in that buck
 | # | Topic | Total Papers | Latest-day Δ | Browse |
 |---|---|---|---|---|
 | 1 | **Survey & Benchmark** | 80 | — | [topics/survey.md](topics/survey.md) |
-| 2 | **Dynamic / 4D / Streaming** | 276 | — | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
+| 2 | **Dynamic / 4D / Streaming** | 277 | **+1** | [topics/dynamic-4d.md](topics/dynamic-4d.md) |
 | 3 | **Avatar / Human / Face** | 42 | — | [topics/avatar-human.md](topics/avatar-human.md) |
-| 4 | **Generation / Diffusion** | 67 | — | [topics/generation.md](topics/generation.md) |
+| 4 | **Generation / Diffusion** | 68 | **+1** | [topics/generation.md](topics/generation.md) |
 | 5 | **Editing / Stylization / Watermark** | 37 | — | [topics/editing.md](topics/editing.md) |
 | 6 | **Compression / Compact / Efficient Storage** | 37 | — | [topics/compression.md](topics/compression.md) |
-| 7 | **Rendering / Acceleration / Mobile** | 55 | — | [topics/rendering.md](topics/rendering.md) |
+| 7 | **Rendering / Acceleration / Mobile** | 56 | **+1** | [topics/rendering.md](topics/rendering.md) |
 | 8 | **SLAM / Localization / Mapping** | 17 | — | [topics/slam.md](topics/slam.md) |
 | 9 | **Autonomous Driving / Outdoor** | 18 | — | [topics/driving.md](topics/driving.md) |
 | 10 | **Medical / Surgical** | 4 | — | [topics/medical.md](topics/medical.md) |
@@ -191,8 +192,53 @@ Only the most recent crawl day is shown inline. Day-by-day history older than 30
 
 <!-- LATEST-START -->
 
-### 2026-07-12 (UTC) — 0 new paper(s)
+### 2026-07-13 (UTC) — 3 new paper(s)
 
-_No new papers today._
+<details><summary><b>Dynamic / 4D / Streaming</b> (1) · <a href="topics/dynamic-4d.md">full list →</a></summary>
+
+- **[SplatCtrl: Perception-Action Coupling via Gaussian Scene Representations and Reactive Robot Control](https://arxiv.org/abs/2607.08948)**  
+  *Siddarth Jain, Ho Jin Choi*  
+  `2026-07-09` · `cs.RO` · [abs](https://arxiv.org/abs/2607.08948) · [pdf](https://arxiv.org/pdf/2607.08948.pdf)
+  > 💡 提出基于3D高斯泼溅的混合滤波与连续距离场方法，实现动态环境下的实时场景重建与无碰撞机器人反应控制。
+
+  <details><summary>Abstract</summary>
+
+  Robotic manipulators excel in structured environments but face substantial challenges in unstructured and dynamic settings. This paper presents SplatCtrl, a unified framework for real-time scene reconstruction and reactive robot motion generation to enable collision-free robotic arm control in previously unseen and continuously changing environments. Building on 3D Gaussian Splatting (3D-GS), we introduce a hybrid voxel-based filtering and dynamic Gaussian relocation strategy that supports efficient scene reconstruction from RGB-D streams while accommodating environmental changes. For safe and reactive control, we further propose a method for deriving continuous signed distance functions from isotropic Gaussians, providing stable and differentiable collision probability estimates that bridge classical distance fields with the modern implicit representation. These continuous distance metrics are incorporated into control barrier functions, resulting in a unified perception-action coupling framework that supports smooth and reliable real-time motion generation in response to scene changes. Experimental validation in simulation, on physical robot, and within shared human-robot workspace demonstrates the framework's effectiveness, achieving integrated scene reconstruction and reactive control in uncertain, and dynamic environments.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Generation / Diffusion</b> (1) · <a href="topics/generation.md">full list →</a></summary>
+
+- **[StereoSplat+: Feed-Forward Stereo Gaussian Splatting with Diffusion-Assisted Progressive Inference](https://arxiv.org/abs/2607.08808)**  
+  *Zihua Liu, Masatoshi Okutomi*  
+  `2026-07-09` · `cs.CV` · [abs](https://arxiv.org/abs/2607.08808) · [pdf](https://arxiv.org/pdf/2607.08808.pdf)
+  > 💡 单个立体对重建3DGS困难，提出StereoSplat前馈估计器融合成本体积与三平面，结合扩散增强渐进推理提升遮挡区渲染质量与几何精度。
+
+  <details><summary>Abstract</summary>
+
+  Recent advances in 3D Gaussian Splatting (3DGS) have enabled high-quality, render-ready scene representations for novel-view synthesis. However, most existing 3DGS pipelines rely on multi-view observations (or non-causal access to future frames) to achieve sufficient coverage, which is often unavailable in on-device robotics and AR settings where sensing is restricted to a single stereo rig. Recovering a high-quality 3DGS scene from one stereo observation, therefore, remains challenging due to occlusions, limited field of view, and missing geometry. We present StereoSplat+, a diffusion-enhanced feed-forward framework that enables causal reconstruction from a single stereo pair. Our method builds on two key components. First, we propose StereoSplat, an input-invariant feed-forward 3D Gaussian estimator that takes a variable number of posed stereo pairs as input and predicts high-quality 3D Gaussians. StereoSplat fuses complementary geometry cues via a cost-volume branch and a triplane-based 3D volume branch and leverages continuous pose encoding to generalize across view counts and camera configurations. Second, since multiple posed stereo pairs are typically unavailable at inference time, we introduce a diffusion-enhanced one-shot progressive inference scheme called StereoSplat+: starting from one stereo pair, we render novel stereo views from the predicted 3DGS, refine them with a one-step diffusion enhancer, and feed them back as additional inputs to update the 3DGS. Experiments on the KITTI-360 dataset show that StereoSplat+ improves novel-view rendering quality and geometry accuracy, especially in occluded regions and under strong view extrapolation, outperforming recent feed-forward 3DGS baselines.
+
+  </details>
+
+
+</details>
+
+<details><summary><b>Rendering / Acceleration / Mobile</b> (1) · <a href="topics/rendering.md">full list →</a></summary>
+
+- **[AnythingReality: Robust Online Gaussian Splatting SLAM for Open-Vocabulary VR Scene Exploration](https://arxiv.org/abs/2607.09260)**  
+  *Timofei Kozlov, Dmitrii Maliukov, Andrey Marchenko, Miguel Altamirano Cabrera, Dzmitry Tsetserukou*  
+  `2026-07-10` · `cs.CV` · [abs](https://arxiv.org/abs/2607.09260) · [pdf](https://arxiv.org/pdf/2607.09260.pdf)
+
+  <details><summary>Abstract</summary>
+
+  We present a novel integrated architecture for robust online 3D Gaussian splatting, real-time VR exploration, and speech-driven Vision-Language-Model interaction. Unlike methods assuming clean depth or external poses, our system combines ORB-SLAM3-based pose estimation with online Gaussian reconstruction for noisy real-world data. A VR pipeline enables immersive exploration of incremental reconstructions; a semantic module transcribes voice commands, generates scene descriptions, and records points of interest. Against state-of-the-art online Gaussian splatting methods, we improve image quality on our dataset (+14.5% PSNR, +8.6% SSIM, -14.3% LPIPS) and TUM-RGBD (+11.7% PSNR, +7.8% SSIM, -21.6% LPIPS), with comparable or superior frame rates via quality-speed configurations. We achieve an 88% VLM object-recognition rate.
+
+  </details>
+
+
+</details>
 <!-- LATEST-END -->
 <!-- AUTO-GENERATED-END -->
