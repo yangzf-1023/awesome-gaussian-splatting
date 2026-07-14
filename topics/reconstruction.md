@@ -12,6 +12,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-14
+
+- **[Incremental Online Scene Reconstruction by 3D Gaussian Triangulation](https://arxiv.org/abs/2607.10690)**  
+  *Yanjin Zhu, Shaofan Liu, Jianke Zhu*  
+  `2026-07-12` · `cs.CV` · [abs](https://arxiv.org/abs/2607.10690) · [pdf](https://arxiv.org/pdf/2607.10690.pdf)
+  > 💡 提出在线三角化3D高斯框架，直接提取网格并通过平面约束优化，实现高质量渲染与增量表面重建，降低存储开销。
+
+  <details><summary>Abstract</summary>
+
+  Incremental scene reconstruction is essential for real-world applications. Although 3D Gaussian Splatting shows strong potential, most existing approaches require offline conversion of the optimized Gaussians into an intermediate implicit field for explicit mesh extraction, which hinders seamless integration with downstream tasks. To address this limitation, we propose a novel online framework that incrementally reconstructs and updates high-fidelity explicit meshes by directly triangulating a dense geometric Gaussian representation, which supports both high-quality rendering and incremental surface reconstruction. Moreover, we present a direct meshing algorithm that efficiently extracts and updates the mesh from the Gaussian set. To ensure mesh accuracy, we enforce a plane-based pulling constraint that dynamically aligns 3D Gaussian primitives to the approximated local surface. Furthermore, our framework significantly reduces memory and computational overhead during long-sequence processing by dynamically freezing fully optimized historical regions. Experiments on public datasets demonstrate that our method outperforms conventional Gaussian-based methods on both rendering quality and reconstruction accuracy.
+
+  </details>
+
 ## 2026-07-07
 
 - **[City-Level 3D Surface Reconstruction with Viewpoint Orientation Partitioning and Scene Completion](https://arxiv.org/abs/2607.03771)**  

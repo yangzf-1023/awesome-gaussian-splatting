@@ -18,6 +18,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-14
+
+- **[SyncSpace: Layout-Conditioned 3D Gaussian Splatting for Space Reskinning in Mixed Reality](https://arxiv.org/abs/2607.10050)**  
+  *Qinchuan Zhang, Weibo Xu, Yunge Wen*  
+  `2026-07-11` · `cs.HC` · [abs](https://arxiv.org/abs/2607.10050) · [pdf](https://arxiv.org/pdf/2607.10050.pdf)
+  > 💡 先提取布局几何先验生成3DGS场景，再配准到物理空间，实现混合现实中布局保留的多风格空间重绘。
+
+  <details><summary>Abstract</summary>
+
+  We present SyncSpace, a system that achieves both spatial alignment and visual consistency between a generated 3DGS world and physical space. We first scan the space via depth sensing to extract 3D bounding boxes, which we render into a layout-only panorama and feed as a geometric prior to a generative world model, producing a Gaussian splat scene in which objects are re-semantized to fit a target style without per-object control. We then align the generated scene to physical space with a coarse-to-fine registration algorithm, refined manually via pinch gestures when automatic registration does not converge. We demonstrate a hand-tracked engulfment interaction in which the virtual world rises to replace the physical space, and show a single space reskinned into multiple stylistically distinct worlds with its layout preserved.
+
+  </details>
+
 ## 2026-07-08
 
 - **[Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control](https://arxiv.org/abs/2607.05522)**  

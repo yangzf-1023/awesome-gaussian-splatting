@@ -11,6 +11,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-14
+
+- **[SalientGS: Unified SfM-to-3DGS with Importance-Guided MCMC Gaussian Allocation](https://arxiv.org/abs/2607.11285)**  
+  *Tianyu Xiong, Rui Li, Suning Ge, Jiaqi Yang*  
+  `2026-07-13` · `cs.CV` · [abs](https://arxiv.org/abs/2607.11285) · [pdf](https://arxiv.org/pdf/2607.11285.pdf)
+  > 💡 提出统一SfM到3DGS流水线，用重要性引导MCMC高斯分配重新分配容量到欠拟合区域，实现快速高质量重建。
+
+  <details><summary>Abstract</summary>
+
+  Reconstructing 3D scenes from unordered images remains bottlenecked by expensive Structure-from-Motion (SfM) preprocessing and frozen pose interfaces. We present SalientGS, a unified SfM-to-3D Gaussian Splatting (3DGS) pipeline. Its central contribution is importance-guided Markov Chain Monte Carlo (MCMC) Gaussian allocation, which aggregates multi-view residuals into per-Gaussian underfit and redundancy signals. These signals define a smooth importance-weighted sampling distribution that biases both birth and relocation toward underfit regions. This reallocates capacity from well-fit areas without altering the underlying stochastic gradient Langevin dynamics (SGLD). SalientGS achieves end-to-end reconstruction in 15 minutes with state-of-the-art perceptual quality. The supplementary material provides dedicated sections for Per-Scene Qualitative Comparisons and Per-Image Learned Perceptual Image Patch Similarity (LPIPS) Analysis, including failure cases. Code and evaluation scripts are available at https://github.com/Six-Bit-TX/SalientGS.
+
+  </details>
+
 ## 2026-07-04
 
 - **[InvSplat: Inverse Feed-Forward Scene Splatting](https://arxiv.org/abs/2607.02301)**  
