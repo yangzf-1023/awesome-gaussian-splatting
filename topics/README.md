@@ -7,11 +7,11 @@ Every Gaussian-Splatting paper this repo has ever ingested, grouped by sub-topic
 | # | Topic | Papers | File |
 |---|---|---|---|
 | 1 | Survey & Benchmark | 80 | [survey.md](survey.md) |
-| 2 | Dynamic / 4D / Streaming | 278 | [dynamic-4d.md](dynamic-4d.md) |
-| 3 | Avatar / Human / Face | 43 | [avatar-human.md](avatar-human.md) |
-| 4 | Generation / Diffusion | 69 | [generation.md](generation.md) |
+| 2 | Dynamic / 4D / Streaming | 279 | [dynamic-4d.md](dynamic-4d.md) |
+| 3 | Avatar / Human / Face | 44 | [avatar-human.md](avatar-human.md) |
+| 4 | Generation / Diffusion | 71 | [generation.md](generation.md) |
 | 5 | Editing / Stylization / Watermark | 37 | [editing.md](editing.md) |
-| 6 | Compression / Compact / Efficient Storage | 38 | [compression.md](compression.md) |
+| 6 | Compression / Compact / Efficient Storage | 39 | [compression.md](compression.md) |
 | 7 | Rendering / Acceleration / Mobile | 57 | [rendering.md](rendering.md) |
 | 8 | SLAM / Localization / Mapping | 17 | [slam.md](slam.md) |
 | 9 | Autonomous Driving / Outdoor | 18 | [driving.md](driving.md) |
