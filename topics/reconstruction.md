@@ -13,6 +13,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-16
+
+- **[COLMAR: Cooperative View Policy Learning for Multi-Agent Active 3D Reconstruction](https://arxiv.org/abs/2607.13524)**  
+  *Phu Pham, Damon Conover, Aniket Bera*  
+  `2026-07-15` · `cs.RO` · [abs](https://arxiv.org/abs/2607.13524) · [pdf](https://arxiv.org/pdf/2607.13524.pdf)
+  > 💡 通过共享策略优化和重建感知目标，COLMAR解决了多智能体主动3D重建中的冗余观测问题，精度提升54%，覆盖率提升49%。
+
+  <details><summary>Abstract</summary>
+
+  Active 3D reconstruction requires selecting informative viewpoints under limited sensing budgets. In multi-agent settings, coordination inefficiencies such as redundant observations and spatial clustering can significantly reduce reconstruction quality. We present COLMAR, a cooperative view policy learning framework for multi-agent active 3D reconstruction. COLMAR formulates viewpoint allocation as a shared policy optimization over map-centric observations and introduces a reconstruction-aware objective that promotes overlap-aware coverage, team-level discovery, and collision-safe exploration. Dense feedback derived from incremental reconstruction updates aligns exploration behavior with downstream geometric quality. The policy is trained using parameter-sharing Proximal Policy Optimization (PPO) with independent per-agent action selection at deployment, conditioned on a fused team map and without inter-agent message passing for decision making. Selected viewpoints are then reconstructed with 3D Gaussian Splatting (3DGS) for high-fidelity photometric evaluation. Experiments on GLEAM and Replica demonstrate consistent improvements over heuristic and non-cooperative baselines, achieving up to 54% higher reconstruction accuracy and 49% greater coverage under matched sensing budgets.
+
+  </details>
+
 ## 2026-07-14
 
 - **[Incremental Online Scene Reconstruction by 3D Gaussian Triangulation](https://arxiv.org/abs/2607.10690)**  

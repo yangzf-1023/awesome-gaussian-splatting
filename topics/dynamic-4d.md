@@ -29,6 +29,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-16
+
+- **[Learning Physics-Guided Residual Dynamics for Deformable Object Simulation](https://arxiv.org/abs/2607.13451)**  
+  *Shivansh Patel, Kaifeng Zhang, Sanjay Pokkali, Svetlana Lazebnik, Yunzhu Li*  
+  `2026-07-15` · `cs.RO` · [abs](https://arxiv.org/abs/2607.13451) · [pdf](https://arxiv.org/pdf/2607.13451.pdf)
+  > 💡 结合可优化弹簧质点模型与残差修正网络，使用滑动窗口Transformer实现更精确的可变形物体模拟。
+
+  <details><summary>Abstract</summary>
+
+  Simulating deformable objects is essential for a wide range of robotic manipulation applications, yet accurately predicting their dynamics remains challenging. We propose Physics-Guided Residual Dynamics (PGRD), a hybrid simulation framework that combines the advantages of physics-based and learning-based approaches. Specifically, PGRD combines an optimizable spring-mass simulator as a backbone with a learned neural network that predicts residual corrections to the physics-based predictions. We adopt a velocity-based formulation to ensure stable simulation and a sliding-window transformer architecture to capture temporal dependencies. We show that PGRD produces more accurate results than both purely physics-based and learning-based methods on a set of diverse real-world deformable objects. We further demonstrate the utility of PGRD in two applications: manipulation planning via Model Predictive Control, including a language-conditioned setting with a generated goal image; and interactive simulation via action-conditioned video prediction by 3D Gaussian Splatting.
+
+  </details>
+
+- **[A 3DGS-Driven Dynamic Viewpoint and Vibrotactile Framework for Subsea Teleoperation Validated via fNIRS](https://arxiv.org/abs/2607.13067)**  
+  *Fang Xu, Tianyu Zhou, Ruitong Tian, Md Jahidul Islam, Jing Du*  
+  `2026-07-10` · `cs.RO` · [abs](https://arxiv.org/abs/2607.13067) · [pdf](https://arxiv.org/pdf/2607.13067.pdf)
+  > 💡 提出结合3DGS动态视点和振动触觉的多模态框架，有效改善水下远程操作在不同延迟下的性能。
+
+  <details><summary>Abstract</summary>
+
+  Teleoperating remotely operated vehicles (ROVs) in flooded, cluttered infrastructure is fundamentally limited by narrow 2D egocentric views and subsea communication latency. We present a multimodal teleoperation architecture built on a ROS-Unity framework that decouples proactive spatial planning from reactive boundary avoidance. The system replaces static camera feeds with a Dynamic Adaptive Viewpoint System (DAVS), which uses continuous optimization and real-time 3D Gaussian Splatting (3DGS) to synthesize an occlusion-free exocentric viewpoint from onboard state estimation. To further reduce sensory workload, a torso-mounted vibrotactile suit maps local obstacle clearance to intuitive haptic proximity cues. The architecture was evaluated in a controlled human-subject study (N = 30) using a BlueROV2 navigating a complex simulated underwater facility. A 3 x 4 repeated-measures design compared three interaction modalities (Egocentric, Haptic, Exocentric) under four communication delays (0.0-1.0 s). Performance was quantified using behavioral measures and functional near-infrared spectroscopy (fNIRS) to assess task-evoked prefrontal activation. Results show that reactive haptic feedback improves path adherence under minimal delay, whereas the 3DGS-driven exocentric visualization provides superior resilience under severe latency (0.5-1.0 s), significantly outperforming the other modalities. fNIRS further revealed a cognitive disengagement effect: increasing latency during conventional egocentric teleoperation overloaded working memory and reduced prefrontal activation, whereas the proactive spatial context provided by DAVS sustained executive control. These findings demonstrate that spatially grounded, multimodal assistance can substantially improve operator performance and cognitive endurance during latency-degraded underwater teleoperation.
+
+  </details>
+
 ## 2026-07-15
 
 - **[Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements](https://arxiv.org/abs/2607.12362)**  

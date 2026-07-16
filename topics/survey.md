@@ -21,6 +21,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-16
+
+- **[Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT](https://arxiv.org/abs/2607.13682)**  
+  *Chulin Zhao, Yiran Xu, Shu Liu*  
+  `2026-07-15` · `cs.CV` · [abs](https://arxiv.org/abs/2607.13682) · [pdf](https://arxiv.org/pdf/2607.13682.pdf)
+  > 💡 利用辐射高斯泼溅的线性属性导出闭式变分方差，首次系统校准表明不确定性可准确排序稀疏视图CT重建误差。
+
+  <details><summary>Abstract</summary>
+
+  Radiative Gaussian splatting has made sparse-view CT reconstruction fast, but existing methods output point estimates with no notion of where the reconstruction can be trusted. We exploit a property of transmissive X-ray imaging that RGB splatting cannot claim -- projection and voxelization are strictly linear in the per-Gaussian densities -- to equip radiative Gaussians with a variational density posterior whose predictive variance propagates in closed form, exactly, in a single forward pass, in both volume space ($σ^2(x)=\sum_i g_i(x)^2 s_i^2$) and projection space ($\mathrm{Var}[I_p]=\sum_i w_{i,p}^2 s_i^2$). We present the first systematic calibration study for Gaussian-splatting CT (Spearman / AUSE / ECE with temperature scaling), showing that the resulting per-voxel uncertainty ranks true reconstruction error on 14 of 15 scenes of the official benchmark across three view budgets -- 9 of 15 additionally meeting our magnitude-calibration target after a single temperature -- while the perturbation-ensemble heuristic of concurrent work, transplanted to voxel space under the same protocol on our development scenes, does not (rank correlation as low as $-0.08$). We then dissect why uncalibrated acquisition scores can nevertheless select acceptable views, identifying three regimes -- flat (isotropic, balanced), pathological (degenerate coverage), and anisotropic -- and showing, in controlled single-scene testbeds, that principled uncertainty earns a measurable premium only in the last, motivating a coverage-gated, maturity-scheduled acquisition policy; the same calibrated posterior further points toward a dose-adaptive stopping rule, whose experimental validation we leave to future work.
+
+  </details>
+
 ## 2026-07-10
 
 - **[Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction](https://arxiv.org/abs/2607.08769)**  

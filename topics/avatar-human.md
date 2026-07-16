@@ -20,6 +20,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-16
+
+- **[T3HG-Editor: Text-driven 3D Human Garment Editing with Body Priors Embedded in SMPL-X](https://arxiv.org/abs/2607.13654)**  
+  *Shaoru Sun, Xingtao Wang, Zihan Ma, Wenrui Li, Jiantao Zhou, Debin Zhao, Xiaopeng Fan*  
+  `2026-07-15` · `cs.CV` · [abs](https://arxiv.org/abs/2607.13654) · [pdf](https://arxiv.org/pdf/2607.13654.pdf)
+  > 💡 利用SMPL-X先验播种高斯、聚合跨视图令牌并裁剪溢出高斯，实现高保真且一致的文本驱动3D服装编辑。
+
+  <details><summary>Abstract</summary>
+
+  While 3D Gaussian Editing (3DGE) has seen substantial progress, text-driven 3D human garment editing remains largely underexplored. Existing 3DGE works typically follow a paradigm that applies 2D editing techniques to multi-view rendered images and updates 3D Gaussians based on the modified images. Extending such methods to 3D human garment editing suffers from low-fidelity outcomes, caused by introduced distortions and garment inconsistencies. A promising breakthrough opportunity arises from the SMPL eXpressive (SMPL-X) model that embodies rich prior information for virtual humans. Motivated by this insight, we propose a text-driven 3D human garment editor termed T3HG-Editor, which delivers high-fidelity and garment consistent results by leveraging geometry and joint priors embedded in SMPL-X. Specifically, T3HG-Editor contains three stages, namely obtainment of editable Gaussians, garment consistent editing, and Gaussian updating with overflow pruning. The obtainment of editable Gaussians begins with seeding Gaussians along SMPL-X normals to generate sufficient near surface Gaussians, followed by a 2D mask constraint that precisely localizes the target Gaussians to be edited. The garment consistent editing aggregates tokens corresponding to the same SMPL-X vertex across multiple views and propagates them to their original views, enforcing garment consistency without requiring additional training. Gaussian updating with overflow pruning employs a Signed Distance Function (SDF) defined on SMPL-X to construct a human distance field, which is then integrated with a 2D semantic mask to prune overflowing Gaussians, thus preventing contamination of non-target regions. Experiments on multiple subjects and diverse garment types demonstrate that T3HG-Editor outperforms state-of-the-art methods in both editing quality and garment consistency.
+
+  </details>
+
+- **[Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154)**  
+  *Lingxiao Guo, Huanyu Li, Guanya Shi*  
+  `2026-07-14` · `cs.RO` · [abs](https://arxiv.org/abs/2607.13154) · [pdf](https://arxiv.org/pdf/2607.13154.pdf)
+  > 💡 从单一RGBD演示重建高斯泼溅背景与轨迹，通过合成数据引擎生成多样化数据，实现开放世界移动操控的泛化。
+
+  <details><summary>Abstract</summary>
+
+  Learning open-world mobile manipulation policies requires vast data to achieve spatial generalization, long-horizon robustness, and scene generalization. Current prevailing data collection paradigms, teleoperation and UMI, demand prohibitive human effort and cost at scale. To scale beyond the limits of manual data collection, we seek to maximize the value of each human demonstration by scalable data generation. To this end, we introduce WANDA: learning open-World mobile mANipulation from one demonstration via a synthetic DAta engine. WANDA first reconstructs background Gaussian splats and robot-object interaction trajectories from source RGBD observations, as a world substrate for later planning and rendering. It then rearranges contact-rich robot-object interaction segments into extensive spatial configurations, utilizing whole-body motion planning to chain them into new trajectories. To enhance long-horizon robustness, it applies Corrective State Expansion to increase the robot and object state diversity at different stages of mobile manipulation. To unlock cross-environment generalization, trajectories are synthesized on diverse generated 3D worlds from everyday photos. Furthermore, we synthesize photo-realistic observations by compositing rendered robot and object meshes with Gaussian splatting backgrounds. We evaluate our approach on extensive simulation and real-world tasks in various scenes. Experiments show that policies trained with WANDA achieve long-horizon robustness, broad spatial generalization and cross-environment generalization from one real demonstration. Moreover, WANDA naturally supports cross-embodiment data generation, validated by zero-shot deployment on another mobile manipulator with a distinct morphology.
+
+  </details>
+
 ## 2026-07-15
 
 - **[VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation](https://arxiv.org/abs/2607.12356)**  
