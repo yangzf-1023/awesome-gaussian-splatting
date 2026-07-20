@@ -31,6 +31,42 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-20
+
+- **[HybridSim: A Physics-Learning Hybrid Digital Twin for mmWave Human Sensing](https://arxiv.org/abs/2607.15806)**  
+  *Weitao Xiong, Tianyu Liu, Peng Li, Kok Chung Chua, Toa Chean Khim, Pu Wang, Hongfei Xue*  
+  `2026-07-17` · `cs.CV` · [abs](https://arxiv.org/abs/2607.15806) · [pdf](https://arxiv.org/pdf/2607.15806.pdf)
+  > 💡 采用物理-学习混合方法
+
+  <details><summary>Abstract</summary>
+
+  High-fidelity simulation of mmWave radar signals for dynamic human motion is valuable for developing radar-based human sensing models; yet collecting accurately labeled measurements for a specific deployment site remains expensive. We present HybridSim, a physics-learning hybrid simulator that synthesizes mmWave radar signals from dynamic human meshes under a fixed indoor room configuration, explicitly decoupling propagation into two components. To parameterize the human subject, we use a tri-plane representation to extract human features and a Graph Convolutional Network to stabilize optimization and mitigate gradient instability. The direct signal path is modeled via an inverse-rendering formulation with a microfacet BRDF to capture primary surface reflections. In parallel, the indirect path is approximated by combining 3D Gaussian Splatting with a virtual-receiver geometry to fit and reproduce site-specific multipath interference patterns, achieving substantially lower computational cost than explicit full ray tracing. Experiments in a fixed-room setting show improved agreement with a physically based reference and consistent gains on downstream radar-based human sensing tasks when using HybridSim for site-specific data augmentation.
+
+  </details>
+
+- **[ImprovedVBGS: Real-time Continual Variational Bayes Gaussian Splatting](https://arxiv.org/abs/2607.15542)**  
+  *Damani Mguni-Coker*  
+  `2026-07-17` · `cs.CV` · [abs](https://arxiv.org/abs/2607.15542) · [pdf](https://arxiv.org/pdf/2607.15542.pdf)
+  > 💡 空间截断变分推理和高效重分配实现1680倍加速，在NeRF合成数据集上保持重建质量的同时达到实时连续学习。
+
+  <details><summary>Abstract</summary>
+
+  On-the-fly reconstruction is a key requirement for many applications in robotics and autonomous navigation. Variational Bayes Gaussian Splatting (VBGS) enables continual learning without replay buffers using Coordinate Ascent Variational Inference (CAVI), but its per-frame iterations over all observed points make it too slow for real-time use with strict memory and latency requirements. We present ImprovedVBGS, an accelerated framework for on-the-fly continual reconstruction. This is achieved primarily through (i) spatially truncated variational inference, and (ii) improved reassignment that uses forwarding, truncation and eliminates wasteful dynamic recompilation. On the NeRF synthetic dataset, we reduce mean per-frame latency from ~84.0 s to ~0.050 s on an RTX 3070 Ti, a 1680x speed-up while maintaining reconstruction quality.
+
+  </details>
+
+- **[Rendering 3D Gaussians on a Graph Processor](https://arxiv.org/abs/2607.15951)**  
+  *Nicholas Fry, Ignacio Alzugaray, Mark Pupilli, Paul H. J. Kelly, Andrew J. Davison*  
+  `2026-07-17` · `cs.GR` · [abs](https://arxiv.org/abs/2607.15951) · [pdf](https://arxiv.org/pdf/2607.15951.pdf)
+  > 💡 在仅含片上SRAM的IPU上首次实现3D高斯渲染，利用网格通信和BSP模型，分析带宽与负载平衡瓶颈。
+
+  <details><summary>Abstract</summary>
+
+  We present the first implementation of a 3D Gaussian renderer on an Intelligence Processing Unit (IPU), comprising 1,472 independent tiles with only on-chip SRAM; constraints that approximate properties of efficient sensor-processor architectures. Our input scenes are 3D Gaussian maps from real-world sequences. Each tile 'owns' a screen-space region of the framebuffer; Gaussian primitives are routed to destination tiles via Manhattan-distance hops on a north-east-west-south (NEWS) grid, then distributed to overlapping neighbours in an expanding tree pattern. Computation follows the IPU's Bulk Synchronous Parallel (BSP) model, with inter-tile communication defined at compile time. We show this hardware allows us to exploit spatial and temporal locality by enabling local data transfer between cores. We evaluate the bottlenecks in this SRAM-only implementation: inter-tile bandwidth, per-tile SRAM capacity, and workload imbalance from non-uniform Gaussian density. We analyse how these constraints affect performance and render quality. This exploration raises broader questions for conventional GPUs and 3D representations, suggesting that direct inter-SM (streaming multiprocessor) communication might offer ways to reduce DRAM access in GPU kernels. We discuss these implications for the future of on-sensor and DRAM-free architectures. Project page: https://nmjfry.github.io/ipu-3dgs/
+
+  </details>
+
 ## 2026-07-17
 
 - **[AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight](https://arxiv.org/abs/2607.14997)**  
