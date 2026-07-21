@@ -22,6 +22,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-21
+
+- **[Exploration Matters for Escaping the Blur Trap in 3D Gaussian Splatting](https://arxiv.org/abs/2607.17965)**  
+  *Chengbo Wang, Guozheng Ma, Jinhong Wu, Tie Ji, Yizhen Lao*  
+  `2026-07-20` · `cs.CV` · [abs](https://arxiv.org/abs/2607.17965) · [pdf](https://arxiv.org/pdf/2607.17965.pdf)
+  > 💡 指出3DGS优化中的模糊陷阱问题，提出随机播种和随机分裂两种探索策略，成功逃离局部最优，提升渲染质量。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) employs Gaussian primitives for explicit scene representation, facilitating real-time, high-fidelity reconstruction and novel view synthesis of complex scenes. However, the explicit modeling inherent in 3DGS introduces a gradient bias during optimization, rendering its non-convex optimization process highly susceptible to convergence toward local suboptimal solutions. This constitutes a fundamental limitation in 3DGS optimization, which we term the Blur Trap. To address this limitation, we integrate simple explicit exploration into the 3DGS optimization framework. First, through rigorous mathematical analysis of the 3DGS optimization formulation, we identify the underlying optimization bias responsible for the Blur Trap and categorize it into two distinct subtypes: the Far-Side Blur Trap and the Near-Side Blur Trap. Subsequently, we propose two highly straightforward exploration strategies (Random Seeding and Random Splitting) to mitigate the far-side and near-side blur traps, respectively. Experimental validation demonstrates that the incorporation of these exploration operators effectively and complementarily overcome the Blur Trap, achieving high-quality rendering performance across multiple datasets. Project page: https://chengbo-wang.github.io/ExploreGS/
+
+  </details>
+
+- **[Locality-Aware Density Control for Efficient Gaussian-based Image Representation](https://arxiv.org/abs/2607.17896)**  
+  *Jiacong Chen, Qingyu Mao, Xiandong Meng, Shuai Liu, Chao Li, Fanyang Meng, Youneng Bao, Yongsheng Liang*  
+  `2026-07-20` · `cs.CV` · [abs](https://arxiv.org/abs/2607.17896) · [pdf](https://arxiv.org/pdf/2607.17896.pdf)
+  > 💡 针对2DGS中高斯容量分配效率低的问题，提出LocoADC框架，通过区域致密化与相似合并策略，显著提升图像重建质量。
+
+  <details><summary>Abstract</summary>
+
+  2D Gaussian Splatting is an attractive direction for image representation due to its explicit formulation, fast rasterization, and favorable decoding efficiency. The representation quality of this paradigm depends on the proper allocation of Gaussian capacity to the demanding regions. However, existing methods fail to allocate Gaussian capacity efficiently during optimization: under-reconstructed content is often refined in a fragmented pixel-wise manner, while neighboring optimized Gaussians with similar attributes are redundantly retained. This inefficiency motivates the need for a density control framework that jointly addresses insufficient allocation in under-reconstructed regions and redundant allocation in over-reconstructed regions. Our key insight is that this framework should exploit two complementary forms of locality: the local continuity of reconstruction errors in image space for improved Gaussian allocation, and the local similarity of neighboring Gaussians in Gaussian space for redundant elimination. Based on this insight, we propose Locality-Aware Density Control (LocoADC), a plug-and-play framework that improves Gaussian capacity utilization through Region-wise Gaussian Densification (RGD) and Similarity-Driven Gaussian Merging (SDGM) strategies, together with a local color consistency constraint for more reliable merging. Extensive experiments on diverse datasets show that LocoADC consistently improves multiple baselines by enabling more effective local Gaussian allocation, including a 2.93 dB PSNR gain over GI on the CLIC dataset under the same 30k Gaussian budget. Code is available at: \textit{https://github.com/ChenJiaCong-1005/LocoADC}.
+
+  </details>
+
 ## 2026-07-17
 
 - **[JADE-GS: Joint Alternating Deblurring Guided by Events in 3D Gaussian Splatting](https://arxiv.org/abs/2607.14990)**  

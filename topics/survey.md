@@ -22,6 +22,42 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-21
+
+- **[CaT-GS: Efficient 3DGS Rendering for Large Scale Scenes via Inter-frame Caching and Tile Scheduling](https://arxiv.org/abs/2607.17842)**  
+  *Tingjia Zhang, Bo Chen, Shengzhong Liu, Fan Wu, Guihai Chen*  
+  `2026-07-20` · `cs.CV` · [abs](https://arxiv.org/abs/2607.17842) · [pdf](https://arxiv.org/pdf/2607.17842.pdf)
+  > 💡 针对大规模3DGS渲染中冗余计算与负载不均，提出跨帧缓存与瓦片调度方法，实现10倍加速。
+
+  <details><summary>Abstract</summary>
+
+  Recent breakthroughs in 3D Gaussian Splatting (3DGS) have advanced neural rendering with high fidelity and speed. However, its performance degrades significantly in large-scale scenes due to the computational burden of tile-based rasterization. Existing optimization efforts either require costly scene re-training or focus on narrow aspects of the pipeline, overlooking critical inefficiencies in real-world deployments. Through a comprehensive analysis, we identify three primary sources of redundancy and low GPU utilization: redundant inter-frame pre-processing, viewpoint-based occlusion redundancy, and severe tile-level load imbalance. To address these issues, we propose CaT-GS, a novel and efficient 3DGS rendering pipeline. CaT-GS introduces a speculative multi-frame preprocessing method to eliminate redundant computations across consecutive frames, and an inter-frame caching mechanism to eliminate viewpoint redundant rendering stages. Furthermore, it refactors rasterization tasks with a dedicated kernel to mitigate tile load imbalance, significantly boosting GPU utilization. Extensive experiments demonstrate that CaT-GS achieves a speedup of up to 10 times over the original 3DGS and up to 70% over previous state-of-the-art methods, establishing a new benchmark for high-fidelity, real-time rendering of large-scale scenes.
+
+  </details>
+
+- **[Does Robust VIO Need More Learning? Geometry-Verified Visual Measurements under Distribution Shift](https://arxiv.org/abs/2607.17956)**  
+  *Yangyang Ning, Shu Liang, Quanbo Ge, Tianchen Deng, Yuhua Qi, Shenghai Yuan*  
+  `2026-07-20` · `cs.RO` · [abs](https://arxiv.org/abs/2607.17956) · [pdf](https://arxiv.org/pdf/2607.17956.pdf)
+  > 💡 针对分布偏移下VIO鲁棒性，提出最小学习框架，
+
+  <details><summary>Abstract</summary>
+
+  Learning is increasingly introduced into visual-inertial odometry (VIO), ranging from learned feature front-ends to learning-dominant motion and geometry estimation. However, learning more of the pipeline does not necessarily improve robustness when deployment conditions differ from the training distribution. This work asks whether robust VIO under distribution shift truly requires deeper learned estimation, or whether learning can be confined to visual measurement generation. We propose a minimal-learning stereo VIO framework in which SEA-RAFT is used only to propose dense stereo correspondences and predict their uncertainty, while temporal tracking, geometric verification, and state estimation remain explicit. Dense flow is sampled at sparse feature locations, filtered using predicted uncertainty and stereo epipolar consistency, and incorporated into a sliding-window stereo-inertial estimator through uncertainty-weighted reprojection factors. The same uncertainty is further propagated through stereo triangulation for downstream anisotropic 3D Gaussian mapping. Experiments on EuRoC, VIODE, and 4Seasons demonstrate accurate and stable estimation under motion blur, dynamic scenes, illumination changes, and large indoor-to-outdoor distribution shifts. Ablations show that learned flow alone is insufficient: the gains arise from combining learned correspondence proposals with geometric verification and uncertainty-aware weighting. These results suggest that, for OOD-robust VIO, carefully integrated learned visual measurements can be more effective than learning a larger fraction of the estimation pipeline. Code and configs for the benchmark will be open-source upon acceptance. A supplementary video is available at https://drive.google.com/file/d/1EVRhOkhanmNXHbQS1Vr80FoEIAYOYOV2/view
+
+  </details>
+
+- **[GEAR: Reconstruction of Classical Paintings via Geometry Grounding and Appearance Restitution](https://arxiv.org/abs/2607.17519)**  
+  *Qinyu Zhang, Xinda Liu, Yunchen Li, Yunzhuo Liu, Chenxi Hu, Kang Li, Guohua Geng*  
+  `2026-07-20` · `cs.MM` · [abs](https://arxiv.org/abs/2607.17519) · [pdf](https://arxiv.org/pdf/2607.17519.pdf)
+  > 💡 针对单幅古典绘画缺乏3D线索，提出无训练两阶段GeAR框架进行几何基础化与外观恢复，生成逼真3D场景，并构建HeriArch基准。
+
+  <details><summary>Abstract</summary>
+
+  Classical paintings preserve rich spatial, cultural, and historical content, making their reconstruction as explorable 3D scenes valuable for digital preservation, immersive exhibition, and cultural engagement. Yet, unlike photographs, they often depict scenes in a single-view, stylized manner, with weak perspective, lighting, and depth cues. Existing 3D reconstruction methods are largely built on natural-image priors, making it difficult to recover geometrically plausible and visually faithful 3D representations from such inputs. To address this challenge, we introduce Classical Painting-to-3D (CP3D), a new task that aims to recover a 3D representation from a single classical painting while jointly ensuring geometric plausibility, appearance fidelity to the source artwork, and plausible novel-view synthesis. We further propose GeAR, a training-free two-stage framework for Geometry Grounding and Appearance Restitution. GeAR first converts the input painting into a geometry-grounded representation with more coherent shading and illumination cues, improving the stability of 3D Gaussian reconstruction. It then restores artwork-faithful appearance across views under spatial constraints and multi-view consistency, recovering the painterly textures and details weakened during grounding. In addition, we construct HeriArch, a curated benchmark of 10,160 high-resolution classical artworks for systematic evaluation of CP3D. Extensive experiments and user studies show that GeAR consistently outperforms strong baselines in geometric plausibility, appearance fidelity, and human preference. Code and dataset will be released publicly.
+
+  </details>
+
 ## 2026-07-16
 
 - **[Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT](https://arxiv.org/abs/2607.13682)**  

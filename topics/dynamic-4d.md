@@ -32,6 +32,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-21
+
+- **[Packet-Loss Robust 3D Gaussian Compression via Atomic Packaging and GNN-based Error Concealment](https://arxiv.org/abs/2607.17916)**  
+  *Yuxuan Tao, Xuerui Ma, Hao Zhang, Chunhua Peng*  
+  `2026-07-20` · `cs.GR` · [abs](https://arxiv.org/abs/2607.17916) · [pdf](https://arxiv.org/pdf/2607.17916.pdf)
+  > 💡 提出原子包装和GNN误差隐藏框架，在20%丢包下将3DGS渲染PSNR下降限制至约3dB。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) and recent compression schemes such as HAC++ enable high-fidelity real-time neural rendering, but their bitstreams are fragile under packet loss during network streaming. Existing compression methods often separate correlated anchor attributes into independent streams, so losing one packet can create attribute-inconsistent broken anchors and severe rendering artifacts. We propose a packet-loss robust 3DGS transmission and error concealment framework. On the encoder side, anchor-level atomic packaging jointly encapsulates all attributes of each anchor, converting corrupted-attribute failures into clean missing-anchor erasures. Stratified random grouping further disperses packet losses across the spatial domain to avoid large contiguous voids. On the decoder side, we formulate recovery as prior-aware attribute inpainting. A Context-Aware Residual Interpolation (CARI) branch uses hash-grid prior predictions and neighboring residuals to build a robust baseline, while a lightweight two-layer graph neural network with cross-attention over hash-grid priors refines high-frequency attribute residuals. Attribute-wise confidence control falls back to interpolation when learned predictions are unreliable. Experiments under 20 percent random packet loss on BungeeNeRF, Mip-NeRF 360, and Tanks and Temples show that the proposed method substantially improves over no-concealment transmission and limits average PSNR degradation to about 3 dB relative to the lossless HAC++ reference.
+
+  </details>
+
+- **[OmniStyle-INR: Universal and Multimodal Style Transfer for INRs](https://arxiv.org/abs/2607.16362)**  
+  *Rafał Kajca, Michał Miziołek, Kornel Howil, Rafał Tobiasz, Przemysław Spurek*  
+  `2026-07-17` · `cs.CV` · [abs](https://arxiv.org/abs/2607.16362) · [pdf](https://arxiv.org/pdf/2607.16362.pdf)
+  > 💡 针对高斯溅射在连续域
+
+  <details><summary>Abstract</summary>
+
+  Style transfer remains a fundamental and highly important task across various data modalities, enabling creative manipulation conditioned by both reference images and textual descriptions. Recently, methods utilizing Gaussian Splatting have emerged as a unified representation for 2D images, video, 3D scenes, and 4D dynamics. However, representing videos and 2D images with Gaussian Splatting is structurally sub-optimal for dense continuous domains. The number of required Gaussians often approaches the total number of pixels, raising questions about the actual utility of such a representation for these specific modalities. In contrast, Implicit Neural Representations have established themselves as a much more popular and natural choice across all these data domains. Implicit Neural Representations naturally provide significant advantages, including data compression, inherent capabilities for super resolution, and seamless integration with deep generative models. To this end, we introduce OmniStyle-INR, a novel framework that leverages network-based continuous representations as a truly universal domain. Our approach successfully performs high-quality style transfer across all visual modalities, guided seamlessly by both text prompts and visual exemplars.
+
+  </details>
+
 ## 2026-07-20
 
 - **[HybridSim: A Physics-Learning Hybrid Digital Twin for mmWave Human Sensing](https://arxiv.org/abs/2607.15806)**  

@@ -16,6 +16,53 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-21
+
+- **[QIRF Quantum-Inspired Non-Orthogonal Function-Space Compression for 3D Gaussian Splatting](https://arxiv.org/abs/2607.18067)**  
+  *Shizeng Jiang, Hao Zhang, Xuerui Ma, Ying Hu, Tao Zhang*  
+  `2026-07-20` · `cs.CV` · [abs](https://arxiv.org/abs/2607.18067) · [pdf](https://arxiv.org/pdf/2607.18067.pdf)
+  > 💡 利用量子启发非正交函数压缩，通过重叠矩阵和密度矩阵选择子空间，减少高斯数量71.7%，提升渲染速度34.3%。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) achieves high-quality real-time rendering by representing a scene with a large collection of anisotropic Gaussian primitives. However, complex scenes often require millions of Gaussians, resulting in substantial storage and rendering costs. Existing compression methods mainly reduce redundancy through primitive-wise pruning, attribute quantization, clustering, or neural coding, while redundancy caused by strongly overlapping and non-orthogonal Gaussian basis functions remains largely unexplored. We present QIRF, a quantum-inspired non-orthogonal function-space compression method for 3D Gaussian Splatting. QIRF models neighboring Gaussian primitives as a local non-orthogonal basis and formulates primitive reduction as a subspace-aware selection problem. Specifically, an analytic Gaussian overlap matrix and a radiance-response density matrix are constructed to characterize functional redundancy and rendering relevance. Generalized eigendecomposition is then used to identify the dominant local subspace and select representative Gaussian primitives. An RRDM-based response model and detail-aware safeguarding further preserve visually important high-frequency structures under aggressive pruning. Experiments on 13 scenes from Mip-NeRF 360, Tanks and Temples, and Deep Blending show that QIRF reduces the Gaussian count and raw PLY storage by 71.7 percent on average, corresponding to approximately 3.54 times compression, while maintaining reconstruction quality comparable to 3DGS and achieving a marginal average PSNR improvement of 0.10 dB. QIRF also improves the average rendering speed over 3DGS by 34.3 percent. These results suggest that non-orthogonal function-space redundancy is an important yet underexplored source of representational redundancy in explicit Gaussian radiance fields.
+
+  </details>
+
+- **[TopoGS: Planar Reconstruction via Topology-aware 3D Gaussian Splatting](https://arxiv.org/abs/2607.16838)**  
+  *Shanshan Pan, Jiale Chen, Yilin Liu, Hui Huang*  
+  `2026-07-18` · `cs.CV` · [abs](https://arxiv.org/abs/2607.16838) · [pdf](https://arxiv.org/pdf/2607.16838.pdf)
+  > 💡 针对3DGS平面重建缺乏拓扑连接导致碎片化问题，TopoGS通过引入平面与拓扑约束及全局2D拓扑关系，生成连贯精准的3D场景。
+
+  <details><summary>Abstract</summary>
+
+  Extracting structured, parametric 3D representations from raw images remains a fundamental challenge in computer vision and graphics. While recent advancements in the 3D Gaussian Splatting (3DGS) pipeline integrate planar primitives to yield compact and editable geometry, these approaches typically treat planes as isolated, discrete sets. This lack of topological connectivity hinders robust geometric reasoning, leading to fragmented reconstructions and misaligned boundaries that fall short of the precision for rigorous spatial analysis and professional design workflows. To address this, we introduce TopoGS, the first 3DGS framework to explicitly integrate both planar and topological constraints for coherent 3D reconstruction. Specifically, we extract global 2D topological relationships from multi-view image segmentations and anchor Gaussian primitives to these structural elements. This formulation enables the joint optimization of plane parameters, rendering fidelity, and topological adjacency. By enforcing strict multi-view consistency alongside these topological constraints, our method significantly mitigates geometric misalignments and produces connected, structured 3D models. Extensive evaluations on the ScanNet++ dataset demonstrate that TopoGS achieves state-of-the-art performance, providing a highly robust solution for generating accurate, topologically sound, and visually faithful scene representations.
+
+  </details>
+
+- **[SPARE-GS: Structural Parsimony and Resource Efficiency for 3D Gaussian Splatting](https://arxiv.org/abs/2607.16624)**  
+  *Zhang Chen, Shuai Wan, Fuzheng Yang, Jiazhi Xia, Weiyao Lin, Junhui Hou*  
+  `2026-07-18` · `cs.CV` · [abs](https://arxiv.org/abs/2607.16624) · [pdf](https://arxiv.org/pdf/2607.16624.pdf)
+  > 💡 针对3DGS原语过多问题，提出全局预算约束优化框架，动态调整原语分布，降低高斯数和训练时间并提升质量。
+
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) achieves high-fidelity novel view synthesis in real-time; however its training efficiency and representation compactness are hindered by excessive primitive proliferation. To address this challenge, we formulate the structural evolution of 3DGS as a global budget-constrained optimization problem and derive an optimality condition, which requires the marginal utility of structural resources to be balanced across spatial regions under a finite primitive budget. Based on this formulation, we propose SPARE-GS, a general plug-and-play framework that dynamically aligns the distribution of 3D Gaussian primitives with regional representational demand. SPARE-GS estimates capacity-normalized regional demand, assigns adaptive target quotas, and uses regional budget deviations to coordinate densification, pruning and adaptive termination toward a more balanced structural allocation. Extensive experiments across standard, accelerated, and structure-enhanced 3DGS pipelines demonstrate that SPARE-GS reduces the Gaussian count and training time by an average of 30.38% and 23.81%, respectively, while improving the average PSNR. Moreover, the resulting compact representations reduce downstream processing time and improve the rate-distortion performance of diverse compression and pruning methods, demonstrating the broad applicability of global structural budget regulation.
+
+  </details>
+
+- **[SaaF: Scene-Specific Ambiguity-Aware 3D Language Fields towards Interactive Real-World Object Retrieval](https://arxiv.org/abs/2607.16309)**  
+  *Yuga Yano, Daiju Kanaoka, Hakaru Tamukoh, Yasutomo Kawanishi*  
+  `2026-07-14` · `cs.CV` · [abs](https://arxiv.org/abs/2607.16309) · [pdf](https://arxiv.org/pdf/2607.16309.pdf)
+  > 💡 针对3D语言场特征压缩和查询歧义问题，提出度量学习构建判别性且模糊感知的统一特征空间，提升交互式物体检索准确率。
+
+  <details><summary>Abstract</summary>
+
+  We propose Scene-specific Ambiguity-aware 3D Language Fields (SaaF), a novel Gaussian Splatting-based 3D language field designed for interactive object retrieval in a given real-world scene. Interactive object retrieval using natural language is a crucial capability for service robots operating in complex real-world environments. While recent 3D language field methods for object retrieval establish associations between rendered pixels and autoencoder-compressed CLIP features, they suffer from two limitations: (1) reduced discriminability among similar objects due to feature compression, and (2) poor handling of ambiguous queries, often resulting in unstable or incorrect retrieval. To address these limitations, SaaF introduces a metric learning strategy to construct a unified feature space that is both instance-discriminative and ambiguity-aware. (i) To enhance instance-level visual discrimination, SaaF employs metric learning that pulls image features from multiple viewpoints of the same object closer together in the feature space. (ii) To establish ambiguity awareness, the model jointly trains on multiple text labels generated by the proposed method from each tracked object image sequence, including ambiguous descriptions, to learn the semantic relationships between ambiguous and specific features in a target scene. This feature space enables fine-grained visual understanding while allowing the system to estimate query ambiguity and interactively request clarification when needed. Experimental results demonstrate that SaaF not only improves retrieval accuracy over previous methods but also robustly detects and handles ambiguity in the user text queries under open-vocabulary settings.
+
+  </details>
+
 ## 2026-07-17
 
 - **[Compression of 3D Gaussian Splatting Data Using GPU-friendly Graphics Texture Coding](https://arxiv.org/abs/2607.14513)**  

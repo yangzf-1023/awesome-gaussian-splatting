@@ -14,6 +14,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-21
+
+- **[Points as Tori: Fast Pointwise Signed Distance for Point Clouds](https://arxiv.org/abs/2607.16946)**  
+  *Nicole Feng, Ioannis Gkioulekas, Keenan Crane*  
+  `2026-07-18` · `cs.GR` · [abs](https://arxiv.org/abs/2607.16946) · [pdf](https://arxiv.org/pdf/2607.16946.pdf)
+  > 💡 通过局部圆环拟合点云并利用预训练网络预测曲率参数，实现快速点态有符号距离计算，无需全局优化或离散化。
+
+  <details><summary>Abstract</summary>
+
+  We describe a method for computing signed distance to point clouds that allows fast pointwise evaluation at arbitrary spatial resolution. As input, our method takes a point cloud with normals; as output, it provides an analytical parameterization that allows queries of signed distance to the approximate underlying surface at arbitrary points - simultaneously providing reconstruction and distance. Our key idea is to reconstruct shapes by locally fitting point clouds with tori, which have closed-form signed distance functions. Tori are fitted in a feed-forward manner, using a pre-trained network to output per-point curvature and shift parameters. Importantly, our method does not require costly global optimization or spatial discretization, and is easily parallelizable. Underlying our method is a new theory that unifies signed distance with the classic reconstruction methods of winding numbers and Poisson surface reconstruction. We use our method to compute signed distance to point clouds arising from photogrammetry, meshes, 3D Gaussians, and neural implicits. Our method allows point clouds to be used directly in applications, without explicit surface reconstruction: as examples, we take offsets of point clouds, apply morphological and Boolean operations, and directly visualize offset surfaces using sphere tracing.
+
+  </details>
+
 ## 2026-07-14
 
 - **[HyperGS: Fast and Generalizable Gaussian Video Representation](https://arxiv.org/abs/2607.11500)**  
