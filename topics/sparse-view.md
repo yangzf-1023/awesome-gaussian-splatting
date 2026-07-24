@@ -15,6 +15,20 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-24
+
+- **[SubSplat: High-Resolution Pixel-aligned 3DGS via Sub-pixel Gaussian Reparameterization](https://arxiv.org/abs/2607.20813)**  
+  *Jiun Lee, Jaekwang Kim, Sangmin Lee*  
+  `2026-07-23` · `cs.CV` · [abs](https://arxiv.org/abs/2607.20813) · [pdf](https://arxiv.org/pdf/2607.20813.pdf)
+  > 💡 针对高分辨率渲染中细节与成本矛盾，通过子像素高斯重参数化细分基元并聚合多视图特征，实现
+
+  <details><summary>Abstract</summary>
+
+  Pixel-aligned Gaussian splatting enables efficient and generalizable novel-view synthesis. However, high-resolution rendering faces a critical trade-off where increasing input resolution improves detail at the expense of quadratically rising network computational cost. Conversely, maintaining low-resolution inputs stabilizes this cost but results in insufficient Gaussian density and artifacts. To address this, we propose SubSplat, which introduces Sub-pixel Gaussian Reparameterizer(SPGR) to subdivide primary Gaussians into fine-grained primitives, restoring structural density directly from low-resolution features. We further enhance the reparameterization quality through feature aggregation, which effectively captures high-frequency details across multiple views. Experiments on RealEstate10K and ACID demonstrate that SubSplat achieves high-fidelity rendering with superior efficiency. Our results validate that the proposed framework successfully resolves the trade-off between reparameterization fidelity and network computational cost inherent in pixel-aligned Gaussian Splatting.
+
+  </details>
+
 ## 2026-07-21
 
 - **[Points as Tori: Fast Pointwise Signed Distance for Point Clouds](https://arxiv.org/abs/2607.16946)**  

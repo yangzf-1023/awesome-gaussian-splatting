@@ -33,6 +33,31 @@ All Gaussian-Splatting papers in this topic, auto-collected from arXiv. Newest f
 
 
 
+
+## 2026-07-24
+
+- **[Construction and Dynamic Update of Channel Gain Maps via 3D Gaussian Splatting](https://arxiv.org/abs/2607.21099)**  
+  *Yilong Chen, Yuan Guo, Juncong Zhou, Jie Xu, Rui Zhang*  
+  `2026-07-23` · `cs.IT` · [abs](https://arxiv.org/abs/2607.21099) · [pdf](https://arxiv.org/pdf/2607.21099.pdf)
+  > 💡 使用3D高斯泼溅构建物理信息驱动的信道增益图，并通过增量学习实现高效动态更新，平衡精度与复杂度。
+
+  <details><summary>Abstract</summary>
+
+  Channel knowledge maps (CKMs) have emerged as a promising technique for providing scene-specific and location-dependent propagation knowledge to enable environment-aware wireless network design. This paper investigates the construction and dynamic updating of a particular type of CKM, namely grid-based channel gain maps (CGMs), for large-scale networks using three-dimensional Gaussian splatting (3DGS). First, we formulate a grid-based channel gain model, where each map entry is defined as the locally averaged channel gain over a receiver grid, thereby suppressing phase-sensitive small-scale fluctuations. The resulting channel gain is decomposed into distance-dependent attenuation, path transmittance, and effective scattering contributions. Based on this decomposition, we develop a physics-informed Gaussian-splatting-based channel gain (GS-CG) model, which represents the propagation environment as a set of Gaussian primitives. The proposed model maps Gaussian geometry, opacity, and directional features to propagation-related factors and renders grid-level channel gains through a differentiable process. To accommodate real-time environmental changes, we further propose an incremental learning mechanism that updates a static reference GS-CG representation into a dynamic CGM. Specifically, the reference Gaussian primitives are frozen, while a compact set of tunable Gaussians is introduced to capture newly induced local channel-gain variations from sparse measurements.Numerical results demonstrate that the proposed GS-CG methods accurately reconstruct grid-based CGMs, efficiently adapt to dynamic environmental changes, and achieve a favorable accuracy-complexity tradeoff for fast CGM refinement.
+
+  </details>
+
+- **[RealVDeblur: One-Step Diffusion for Generalizable Real-World Video Deblurring](https://arxiv.org/abs/2607.20628)**  
+  *Renbiao Jin, Mingxin Yang, Yutian Chen, Junhao Zhuang, Xin Cai, Mulin Yu, Linning Xu, Wenxian Yu, Danping Zou, Shi Guo, Tianfan Xue*  
+  `2026-07-22` · `cs.CV` · [abs](https://arxiv.org/abs/2607.20628) · [pdf](https://arxiv.org/pdf/2607.20628.pdf)
+  > 💡 利用3DGS合成真实模糊数据，视频扩散蒸馏为单步生成器，实现鲁棒高效的真实世界视频去模糊。
+
+  <details><summary>Abstract</summary>
+
+  Real-world video deblurring remains challenging due to diverse motion patterns, complex degradations, and the scarcity of realistic training data, yet robust restoration is critical for downstream pipelines such as mobile imaging and 3D reconstruction. This work presents \textbf{RealVDeblur}, an efficient generative framework designed to improve in-the-wild robustness under diverse real capture conditions. First, a large-scale, physically grounded blur synthesis pipeline is constructed from scene-level 3D Gaussian Splatting (3DGS) assets and high-frame-rate videos, providing realistic training data covering both camera-induced and object-motion blur. Second, a video diffusion prior is leveraged for restoration; to better accommodate frame-dependent blur variations, temporal compression in the VAE is disabled and a frame-wise encoding scheme is adopted. For practical deployment on long videos, multi-step diffusion sampling is distilled into an efficient one-step generator, and a training-free Temporal Window Mask stabilizes inference beyond the training horizon with constant memory usage. Extensive experiments on diverse real-world benchmarks demonstrate strong perceptual quality, semantic fidelity, and temporal consistency on unseen videos, as well as improved robustness in downstream 3D reconstruction under severe motion blur. Project page: https://rbjin.github.io/RealVDeblur
+
+  </details>
+
 ## 2026-07-21
 
 - **[Packet-Loss Robust 3D Gaussian Compression via Atomic Packaging and GNN-based Error Concealment](https://arxiv.org/abs/2607.17916)**  
